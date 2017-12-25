@@ -65,34 +65,10 @@ U 1 1 5A3E3EA9
 P 4400 1200
 F 0 "C?" H 4450 1395 50  0000 C CNN
 F 1 "100nF" H 4450 1304 50  0000 C CNN
-F 2 "" H 4400 1200 50  0001 C CNN
+F 2 "agg:0402" H 4400 1200 50  0001 C CNN
 F 3 "" H 4400 1200 50  0001 C CNN
-F 4 "Value" H 4400 1200 60  0001 C CNN "Farnell"
+F 4 "2496810" H 4400 1200 60  0001 C CNN "Farnell"
 	1    4400 1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L agg-kicad:C C?
-U 1 1 5A3E3F1F
-P 4200 1400
-F 0 "C?" H 4250 1595 50  0000 C CNN
-F 1 "100nF" H 4250 1504 50  0000 C CNN
-F 2 "" H 4200 1400 50  0001 C CNN
-F 3 "" H 4200 1400 50  0001 C CNN
-F 4 "Value" H 4200 1400 60  0001 C CNN "Farnell"
-	1    4200 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L agg-kicad:C C?
-U 1 1 5A3E3F54
-P 4400 1600
-F 0 "C?" H 4450 1795 50  0000 C CNN
-F 1 "100nF" H 4450 1704 50  0000 C CNN
-F 2 "" H 4400 1600 50  0001 C CNN
-F 3 "" H 4400 1600 50  0001 C CNN
-F 4 "Value" H 4400 1600 60  0001 C CNN "Farnell"
-	1    4400 1600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -216,10 +192,6 @@ F 3 "" H 4900 1950 60  0001 C CNN
 	1    4900 1950
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4900 1950 4900 1900
-Wire Wire Line
-	4900 1900 5000 1900
 Text Notes 4800 2000 0    60   ~ 0
 No DFU required
 $Comp
@@ -282,18 +254,6 @@ Wire Wire Line
 Wire Wire Line
 	7100 2800 6700 2800
 NoConn ~ 6300 5000
-$Comp
-L agg-kicad:C C?
-U 1 1 5A3F62BE
-P 5000 4850
-F 0 "C?" H 5050 5045 50  0000 C CNN
-F 1 "100nF" H 5050 4954 50  0000 C CNN
-F 2 "" H 5000 4850 50  0001 C CNN
-F 3 "" H 5000 4850 50  0001 C CNN
-F 4 "Value" H 5000 4850 60  0001 C CNN "Farnell"
-	1    5000 4850
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	5000 4850 5000 4800
 Wire Wire Line
@@ -304,18 +264,6 @@ Wire Wire Line
 Wire Wire Line
 	5000 5000 5000 4950
 Connection ~ 5400 5000
-$Comp
-L agg-kicad:C C?
-U 1 1 5A3F712E
-P 4700 1750
-F 0 "C?" H 4750 1945 50  0000 C CNN
-F 1 "100nF" H 4750 1854 50  0000 C CNN
-F 2 "" H 4700 1750 50  0001 C CNN
-F 3 "" H 4700 1750 50  0001 C CNN
-F 4 "Value" H 4700 1750 60  0001 C CNN "Farnell"
-	1    4700 1750
-	0    1    1    0   
-$EndComp
 $Comp
 L agg-kicad:GND #PWR07
 U 1 1 5A3F7FF1
@@ -336,8 +284,6 @@ Wire Wire Line
 	4700 1700 4650 1700
 Wire Wire Line
 	4700 1700 5000 1700
-Text Notes 2300 1000 0    60   ~ 0
-2496810 - 100nF caps 0402
 $Comp
 L agg-kicad:LED D?
 U 1 1 5A3E82EC
@@ -383,4 +329,56 @@ Wire Wire Line
 	7150 2200 7000 2200
 Text Notes 7050 2150 0    60   ~ 0
 16mA max current source
+Wire Wire Line
+	4900 1900 5000 1900
+Wire Wire Line
+	4900 1950 4900 1900
+$Comp
+L agg-kicad:C C?
+U 1 1 5A4085C3
+P 4200 1400
+F 0 "C?" H 4250 1595 50  0000 C CNN
+F 1 "100nF" H 4250 1504 50  0000 C CNN
+F 2 "agg:0402" H 4200 1400 50  0001 C CNN
+F 3 "" H 4200 1400 50  0001 C CNN
+F 4 "2496810" H 4200 1400 60  0001 C CNN "Farnell"
+	1    4200 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:C C?
+U 1 1 5A408606
+P 4400 1600
+F 0 "C?" H 4450 1795 50  0000 C CNN
+F 1 "100nF" H 4450 1704 50  0000 C CNN
+F 2 "agg:0402" H 4400 1600 50  0001 C CNN
+F 3 "" H 4400 1600 50  0001 C CNN
+F 4 "2496810" H 4400 1600 60  0001 C CNN "Farnell"
+	1    4400 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:C C?
+U 1 1 5A408643
+P 4700 1750
+F 0 "C?" H 4750 1945 50  0000 C CNN
+F 1 "100nF" H 4750 1854 50  0000 C CNN
+F 2 "agg:0402" H 4700 1750 50  0001 C CNN
+F 3 "" H 4700 1750 50  0001 C CNN
+F 4 "2496810" H 4700 1750 60  0001 C CNN "Farnell"
+	1    4700 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L agg-kicad:C C?
+U 1 1 5A4087DD
+P 5000 4950
+F 0 "C?" H 5050 5145 50  0000 C CNN
+F 1 "100nF" H 5050 5054 50  0000 C CNN
+F 2 "agg:0402" H 5000 4950 50  0001 C CNN
+F 3 "" H 5000 4950 50  0001 C CNN
+F 4 "2496810" H 5000 4950 60  0001 C CNN "Farnell"
+	1    5000 4950
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC
