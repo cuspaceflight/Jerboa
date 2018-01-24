@@ -1,6 +1,7 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 2
+LIBS:agg-kicad
 LIBS:jerboa-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -85,16 +86,14 @@ $EndComp
 Wire Wire Line
 	4500 1600 4550 1600
 Wire Wire Line
-	4400 1600 4150 1600
+	4150 1600 4400 1600
 Wire Wire Line
 	4200 1400 4150 1400
 Wire Wire Line
-	4150 1400 4150 1600
+	4150 1000 4150 1850
 Connection ~ 4150 1600
 Wire Wire Line
 	4400 1200 4150 1200
-Wire Wire Line
-	4150 1200 4150 1400
 Connection ~ 4150 1400
 $Comp
 L agg-kicad:C C?
@@ -110,8 +109,6 @@ F 4 "Value" H 4200 1000 60  0001 C CNN "Farnell"
 $EndComp
 Wire Wire Line
 	4200 1000 4150 1000
-Wire Wire Line
-	4150 1000 4150 1200
 Connection ~ 4150 1200
 $Comp
 L agg-kicad:C C?
@@ -126,34 +123,24 @@ F 4 "1327658" H 4200 1800 60  0001 C CNN "Farnell"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4150 1850 4150 1800
-Wire Wire Line
 	4200 1800 4150 1800
 Connection ~ 4150 1800
 Wire Wire Line
-	4150 1800 4150 1600
+	4550 1800 4300 1800
 Wire Wire Line
-	4300 1800 4550 1800
-Wire Wire Line
-	4550 1800 4550 1600
-Wire Wire Line
-	4550 1500 4550 1600
+	4550 900  4550 1800
 Connection ~ 4550 1600
-Wire Wire Line
-	4550 1300 4550 1200
 Wire Wire Line
 	4550 1000 4300 1000
 Wire Wire Line
 	4500 1200 4550 1200
 Connection ~ 4550 1200
-Wire Wire Line
-	4550 1200 4550 1000
 Text Label 4650 1700 0    60   ~ 0
 NRST
 Wire Wire Line
 	4550 1300 5000 1300
 Wire Wire Line
-	4300 1400 4550 1400
+	4300 1400 5000 1400
 Wire Wire Line
 	4550 1500 5000 1500
 Text Label 5200 4900 0    60   ~ 0
@@ -169,17 +156,9 @@ F 3 "" H 4550 900 60  0001 C CNN
 	1    4550 900 
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4550 1000 4550 900 
 Connection ~ 4550 1000
-Wire Wire Line
-	4550 1300 4550 1400
 Connection ~ 4550 1300
 Connection ~ 4550 1400
-Wire Wire Line
-	4550 1400 5000 1400
-Wire Wire Line
-	4550 1400 4550 1500
 Connection ~ 4550 1500
 $Comp
 L agg-kicad:GND #PWR04
@@ -230,13 +209,13 @@ F 3 "" H 5400 4750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5500 4800 5400 4800
+	5000 4800 5500 4800
 Wire Wire Line
 	5400 4800 5400 4750
 Wire Wire Line
 	5400 5050 5400 5000
 Wire Wire Line
-	5400 5000 5500 5000
+	5000 5000 5500 5000
 Text Label 6700 4800 2    60   ~ 0
 SWDIO
 Text Label 6700 4900 2    60   ~ 0
@@ -256,11 +235,7 @@ Wire Wire Line
 NoConn ~ 6300 5000
 Wire Wire Line
 	5000 4850 5000 4800
-Wire Wire Line
-	5000 4800 5400 4800
 Connection ~ 5400 4800
-Wire Wire Line
-	5400 5000 5000 5000
 Wire Wire Line
 	5000 5000 5000 4950
 Connection ~ 5400 5000
@@ -281,9 +256,7 @@ Wire Wire Line
 	4700 1750 4700 1700
 Connection ~ 4700 1700
 Wire Wire Line
-	4700 1700 4650 1700
-Wire Wire Line
-	4700 1700 5000 1700
+	4650 1700 5000 1700
 $Comp
 L agg-kicad:LED D?
 U 1 1 5A3E82EC

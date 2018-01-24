@@ -56,10 +56,6 @@ F 3 "" H 4900 2500 60  0001 C CNN
 	1    4900 2500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5000 2400 4900 2400
-Wire Wire Line
-	4900 2400 4900 2500
 $Comp
 L agg-kicad:C C?
 U 1 1 5A3E3EA9
@@ -83,18 +79,6 @@ F 3 "" H 4150 1850 60  0001 C CNN
 	1    4150 1850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4500 1600 4550 1600
-Wire Wire Line
-	4150 1600 4400 1600
-Wire Wire Line
-	4200 1400 4150 1400
-Wire Wire Line
-	4150 1000 4150 1850
-Connection ~ 4150 1600
-Wire Wire Line
-	4400 1200 4150 1200
-Connection ~ 4150 1400
 $Comp
 L agg-kicad:C C?
 U 1 1 5A3ED8BD
@@ -107,9 +91,6 @@ F 4 "Value" H 4200 1000 60  0001 C CNN "Farnell"
 	1    4200 1000
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4200 1000 4150 1000
-Connection ~ 4150 1200
 $Comp
 L agg-kicad:C C?
 U 1 1 5A3EDC65
@@ -122,27 +103,8 @@ F 4 "1327658" H 4200 1800 60  0001 C CNN "Farnell"
 	1    4200 1800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4200 1800 4150 1800
-Connection ~ 4150 1800
-Wire Wire Line
-	4550 1800 4300 1800
-Wire Wire Line
-	4550 900  4550 1800
-Connection ~ 4550 1600
-Wire Wire Line
-	4550 1000 4300 1000
-Wire Wire Line
-	4500 1200 4550 1200
-Connection ~ 4550 1200
 Text Label 4650 1700 0    60   ~ 0
 NRST
-Wire Wire Line
-	4550 1300 5000 1300
-Wire Wire Line
-	4300 1400 5000 1400
-Wire Wire Line
-	4550 1500 5000 1500
 Text Label 5200 4900 0    60   ~ 0
 NRST
 $Comp
@@ -156,10 +118,6 @@ F 3 "" H 4550 900 60  0001 C CNN
 	1    4550 900 
 	1    0    0    -1  
 $EndComp
-Connection ~ 4550 1000
-Connection ~ 4550 1300
-Connection ~ 4550 1400
-Connection ~ 4550 1500
 $Comp
 L agg-kicad:GND #PWR04
 U 1 1 5A3F2FB2
@@ -184,8 +142,6 @@ F 3 "" H 5500 5000 50  0001 C CNN
 	1    5900 4900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5200 4900 5500 4900
 $Comp
 L agg-kicad:GND #PWR05
 U 1 1 5A3F3ABE
@@ -208,37 +164,15 @@ F 3 "" H 5400 4750 60  0001 C CNN
 	1    5400 4750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5000 4800 5500 4800
-Wire Wire Line
-	5400 4800 5400 4750
-Wire Wire Line
-	5400 5050 5400 5000
-Wire Wire Line
-	5000 5000 5500 5000
 Text Label 6700 4800 2    60   ~ 0
 SWDIO
 Text Label 6700 4900 2    60   ~ 0
 SWCLK
-Wire Wire Line
-	6700 4800 6300 4800
-Wire Wire Line
-	6300 4900 6700 4900
 Text Label 7100 2700 2    60   ~ 0
 SWDIO
 Text Label 7100 2800 2    60   ~ 0
 SWCLK
-Wire Wire Line
-	6700 2700 7100 2700
-Wire Wire Line
-	7100 2800 6700 2800
 NoConn ~ 6300 5000
-Wire Wire Line
-	5000 4850 5000 4800
-Connection ~ 5400 4800
-Wire Wire Line
-	5000 5000 5000 4950
-Connection ~ 5400 5000
 $Comp
 L agg-kicad:GND #PWR07
 U 1 1 5A3F7FF1
@@ -250,13 +184,6 @@ F 3 "" H 4700 1950 60  0001 C CNN
 	1    4700 1950
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4700 1950 4700 1850
-Wire Wire Line
-	4700 1750 4700 1700
-Connection ~ 4700 1700
-Wire Wire Line
-	4650 1700 5000 1700
 $Comp
 L agg-kicad:LED D?
 U 1 1 5A3E82EC
@@ -281,8 +208,6 @@ F 4 "9239120" H 6900 2200 60  0001 C CNN "Farnell"
 	1    6900 2200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6700 2200 6900 2200
 $Comp
 L agg-kicad:GND #PWR?
 U 1 1 5A3EA11D
@@ -294,18 +219,8 @@ F 3 "" H 7150 2400 60  0001 C CNN
 	1    7150 2400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7150 2400 7150 2350
-Wire Wire Line
-	7150 2250 7150 2200
-Wire Wire Line
-	7150 2200 7000 2200
 Text Notes 7050 2150 0    60   ~ 0
 16mA max current source
-Wire Wire Line
-	4900 1900 5000 1900
-Wire Wire Line
-	4900 1950 4900 1900
 $Comp
 L agg-kicad:C C?
 U 1 1 5A4085C3
@@ -354,4 +269,105 @@ F 4 "2496810" H 5000 4950 60  0001 C CNN "Farnell"
 	1    5000 4950
 	0    -1   -1   0   
 $EndComp
+Text Label 7050 1900 0    60   ~ 0
+MCU_MISO_TO_RADIO
+Text Label 7050 1800 0    60   ~ 0
+MCU_SCK_TO_RADIO
+Text Label 7050 1700 0    60   ~ 0
+MCU_NSS_TO_RADIO
+Text Label 7050 2000 0    60   ~ 0
+MCU_MOSI_TO_RADIO
+Wire Wire Line
+	5000 2400 4900 2400
+Wire Wire Line
+	4900 2400 4900 2500
+Wire Wire Line
+	4500 1600 4550 1600
+Wire Wire Line
+	4150 1600 4400 1600
+Wire Wire Line
+	4200 1400 4150 1400
+Wire Wire Line
+	4150 1000 4150 1850
+Connection ~ 4150 1600
+Wire Wire Line
+	4400 1200 4150 1200
+Connection ~ 4150 1400
+Wire Wire Line
+	4200 1000 4150 1000
+Connection ~ 4150 1200
+Wire Wire Line
+	4200 1800 4150 1800
+Connection ~ 4150 1800
+Wire Wire Line
+	4550 1800 4300 1800
+Wire Wire Line
+	4550 900  4550 1800
+Connection ~ 4550 1600
+Wire Wire Line
+	4550 1000 4300 1000
+Wire Wire Line
+	4500 1200 4550 1200
+Connection ~ 4550 1200
+Wire Wire Line
+	4550 1300 5000 1300
+Wire Wire Line
+	4300 1400 5000 1400
+Wire Wire Line
+	4550 1500 5000 1500
+Connection ~ 4550 1000
+Connection ~ 4550 1300
+Connection ~ 4550 1400
+Connection ~ 4550 1500
+Wire Wire Line
+	5200 4900 5500 4900
+Wire Wire Line
+	5000 4800 5500 4800
+Wire Wire Line
+	5400 4800 5400 4750
+Wire Wire Line
+	5400 5050 5400 5000
+Wire Wire Line
+	5000 5000 5500 5000
+Wire Wire Line
+	6700 4800 6300 4800
+Wire Wire Line
+	6300 4900 6700 4900
+Wire Wire Line
+	6700 2700 7100 2700
+Wire Wire Line
+	7100 2800 6700 2800
+Wire Wire Line
+	5000 4850 5000 4800
+Connection ~ 5400 4800
+Wire Wire Line
+	5000 5000 5000 4950
+Connection ~ 5400 5000
+Wire Wire Line
+	4700 1950 4700 1850
+Wire Wire Line
+	4700 1750 4700 1700
+Connection ~ 4700 1700
+Wire Wire Line
+	4650 1700 5000 1700
+Wire Wire Line
+	6700 2200 6900 2200
+Wire Wire Line
+	7150 2400 7150 2350
+Wire Wire Line
+	7150 2250 7150 2200
+Wire Wire Line
+	7150 2200 7000 2200
+Wire Wire Line
+	4900 1900 5000 1900
+Wire Wire Line
+	4900 1950 4900 1900
+Wire Wire Line
+	7050 2000 6700 2000
+Wire Wire Line
+	6700 1900 7050 1900
+Wire Wire Line
+	7050 1800 6700 1800
+Wire Wire Line
+	6700 1700 7050 1700
 $EndSCHEMATC
