@@ -37,10 +37,10 @@ F 3 "" H 5100 1950 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L agg-kicad:C C?
+L agg-kicad:C C7
 U 1 1 5A3FE2DB
 P 5000 2000
-F 0 "C?" H 5050 1805 50  0000 C CNN
+F 0 "C7" H 5050 1805 50  0000 C CNN
 F 1 "4.7uF" H 5050 1896 50  0000 C CNN
 F 2 "agg:0805" H 5000 2000 50  0001 C CNN
 F 3 "" H 5000 2000 50  0001 C CNN
@@ -49,10 +49,10 @@ F 4 "9227857" H 5000 2000 60  0001 C CNN "Farnell"
 	-1   0    0    1   
 $EndComp
 $Comp
-L agg-kicad:L L?
+L agg-kicad:L L2
 U 1 1 5A3FE3C6
 P 5000 2250
-F 0 "L?" H 5050 2428 50  0000 C CNN
+F 0 "L2" H 5050 2428 50  0000 C CNN
 F 1 "2.2uH" H 5050 2337 50  0000 C CNN
 F 2 "Jerboa:0806" H 5000 2250 50  0001 C CNN
 F 3 "http://psearch.en.murata.com/inductor/product/LQM2MPN2R2NG0%23.pdf" H 5000 2250 50  0001 C CNN
@@ -68,10 +68,10 @@ Connection ~ 5000 2350
 Wire Wire Line
 	5000 2350 5150 2350
 $Comp
-L agg-kicad:C C?
+L agg-kicad:C C8
 U 1 1 5A3FE5F0
 P 4150 2550
-F 0 "C?" H 4200 2600 50  0000 C CNN
+F 0 "C8" H 4200 2600 50  0000 C CNN
 F 1 "1uF" H 4200 2700 50  0000 C CNN
 F 2 "agg:0402" H 4150 2550 50  0001 C CNN
 F 3 "" H 4150 2550 50  0001 C CNN
@@ -168,10 +168,10 @@ Wire Wire Line
 Text Notes 900  1050 0    60   ~ 0
 Notes:\n- See ubx-g7020 hardware integration manual for info including component values\n- Using DCDC converter; this option is set by the e fuses and appears to be set for  chips in ublox max 7q modules\n
 $Comp
-L agg-kicad:C C?
+L agg-kicad:C C6
 U 1 1 5A407461
 P 4800 2350
-F 0 "C?" H 4850 2155 50  0000 C CNN
+F 0 "C6" H 4850 2155 50  0000 C CNN
 F 1 "4.7uF" H 4850 2246 50  0000 C CNN
 F 2 "agg:0805" H 4800 2350 50  0001 C CNN
 F 3 "" H 4800 2350 50  0001 C CNN
@@ -182,10 +182,10 @@ $EndComp
 Wire Wire Line
 	5150 2150 5100 2150
 $Comp
-L agg-kicad:C C?
+L agg-kicad:C C9
 U 1 1 5A408D67
 P 4300 2450
-F 0 "C?" H 4350 2500 50  0000 C CNN
+F 0 "C9" H 4350 2500 50  0000 C CNN
 F 1 "1uF" H 4350 2600 50  0000 C CNN
 F 2 "agg:0402" H 4300 2450 50  0001 C CNN
 F 3 "" H 4300 2450 50  0001 C CNN
@@ -205,10 +205,10 @@ Connection ~ 5100 2850
 Wire Wire Line
 	5100 2850 5100 2750
 $Comp
-L agg-kicad:C C?
+L agg-kicad:C C4
 U 1 1 5A40F9D1
 P 4250 3050
-F 0 "C?" H 4300 3100 50  0000 C CNN
+F 0 "C4" H 4300 3100 50  0000 C CNN
 F 1 "1uF" H 4300 3200 50  0000 C CNN
 F 2 "agg:0402" H 4250 3050 50  0001 C CNN
 F 3 "" H 4250 3050 50  0001 C CNN
@@ -217,10 +217,10 @@ F 4 "1327658" H 4250 3050 60  0001 C CNN "Farnell"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L agg-kicad:C C?
+L agg-kicad:C C16
 U 1 1 5A4104B9
 P 4500 3150
-F 0 "C?" H 4550 3200 50  0000 C CNN
+F 0 "C16" H 4550 3200 50  0000 C CNN
 F 1 "1uF" H 4550 3300 50  0000 C CNN
 F 2 "agg:0402" H 4500 3150 50  0001 C CNN
 F 3 "" H 4500 3150 50  0001 C CNN
@@ -229,10 +229,10 @@ F 4 "1327658" H 4500 3150 60  0001 C CNN "Farnell"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L agg-kicad:C C?
+L agg-kicad:C C5
 U 1 1 5A41105B
 P 5000 3350
-F 0 "C?" H 5050 3400 50  0000 C CNN
+F 0 "C5" H 5050 3400 50  0000 C CNN
 F 1 "1uF" H 5050 3500 50  0000 C CNN
 F 2 "agg:0402" H 5000 3350 50  0001 C CNN
 F 3 "" H 5000 3350 50  0001 C CNN
@@ -241,10 +241,10 @@ F 4 "1327658" H 5000 3350 60  0001 C CNN "Farnell"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L agg-kicad:C C?
+L agg-kicad:C C10
 U 1 1 5A411184
 P 4750 3250
-F 0 "C?" H 4800 3300 50  0000 C CNN
+F 0 "C10" H 4800 3300 50  0000 C CNN
 F 1 "2.2uF" H 4800 3400 50  0000 C CNN
 F 2 "agg:0402" H 4750 3250 50  0001 C CNN
 F 3 "" H 4750 3250 50  0001 C CNN
