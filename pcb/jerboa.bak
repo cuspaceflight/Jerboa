@@ -26,12 +26,8 @@ S 500  2950 900  2250
 U 5A37ABBE
 F0 "gps" 60
 F1 "gps.sch" 60
-$EndSheet
-$Sheet
-S 500  5450 900  2250
-U 5A37ABC3
-F0 "radio" 60
-F1 "radio.sch" 60
+F2 "GPS_TX" I R 1400 3400 60 
+F3 "GPS_RX" I R 1400 3550 60 
 $EndSheet
 $Comp
 L STM32L051K8U6:STM32L051K8U6 U101
@@ -320,13 +316,9 @@ Connection ~ 4400 1500
 Wire Wire Line
 	5200 4900 5500 4900
 Wire Wire Line
-	5000 4800 5500 4800
-Wire Wire Line
 	5400 4800 5400 4750
 Wire Wire Line
 	5400 5050 5400 5000
-Wire Wire Line
-	5000 5000 5500 5000
 Wire Wire Line
 	6700 4800 6300 4800
 Wire Wire Line
@@ -371,9 +363,9 @@ NRST
 Wire Wire Line
 	4650 1700 5000 1700
 Text Label 6850 3800 0    60   ~ 0
-TX_RADIO_from_MCU
+TX_GPS_from_MCU
 Text Label 6850 3900 0    60   ~ 0
-RX_RADIO_from_MCU
+RX_GPS_from_MCU
 Wire Wire Line
 	6700 3800 6850 3800
 Wire Wire Line
@@ -396,4 +388,52 @@ NoConn ~ 6700 3500
 NoConn ~ 6700 3600
 NoConn ~ 6700 3700
 NoConn ~ 6700 4100
+Wire Wire Line
+	5000 5000 5500 5000
+Wire Wire Line
+	5000 4800 5500 4800
+Text Label 1600 6150 0    60   ~ 0
+MCU_NSS_TO_RADIO
+Text Label 1600 5700 0    60   ~ 0
+MCU_SCK_TO_RADIO
+Text Label 1600 5850 0    60   ~ 0
+MCU_MISO_TO_RADIO
+Text Label 1600 6000 0    60   ~ 0
+MCU_MOSI_TO_RADIO
+$Sheet
+S 500  5450 900  2250
+U 5A37ABC3
+F0 "radio" 60
+F1 "radio.sch" 60
+F2 "RADIO_SDN" I R 1400 5550 60 
+F3 "RADIO_SCLK" I R 1400 5700 60 
+F4 "RADIO_SDO" I R 1400 5850 60 
+F5 "RADIO_SDI" I R 1400 6000 60 
+F6 "RADIO_nSEL" I R 1400 6150 60 
+F7 "RADIO_nIRQ" I R 1400 6300 60 
+$EndSheet
+Wire Wire Line
+	1400 6000 1600 6000
+Wire Wire Line
+	1400 5850 1600 5850
+Wire Wire Line
+	1400 5700 1600 5700
+Text Label 1600 3550 0    60   ~ 0
+TX_GPS_from_MCU
+Text Label 1600 3400 0    60   ~ 0
+RX_GPS_from_MCU
+Wire Wire Line
+	1400 3400 1600 3400
+Wire Wire Line
+	1400 3550 1600 3550
+Wire Wire Line
+	1400 6150 1600 6150
+Wire Wire Line
+	1400 5550 1600 5550
+Wire Wire Line
+	1400 6300 1600 6300
+Text Label 1600 5550 0    60   ~ 0
+RADIO_SHUTDOWN
+Text Label 1600 6300 0    60   ~ 0
+RADIO_nIRQ
 $EndSCHEMATC

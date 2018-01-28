@@ -27,14 +27,6 @@ F 4 "2462635" H 2350 1100 50  0001 L CNN "Farnell"
 	1    2650 2000
 	1    0    0    -1  
 $EndComp
-Text Label 2100 2200 2    60   ~ 0
-RADIO_SDN
-Text Label 2100 2300 2    60   ~ 0
-RADIO_SCLK
-Text Label 2100 2400 2    60   ~ 0
-RADIO_SDO
-Text Label 2100 2500 2    60   ~ 0
-RADIO_SDI
 Wire Wire Line
 	2100 2200 2250 2200
 Wire Wire Line
@@ -54,20 +46,14 @@ F 3 "" H 2050 1800 60  0000 C CNN
 	1    2050 1800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1600 1700 2250 1700
 NoConn ~ 3050 1900
 NoConn ~ 3050 2000
 NoConn ~ 3050 2100
 NoConn ~ 3050 2200
-Text Label 3150 2300 0    60   ~ 0
-RADIO_nIRQ
 Wire Wire Line
 	3050 2300 3150 2300
 Text Label 3250 1600 0    60   ~ 0
 RADIO_TX
-Text Label 2100 2600 2    60   ~ 0
-RADIO_nSEL
 Wire Wire Line
 	2100 2600 2250 2600
 $Comp
@@ -418,4 +404,19 @@ Wire Notes Line
 	4300 500  4300 3100
 Wire Notes Line
 	500  3100 11200 3100
+NoConn ~ 2250 1900
+Text HLabel 2100 2200 0    60   Input ~ 0
+RADIO_SDN
+Text HLabel 2100 2300 0    60   Input ~ 0
+RADIO_SCLK
+Text HLabel 2100 2400 0    60   Input ~ 0
+RADIO_SDO
+Text HLabel 2100 2500 0    60   Input ~ 0
+RADIO_SDI
+Text HLabel 2100 2600 0    60   Input ~ 0
+RADIO_nSEL
+Text HLabel 3150 2300 2    60   Input ~ 0
+RADIO_nIRQ
+Wire Wire Line
+	1600 1700 2250 1700
 $EndSCHEMATC
