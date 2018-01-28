@@ -1,7 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:agg-kicad
+EESchema Schematic File Version 4
 LIBS:jerboa-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -49,6 +48,7 @@ F 0 "#PWR01" H 4770 2540 50  0001 L CNN
 F 1 "GND" H 4900 2400 50  0000 C CNN
 F 2 "" H 4900 2500 60  0001 C CNN
 F 3 "" H 4900 2500 60  0001 C CNN
+F 4 "Value" H 4900 2500 50  0001 C CNN "Farnell"
 	1    4900 2500
 	1    0    0    -1  
 $EndComp
@@ -282,7 +282,7 @@ Wire Wire Line
 Wire Wire Line
 	4050 1400 4000 1400
 Wire Wire Line
-	4000 1000 4000 1850
+	4000 1000 4000 1200
 Connection ~ 4000 1600
 Wire Wire Line
 	4250 1200 4000 1200
@@ -296,7 +296,7 @@ Connection ~ 4000 1800
 Wire Wire Line
 	4400 1800 4150 1800
 Wire Wire Line
-	4400 900  4400 1800
+	4400 900  4400 1000
 Connection ~ 4400 1600
 Wire Wire Line
 	4400 1000 4150 1000
@@ -306,7 +306,7 @@ Connection ~ 4400 1200
 Wire Wire Line
 	4400 1300 5000 1300
 Wire Wire Line
-	4150 1400 5000 1400
+	4150 1400 4400 1400
 Wire Wire Line
 	4400 1500 5000 1500
 Connection ~ 4400 1000
@@ -361,13 +361,11 @@ Wire Wire Line
 Text Label 4650 1700 2    60   ~ 0
 NRST
 Wire Wire Line
-	4650 1700 5000 1700
+	4650 1700 4700 1700
 Text Label 6850 3800 0    60   ~ 0
 TX_GPS_from_MCU
 Text Label 6850 3900 0    60   ~ 0
 RX_GPS_from_MCU
-Wire Wire Line
-	6700 3800 6850 3800
 Wire Wire Line
 	6700 3900 6850 3900
 NoConn ~ 5000 2100
@@ -385,9 +383,9 @@ NoConn ~ 6700 3300
 NoConn ~ 6700 3500
 NoConn ~ 6700 4100
 Wire Wire Line
-	5000 5000 5500 5000
+	5000 5000 5400 5000
 Wire Wire Line
-	5000 4800 5500 4800
+	5000 4800 5400 4800
 Text Label 1600 6150 0    60   ~ 0
 MCU_NSS_TO_RADIO
 Text Label 1600 5700 0    60   ~ 0
@@ -442,4 +440,34 @@ Text Label 1600 5550 0    60   ~ 0
 MCU_SHUTDOWN_TO_RADIO
 Text Label 1600 6300 0    60   ~ 0
 MCU_nIRQ_TO_RADIO
+Wire Wire Line
+	4000 1600 4000 1800
+Wire Wire Line
+	4000 1400 4000 1600
+Wire Wire Line
+	4000 1200 4000 1400
+Wire Wire Line
+	4000 1800 4000 1850
+Wire Wire Line
+	4400 1600 4400 1800
+Wire Wire Line
+	4400 1200 4400 1300
+Wire Wire Line
+	4400 1000 4400 1200
+Wire Wire Line
+	4400 1300 4400 1400
+Wire Wire Line
+	4400 1400 5000 1400
+Wire Wire Line
+	4400 1400 4400 1500
+Wire Wire Line
+	4400 1500 4400 1600
+Wire Wire Line
+	5400 4800 5500 4800
+Wire Wire Line
+	5400 5000 5500 5000
+Wire Wire Line
+	4700 1700 5000 1700
+Wire Wire Line
+	6850 3800 6700 3800
 $EndSCHEMATC

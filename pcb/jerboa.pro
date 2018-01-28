@@ -31,4 +31,3 @@ NetIExt=net
 version=1
 LibDir=
 [eeschema/libraries]
-LibName1=//cued-fs/users/general/ere26/windows-home/Desktop/GitHub/Jerboa/agg-kicad/agg-kicad

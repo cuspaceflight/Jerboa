@@ -1,7 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:agg-kicad
+EESchema Schematic File Version 4
 LIBS:jerboa-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -16,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L ADP3335 IC201
+L agg-kicad:ADP3335 IC201
 U 1 1 5A6DE9D3
 P 5250 3700
 F 0 "IC201" H 5050 3900 50  0000 L CNN
@@ -28,17 +27,17 @@ F 4 "2067775" H 5050 3200 50  0001 L CNN "Farnell"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5800 3600 5800 3750
+	5800 3600 5800 3700
 Connection ~ 5800 3700
 Wire Wire Line
 	5800 3850 5800 3900
 Wire Wire Line
 	4850 3800 4950 3800
 Wire Wire Line
-	4850 3600 4850 3800
+	4850 3600 4850 3700
 Connection ~ 4850 3700
 $Comp
-L CONN_01x02 J201
+L agg-kicad:CONN_01x02 J201
 U 1 1 5A6DEB31
 P 4450 3750
 F 0 "J201" V 4350 3600 50  0000 L CNN
@@ -49,12 +48,12 @@ F 3 "" H 4450 3750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4550 3600 4550 3750
+	4550 3600 4550 3700
 Wire Wire Line
-	4550 3850 4550 3950
+	4550 3850 4550 3900
 Connection ~ 4550 3700
 $Comp
-L VBATT #PWR09
+L agg-kicad:VBATT #PWR09
 U 1 1 5A6DEBBC
 P 4550 3600
 F 0 "#PWR09" H 4550 3710 50  0001 L CNN
@@ -65,7 +64,7 @@ F 3 "" H 4550 3600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR010
+L agg-kicad:GND #PWR010
 U 1 1 5A6DEBD4
 P 4550 3950
 F 0 "#PWR010" H 4420 3990 50  0001 L CNN
@@ -77,7 +76,7 @@ F 3 "" H 4550 3950 60  0000 C CNN
 $EndComp
 Connection ~ 4550 3900
 $Comp
-L C C202
+L agg-kicad:C C202
 U 1 1 5A6DEC39
 P 5800 3750
 F 0 "C202" H 5850 3820 50  0000 C CNN
@@ -89,7 +88,7 @@ F 4 "Value" H 5800 3750 60  0001 C CNN "Fieldname"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C203
+L agg-kicad:C C203
 U 1 1 5A6DEC8C
 P 6050 3750
 F 0 "C203" H 6100 3820 50  0000 C CNN
@@ -103,7 +102,7 @@ $EndComp
 Wire Wire Line
 	6050 3700 6050 3750
 $Comp
-L 3v3 #PWR011
+L agg-kicad:3v3 #PWR011
 U 1 1 5A6DECCE
 P 5800 3600
 F 0 "#PWR011" H 5800 3710 50  0001 L CNN
@@ -114,7 +113,7 @@ F 3 "" H 5800 3600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR012
+L agg-kicad:GND #PWR012
 U 1 1 5A6DECEA
 P 6050 3900
 F 0 "#PWR012" H 5920 3940 50  0001 L CNN
@@ -127,7 +126,7 @@ $EndComp
 Wire Wire Line
 	6050 3900 6050 3850
 $Comp
-L C C201
+L agg-kicad:C C201
 U 1 1 5A6DED5C
 P 4700 3750
 F 0 "C201" H 4750 3820 50  0000 C CNN
@@ -145,22 +144,40 @@ Wire Wire Line
 	4700 3750 4700 3700
 Connection ~ 4700 3700
 Wire Wire Line
-	4550 3900 4950 3900
+	4550 3900 4700 3900
 Wire Wire Line
-	4550 3700 4950 3700
+	4550 3700 4700 3700
 Wire Wire Line
-	5650 3600 5650 3800
+	5650 3600 5650 3700
 Connection ~ 5650 3700
-Connection ~ 5650 3600
-Connection ~ 5650 3800
 Wire Wire Line
 	5650 3800 5550 3800
 Wire Wire Line
 	5550 3600 5650 3600
 Wire Wire Line
-	5550 3700 6050 3700
+	5550 3700 5650 3700
 Wire Wire Line
 	5800 3900 5550 3900
 Wire Wire Line
 	4950 3600 4850 3600
+Wire Wire Line
+	5800 3700 5800 3750
+Wire Wire Line
+	5800 3700 6050 3700
+Wire Wire Line
+	4850 3700 4850 3800
+Wire Wire Line
+	4850 3700 4950 3700
+Wire Wire Line
+	4550 3700 4550 3750
+Wire Wire Line
+	4550 3900 4550 3950
+Wire Wire Line
+	4700 3900 4950 3900
+Wire Wire Line
+	4700 3700 4850 3700
+Wire Wire Line
+	5650 3700 5650 3800
+Wire Wire Line
+	5650 3700 5800 3700
 $EndSCHEMATC

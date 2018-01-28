@@ -1,7 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:agg-kicad
+EESchema Schematic File Version 4
 LIBS:jerboa-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -16,21 +15,21 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MAX-7Q IC301
+L agg-kicad:MAX-7Q IC301
 U 1 1 5A6DE5A1
 P 5850 3300
 F 0 "IC301" H 5450 3800 50  0000 L CNN
 F 1 "MAX-7Q" H 5450 2600 50  0000 L CNN
-F 2 "agg-unchecked:MAX-7Q" H 5450 2500 50  0001 L CNN
+F 2 "agg:MAX-7Q" H 5450 2500 50  0001 L CNN
 F 3 "" H 5800 3300 50  0001 C CNN
 F 4 "MAX-7Q" H 5450 2400 50  0001 L CNN "HabSupplies"
 	1    5850 3300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5100 3100 5350 3100
+	5100 3100 5250 3100
 Wire Wire Line
-	5250 2800 5250 3100
+	5250 2800 5250 2900
 Wire Wire Line
 	5350 3000 5250 3000
 Connection ~ 5250 3000
@@ -38,11 +37,11 @@ Wire Wire Line
 	5350 2900 5250 2900
 Connection ~ 5250 2900
 Wire Wire Line
-	5100 3200 5350 3200
+	5100 3200 5250 3200
 Connection ~ 5250 3200
 Connection ~ 5250 3100
 $Comp
-L GND #PWR013
+L agg-kicad:GND #PWR013
 U 1 1 5A6DE6B0
 P 5250 3250
 F 0 "#PWR013" H 5120 3290 50  0001 L CNN
@@ -55,7 +54,7 @@ $EndComp
 Wire Wire Line
 	5250 3250 5250 3200
 $Comp
-L C C301
+L agg-kicad:C C301
 U 1 1 5A6DE6E0
 P 5100 3100
 F 0 "C301" H 5150 3170 50  0000 C CNN
@@ -66,7 +65,7 @@ F 3 "" H 5100 3100 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L 3v3 #PWR014
+L agg-kicad:3v3 #PWR014
 U 1 1 5A6DE74F
 P 5250 2800
 F 0 "#PWR014" H 5250 2910 50  0001 L CNN
@@ -81,7 +80,7 @@ Wire Wire Line
 Wire Wire Line
 	6400 2900 6400 2850
 $Comp
-L COAX P301
+L agg-kicad:COAX P301
 U 1 1 5A6DE78F
 P 6700 2750
 F 0 "P301" H 6700 2850 50  0000 C CNN
@@ -97,12 +96,12 @@ Wire Wire Line
 Wire Wire Line
 	6700 3000 6700 2850
 Wire Wire Line
-	6800 2850 6800 3150
+	6800 2850 6800 3100
 Wire Wire Line
 	6250 3100 6800 3100
 Connection ~ 6800 3100
 $Comp
-L GND #PWR015
+L agg-kicad:GND #PWR015
 U 1 1 5A6DE826
 P 6800 3150
 F 0 "#PWR015" H 6670 3190 50  0001 L CNN
@@ -113,7 +112,7 @@ F 3 "" H 6800 3150 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR016
+L agg-kicad:GND #PWR016
 U 1 1 5A6DE840
 P 6400 2850
 F 0 "#PWR016" H 6270 2890 50  0001 L CNN
@@ -140,4 +139,14 @@ Text HLabel 5250 3500 0    60   Input ~ 0
 GPS_TX
 Text HLabel 5250 3600 0    60   Input ~ 0
 GPS_RX
+Wire Wire Line
+	5250 3000 5250 3100
+Wire Wire Line
+	5250 2900 5250 3000
+Wire Wire Line
+	5250 3200 5350 3200
+Wire Wire Line
+	5250 3100 5350 3100
+Wire Wire Line
+	6800 3100 6800 3150
 $EndSCHEMATC
