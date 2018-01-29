@@ -1,0 +1,16 @@
+- Finish and check the schematic
+    - Component values for radio antenna (434MHz and APRS freqs)
+    - Farnell numbers and footprints on components
+    - Brownout protection e.g. with supply voltage supervisor
+
+- PCB layout
+
+- Second PCB for solar circuit
+    - LTC3105 or equivalent
+    - Boost regulators:
+         http://uk.farnell.com/w/c/semiconductors-ics/power-management-ics-pmic/voltage-regulators/dc-dc-fixed-switching-regulators/prl/results?input-voltage-min=neg300mv|2.05mv|300mv|3mv|500mv|600mv|700mv&output-voltage-nom-=3.3v&sort=P_ATT_BASE_VALUE_1004174_EN_GB
+
+         - http://uk.farnell.com/rohm/bu33uv7nux-e2/synchronous-boost-dc-dc-converter/dp/2783746 (better performance at high currents)
+         - http://uk.farnell.com/texas-instruments/tps61025drcr/ic-dc-dc-converter-voltage-reg/dp/1703402 (better performance at low currents)
+
+    - Supercapacitor: https://www.mouser.co.uk/ProductDetail/AVX/SCCV40B506MRB?qs=%2fha2pyFaduiHsrt%2fqklqzReZf78H3rgDckmcIbsU%252by8LMSUPTFrqyg%3d%3d

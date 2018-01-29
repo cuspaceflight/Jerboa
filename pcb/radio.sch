@@ -461,4 +461,22 @@ Wire Wire Line
 	6550 2600 6950 2600
 Wire Wire Line
 	6800 1850 7100 1850
+$Comp
+L agg-kicad:C C?
+U 1 1 5A700303
+P 850 2000
+F 0 "C?" V 850 1850 50  0000 L CNN
+F 1 "10nF" V 950 1850 50  0000 L CNN
+F 2 "agg:0402" H 850 2000 50  0001 C CNN
+F 3 "" H 850 2000 50  0001 C CNN
+F 4 "1414575" H 850 2000 50  0001 C CNN "Farnell"
+	1    850  2000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	850  2000 900  2000
+Connection ~ 900  2000
+Wire Wire Line
+	850  2100 900  2100
+Connection ~ 900  2100
 $EndSCHEMATC

@@ -27,14 +27,14 @@ F 4 "2067775" H 5050 3200 50  0001 L CNN "Farnell"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5800 3600 5800 3750
+	5800 3600 5800 3700
 Connection ~ 5800 3700
 Wire Wire Line
 	5800 3850 5800 3900
 Wire Wire Line
 	4850 3800 4950 3800
 Wire Wire Line
-	4850 3600 4850 3800
+	4850 3600 4850 3700
 Connection ~ 4850 3700
 $Comp
 L agg-kicad:CONN_01x02 J201
@@ -48,9 +48,9 @@ F 3 "" H 4450 3750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4550 3600 4550 3750
+	4550 3600 4550 3700
 Wire Wire Line
-	4550 3850 4550 3950
+	4550 3850 4550 3900
 Connection ~ 4550 3700
 $Comp
 L agg-kicad:VBATT #PWR09
@@ -144,22 +144,40 @@ Wire Wire Line
 	4700 3750 4700 3700
 Connection ~ 4700 3700
 Wire Wire Line
-	4550 3900 4950 3900
+	4550 3900 4700 3900
 Wire Wire Line
-	4550 3700 4950 3700
+	4550 3700 4700 3700
 Wire Wire Line
-	5650 3600 5650 3800
+	5650 3600 5650 3700
 Connection ~ 5650 3700
-Connection ~ 5650 3600
-Connection ~ 5650 3800
 Wire Wire Line
 	5650 3800 5550 3800
 Wire Wire Line
 	5550 3600 5650 3600
 Wire Wire Line
-	5550 3700 6050 3700
+	5550 3700 5650 3700
 Wire Wire Line
 	5800 3900 5550 3900
 Wire Wire Line
 	4950 3600 4850 3600
+Wire Wire Line
+	5800 3700 5800 3750
+Wire Wire Line
+	5800 3700 6050 3700
+Wire Wire Line
+	4850 3700 4850 3800
+Wire Wire Line
+	4850 3700 4950 3700
+Wire Wire Line
+	4550 3700 4550 3750
+Wire Wire Line
+	4550 3900 4550 3950
+Wire Wire Line
+	4700 3900 4950 3900
+Wire Wire Line
+	4700 3700 4850 3700
+Wire Wire Line
+	5650 3700 5650 3800
+Wire Wire Line
+	5650 3700 5800 3700
 $EndSCHEMATC
