@@ -346,4 +346,9 @@ F 4 "1593458" H 3900 4100 50  0001 C CNN "Farnell"
 	1    3900 4100
 	1    0    0    -1  
 $EndComp
+Text HLabel 7250 4000 2    50   Input ~ 0
+LOW_BATT_WARNING
+Wire Wire Line
+	7250 4000 7100 4000
+Connection ~ 7100 4000
 $EndSCHEMATC

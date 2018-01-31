@@ -3,5 +3,5 @@
   (lib (name STM32L051K8U6)(type Legacy)(uri ${KIPRJMOD}/lib/STM32L051K8U6.lib)(options "")(descr ""))
   (lib (name ubx-g7020)(type Legacy)(uri ${KIPRJMOD}/../agg-kicad/lib/ic/radio/ubx-g7020.lib)(options "")(descr ""))
   (lib (name fb)(type Legacy)(uri ${KIPRJMOD}/lib/fb.lib)(options "")(descr ""))
-  (lib (name TPS6102x)(type Legacy)(uri /home/gregory/Jerboa/pcb/lib/TPS6102x.lib)(options "")(descr ""))
+  (lib (name TPS6102x)(type Legacy)(uri ${KIPRJMOD}/lib/TPS6102x.lib)(options "")(descr ""))
 )
