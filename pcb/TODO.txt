@@ -1,5 +1,8 @@
 - Finish and check the schematic
+    - Add wspr with si5351
+    - Move low battery potential divider to the power pcb (so that capacitor board has a different threshold i.e. OK to transmit compared to battery board)
     - Component values for radio antenna (434MHz and APRS freqs)
+        - Check the tx/rx matching circuit
     - Farnell numbers and footprints on components
     - Brownout protection e.g. with supply voltage supervisor
 
