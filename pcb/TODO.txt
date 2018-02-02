@@ -1,6 +1,9 @@
 - Finish and check the schematic
-    - Add wspr with si5351
-    - Move low battery potential divider to the power pcb (so that capacitor board has a different threshold i.e. OK to transmit compared to battery board)
+    - Add wspr with si5351 (http://appnotes.etherkit.com/2016/04/10-milliwatt-si5351a-wspr-beacon/)
+        - (Option 1) Replace si4460 tcxo (wrong vcc anyway) with 25MHz TCXO e.g. (ASTX-H11-25.000MHZ-T) going into si5351 which handles wspr (via low pass filter) and si4460 clock (via potential divider to reduce Vpp, and a 100pF ac coupling capacitor?)
+        - (Option 2) Find a 3.3v 26MHz clipped sinusoid tcxo for the si4460, just use a 25MHz crystal for the si5351
+
+    - (maybe?)Move low battery potential divider to the power pcb (so that capacitor board has a different threshold i.e. OK to transmit compared to battery board)
     - Component values for radio antenna (434MHz and APRS freqs)
         - Check the tx/rx matching circuit
     - Farnell numbers and footprints on components
