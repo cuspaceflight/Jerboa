@@ -1,0 +1,346 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L agg-kicad:CONN_01x02 J?
+U 1 1 5A7C8A52
+P 1500 1300
+F 0 "J?" H 1531 1515 50  0000 C CNN
+F 1 "CONN_01x02" H 1531 1424 50  0000 C CNN
+F 2 "" H 1500 1300 50  0001 C CNN
+F 3 "" H 1500 1300 50  0001 C CNN
+	1    1500 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:CONN_01x02 J?
+U 1 1 5A7C8C5D
+P 3450 1250
+F 0 "J?" H 3481 1465 50  0000 C CNN
+F 1 "CONN_01x02" H 3481 1374 50  0000 C CNN
+F 2 "" H 3450 1250 50  0001 C CNN
+F 3 "" H 3450 1250 50  0001 C CNN
+	1    3450 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:GND #PWR?
+U 1 1 5A7C8D84
+P 1750 1400
+F 0 "#PWR?" H 1620 1440 50  0001 L CNN
+F 1 "GND" H 1750 1487 50  0000 C CNN
+F 2 "" H 1750 1400 50  0001 C CNN
+F 3 "" H 1750 1400 50  0001 C CNN
+	1    1750 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:GND #PWR?
+U 1 1 5A7C8EBA
+P 3750 1400
+F 0 "#PWR?" H 3620 1440 50  0001 L CNN
+F 1 "GND" H 3750 1487 50  0000 C CNN
+F 2 "" H 3750 1400 50  0001 C CNN
+F 3 "" H 3750 1400 50  0001 C CNN
+	1    3750 1400
+	1    0    0    -1  
+$EndComp
+Text Label 3700 1250 0    50   ~ 0
+Panel_V
+Wire Wire Line
+	3550 1250 3700 1250
+Wire Wire Line
+	3550 1350 3750 1350
+Wire Wire Line
+	3750 1350 3750 1400
+Text Label 1750 1300 0    50   ~ 0
+Cap_V
+Wire Wire Line
+	1600 1400 1750 1400
+Wire Wire Line
+	1750 1300 1600 1300
+$Comp
+L agg-kicad:R R?
+U 1 1 5A7C93DB
+P 3550 2200
+F 0 "R?" V 3550 2050 50  0000 L CNN
+F 1 "510k" V 3650 2000 50  0000 L CNN
+F 2 "" H 3550 2200 50  0001 C CNN
+F 3 "" H 3550 2200 50  0001 C CNN
+	1    3550 2200
+	0    1    1    0   
+$EndComp
+$Comp
+L agg-kicad:R R?
+U 1 1 5A7C950D
+P 3550 2000
+F 0 "R?" V 3550 1900 50  0000 C CNN
+F 1 "750k" V 3650 1900 50  0000 C CNN
+F 2 "" H 3550 2000 50  0001 C CNN
+F 3 "" H 3550 2000 50  0001 C CNN
+	1    3550 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L agg-kicad:LTC3105 IC?
+U 1 1 5A7C9AD2
+P 2750 2150
+F 0 "IC?" H 2750 2675 50  0000 C CNN
+F 1 "LTC3105" H 2750 2584 50  0000 C CNN
+F 2 "agg:DFN-10-EP-LT" H 2450 1550 50  0001 L CNN
+F 3 "" H 2350 2450 50  0001 C CNN
+F 4 "1898600" H 2450 1450 50  0001 L CNN "Farnell"
+	1    2750 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:CP C?
+U 1 1 5A7C9D0B
+P 3700 2250
+F 0 "C?" V 3796 2192 50  0000 R CNN
+F 1 "50" V 3705 2192 50  0000 R CNN
+F 2 "" H 3700 2250 50  0001 C CNN
+F 3 "" H 3700 2250 50  0001 C CNN
+	1    3700 2250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L agg-kicad:L L?
+U 1 1 5A7CA7EC
+P 2700 1550
+F 0 "L?" H 2750 1728 50  0000 C CNN
+F 1 "6.8u" H 2750 1637 50  0000 C CNN
+F 2 "" H 2700 1550 50  0001 C CNN
+F 3 "" H 2700 1550 50  0001 C CNN
+	1    2700 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:C C?
+U 1 1 5A7CABAB
+P 3300 2500
+F 0 "C?" V 3304 2558 50  0000 L CNN
+F 1 "4.7u" V 3395 2558 50  0000 L CNN
+F 2 "" H 3300 2500 50  0001 C CNN
+F 3 "" H 3300 2500 50  0001 C CNN
+	1    3300 2500
+	0    1    1    0   
+$EndComp
+$Comp
+L agg-kicad:C C?
+U 1 1 5A7CADCB
+P 2000 2250
+F 0 "C?" V 2004 2308 50  0000 L CNN
+F 1 "10n" V 2095 2308 50  0000 L CNN
+F 2 "" H 2000 2250 50  0001 C CNN
+F 3 "" H 2000 2250 50  0001 C CNN
+	1    2000 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L agg-kicad:C C?
+U 1 1 5A7CAE34
+P 2200 1850
+F 0 "C?" H 2250 1655 50  0000 C CNN
+F 1 "10u" H 2250 1746 50  0000 C CNN
+F 2 "" H 2200 1850 50  0001 C CNN
+F 3 "" H 2200 1850 50  0001 C CNN
+	1    2200 1850
+	-1   0    0    1   
+$EndComp
+$Comp
+L agg-kicad:C C?
+U 1 1 5A7CAE9A
+P 2250 2350
+F 0 "C?" V 2254 2408 50  0000 L CNN
+F 1 "1u" V 2345 2408 50  0000 L CNN
+F 2 "" H 2250 2350 50  0001 C CNN
+F 3 "" H 2250 2350 50  0001 C CNN
+	1    2250 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L agg-kicad:R R?
+U 1 1 5A7CBD65
+P 2100 2050
+F 0 "R?" H 2150 2200 50  0000 C CNN
+F 1 "5.1k" H 2150 2100 50  0000 C CNN
+F 2 "" H 2100 2050 50  0001 C CNN
+F 3 "" H 2100 2050 50  0001 C CNN
+	1    2100 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:D D?
+U 1 1 5A7CBF10
+P 1750 2250
+F 0 "D?" V 1846 2192 50  0000 R CNN
+F 1 "D" V 1755 2192 50  0000 R CNN
+F 2 "" H 1750 2250 50  0001 C CNN
+F 3 "" H 1750 2250 50  0001 C CNN
+	1    1750 2250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L agg-kicad:D D?
+U 1 1 5A7CC0B3
+P 1750 2500
+F 0 "D?" V 1846 2442 50  0000 R CNN
+F 1 "D" V 1755 2442 50  0000 R CNN
+F 2 "" H 1750 2500 50  0001 C CNN
+F 3 "" H 1750 2500 50  0001 C CNN
+	1    1750 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L agg-kicad:GND #PWR?
+U 1 1 5A7CCCAD
+P 2750 2750
+F 0 "#PWR?" H 2620 2790 50  0001 L CNN
+F 1 "GND" H 2750 2837 50  0000 C CNN
+F 2 "" H 2750 2750 50  0001 C CNN
+F 3 "" H 2750 2750 50  0001 C CNN
+	1    2750 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:GND #PWR?
+U 1 1 5A7CCFD1
+P 2000 1850
+F 0 "#PWR?" H 1870 1890 50  0001 L CNN
+F 1 "GND" H 2000 1937 50  0000 C CNN
+F 2 "" H 2000 1850 50  0001 C CNN
+F 3 "" H 2000 1850 50  0001 C CNN
+	1    2000 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 1550 3200 1550
+Wire Wire Line
+	3200 1550 3200 1850
+Wire Wire Line
+	3200 1850 3150 1850
+Wire Wire Line
+	2750 2700 2750 2750
+Wire Wire Line
+	2250 2450 2250 2700
+Wire Wire Line
+	3150 2550 3200 2550
+Wire Wire Line
+	3200 2550 3200 2700
+Wire Wire Line
+	3200 2700 2750 2700
+Connection ~ 2750 2700
+Wire Wire Line
+	3200 2700 3300 2700
+Wire Wire Line
+	3300 2700 3300 2600
+Connection ~ 3200 2700
+Wire Wire Line
+	3300 2500 3300 2450
+Wire Wire Line
+	3300 2450 3150 2450
+NoConn ~ 3150 2250
+Wire Wire Line
+	3550 1950 3550 2000
+Wire Wire Line
+	3550 2100 3550 2150
+Wire Wire Line
+	3550 2300 3550 2700
+Connection ~ 3550 2150
+Wire Wire Line
+	3550 2150 3550 2200
+Wire Wire Line
+	2250 2350 2250 2250
+Wire Wire Line
+	2250 2250 2350 2250
+Wire Wire Line
+	2350 2050 2200 2050
+Wire Wire Line
+	2100 2050 2000 2050
+Wire Wire Line
+	2000 2050 2000 2250
+Wire Wire Line
+	2000 2350 2000 2700
+Wire Wire Line
+	2000 2700 2250 2700
+Connection ~ 2250 2700
+Wire Wire Line
+	1750 2400 1750 2250
+Wire Wire Line
+	1750 2150 1750 2050
+Wire Wire Line
+	1750 2050 2000 2050
+Connection ~ 2000 2050
+Wire Wire Line
+	1750 2500 1750 2700
+Wire Wire Line
+	1750 2700 2000 2700
+Connection ~ 2000 2700
+Wire Wire Line
+	2250 2700 2300 2700
+Wire Wire Line
+	2350 2550 2300 2550
+Wire Wire Line
+	2300 2550 2300 2700
+Connection ~ 2300 2700
+Wire Wire Line
+	2300 2700 2750 2700
+Wire Wire Line
+	2000 1850 2100 1850
+Wire Wire Line
+	1900 1550 2250 1550
+Wire Wire Line
+	2250 1550 2250 1850
+Wire Wire Line
+	2200 1850 2250 1850
+Connection ~ 2250 1550
+Wire Wire Line
+	2250 1550 2700 1550
+Connection ~ 2250 1850
+Wire Wire Line
+	2250 1850 2350 1850
+Wire Wire Line
+	3150 2150 3550 2150
+Wire Wire Line
+	3150 1950 3550 1950
+Wire Wire Line
+	3300 2700 3550 2700
+Connection ~ 3300 2700
+Wire Wire Line
+	3550 1950 3700 1950
+Wire Wire Line
+	3700 1950 3700 2150
+Connection ~ 3550 1950
+Wire Wire Line
+	3700 2250 3700 2700
+Wire Wire Line
+	3700 2700 3550 2700
+Connection ~ 3550 2700
+Text Label 1900 1550 0    50   ~ 0
+Panel_V
+NoConn ~ 2350 2150
+$Comp
+L Device:Solar_Cell SC?
+U 1 1 5A7F06D9
+P 1400 1750
+F 0 "SC?" H 1508 1846 50  0000 L CNN
+F 1 "Solar_Cell" H 1508 1755 50  0000 L CNN
+F 2 "" V 1400 1810 50  0001 C CNN
+F 3 "~" V 1400 1810 50  0001 C CNN
+	1    1400 1750
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
