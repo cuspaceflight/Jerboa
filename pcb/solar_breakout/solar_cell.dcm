@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Solar_Cell
+D single solar cell
+K solar cell
+F ~
+$ENDCMP
+#
+#End Doc Library
