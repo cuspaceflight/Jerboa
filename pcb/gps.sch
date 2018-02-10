@@ -69,17 +69,13 @@ $EndComp
 Wire Wire Line
 	5200 2500 5100 2500
 Wire Wire Line
-	5100 2500 5100 2450
+	5100 2450 5100 2700
 Wire Wire Line
-	5200 2700 5100 2700
-Wire Wire Line
-	5100 2700 5100 2600
+	4950 2700 5200 2700
 Connection ~ 5100 2500
 Wire Wire Line
 	5200 2600 5100 2600
 Connection ~ 5100 2600
-Wire Wire Line
-	5100 2600 5100 2500
 $Comp
 L agg-kicad:GND #PWR?
 U 1 1 5A6F2D41
@@ -92,18 +88,14 @@ F 3 "" H 5100 3050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5100 3000 5100 3050
+	5100 2800 5100 3050
 Wire Wire Line
 	5100 3000 5200 3000
 Wire Wire Line
 	5200 2900 5100 2900
-Wire Wire Line
-	5100 2900 5100 3000
 Connection ~ 5100 3000
 Wire Wire Line
-	5200 2800 5100 2800
-Wire Wire Line
-	5100 2800 5100 2900
+	4950 2800 5200 2800
 Connection ~ 5100 2900
 NoConn ~ 6400 2500
 NoConn ~ 6400 2600
@@ -138,19 +130,15 @@ F 3 "" H 6500 3800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6500 3800 6500 3750
+	6500 3700 6500 3800
 Wire Wire Line
-	6500 3500 6400 3500
-Wire Wire Line
-	6500 3500 6700 3500
+	6400 3500 6700 3500
 Connection ~ 6500 3500
 Wire Wire Line
 	6700 3600 6700 3750
 Wire Wire Line
 	6700 3750 6500 3750
 Connection ~ 6500 3750
-Wire Wire Line
-	6500 3750 6500 3700
 NoConn ~ 5200 3400
 NoConn ~ 5200 3300
 Text HLabel 5150 3200 0    60   Input ~ 0
@@ -158,10 +146,6 @@ GPS_~RESET
 Wire Wire Line
 	5200 3200 5150 3200
 NoConn ~ 5200 3500
-Wire Wire Line
-	4950 2700 5100 2700
 Connection ~ 5100 2700
-Wire Wire Line
-	4950 2800 5100 2800
 Connection ~ 5100 2800
 $EndSCHEMATC

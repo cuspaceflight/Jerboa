@@ -4,4 +4,6 @@
   (lib (name ubx-g7020)(type Legacy)(uri ${KIPRJMOD}/../agg-kicad/lib/ic/radio/ubx-g7020.lib)(options "")(descr ""))
   (lib (name fb)(type Legacy)(uri ${KIPRJMOD}/lib/fb.lib)(options "")(descr ""))
   (lib (name TPS6102x)(type Legacy)(uri ${KIPRJMOD}/lib/TPS6102x.lib)(options "")(descr ""))
+  (lib (name SI5351A_10_pin)(type Legacy)(uri ${KIPRJMOD}/lib/SI5351A_10_pin.lib)(options "")(descr ""))
+  (lib (name FDC6329L)(type Legacy)(uri ${KIPRJMOD}/lib/FDC6329L.lib)(options "")(descr ""))
 )

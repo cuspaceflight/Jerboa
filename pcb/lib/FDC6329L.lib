@@ -1,0 +1,23 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# FDC6329L
+#
+DEF FDC6329L U 0 40 Y Y 1 F N
+F0 "U" 0 200 60 H V C CNN
+F1 "FDC6329L" 0 -450 60 H V C CNN
+F2 "Jerboa:SuperSOT-6" 0 -650 60 H I C CNN
+F3 "http://www.farnell.com/datasheets/2285836.pdf" 0 -550 60 H I C CNN
+F4 "1652469" 0 -750 60 H I C CNN "Farnell"
+DRAW
+S -450 150 450 -400 0 1 0 f
+X R2 1 650 -350 200 L 50 50 1 1 P
+X Vout,C1 2 650 0 200 L 50 50 1 1 P
+X Vout,C1 3 650 100 200 L 50 50 1 1 P
+X Vin,R1 4 -650 -200 200 R 50 50 1 1 P
+X Von/off 5 -650 -350 200 R 50 50 1 1 P
+X R1,C1 6 -650 100 200 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library

@@ -283,7 +283,7 @@ Wire Wire Line
 Wire Wire Line
 	4050 2400 4000 2400
 Wire Wire Line
-	4000 2000 4000 2200
+	4000 2000 4000 2850
 Connection ~ 4000 2600
 Wire Wire Line
 	4250 2200 4000 2200
@@ -297,7 +297,7 @@ Connection ~ 4000 2800
 Wire Wire Line
 	4400 2800 4150 2800
 Wire Wire Line
-	4400 1900 4400 2000
+	4400 1900 4400 2800
 Connection ~ 4400 2600
 Wire Wire Line
 	4400 2000 4150 2000
@@ -307,7 +307,7 @@ Connection ~ 4400 2200
 Wire Wire Line
 	4400 2300 5000 2300
 Wire Wire Line
-	4150 2400 4400 2400
+	4150 2400 5000 2400
 Wire Wire Line
 	4400 2500 5000 2500
 Connection ~ 4400 2000
@@ -362,14 +362,13 @@ Wire Wire Line
 Text Label 4650 2700 2    60   ~ 0
 NRST
 Wire Wire Line
-	4650 2700 4700 2700
+	4650 2700 5000 2700
 Text Label 6850 4800 0    60   ~ 0
 TX_GPS_from_MCU
 Text Label 6850 4900 0    60   ~ 0
 RX_GPS_from_MCU
 Wire Wire Line
 	6700 4900 6850 4900
-NoConn ~ 5000 3100
 NoConn ~ 5000 3200
 NoConn ~ 6700 2300
 NoConn ~ 6700 2400
@@ -384,9 +383,9 @@ NoConn ~ 6700 4300
 NoConn ~ 6700 4500
 NoConn ~ 6700 5100
 Wire Wire Line
-	5000 6000 5400 6000
+	5000 6000 5500 6000
 Wire Wire Line
-	5000 5800 5400 5800
+	5000 5800 5500 5800
 Text Label 1600 6150 0    60   ~ 0
 MCU_NSS_TO_RADIO
 Text Label 1600 5700 0    60   ~ 0
@@ -439,34 +438,6 @@ MCU_SHUTDOWN_TO_RADIO
 Text Label 1600 6300 0    60   ~ 0
 MCU_nIRQ_TO_RADIO
 Wire Wire Line
-	4000 2600 4000 2800
-Wire Wire Line
-	4000 2400 4000 2600
-Wire Wire Line
-	4000 2200 4000 2400
-Wire Wire Line
-	4000 2800 4000 2850
-Wire Wire Line
-	4400 2600 4400 2800
-Wire Wire Line
-	4400 2200 4400 2300
-Wire Wire Line
-	4400 2000 4400 2200
-Wire Wire Line
-	4400 2300 4400 2400
-Wire Wire Line
-	4400 2400 5000 2400
-Wire Wire Line
-	4400 2400 4400 2500
-Wire Wire Line
-	4400 2500 4400 2600
-Wire Wire Line
-	5400 5800 5500 5800
-Wire Wire Line
-	5400 6000 5500 6000
-Wire Wire Line
-	4700 2700 5000 2700
-Wire Wire Line
 	6850 4800 6700 4800
 $Comp
 L agg-kicad:R R?
@@ -494,12 +465,10 @@ $EndComp
 Wire Wire Line
 	8100 2700 8100 2650
 Wire Wire Line
-	6700 2500 8100 2500
+	6700 2500 8300 2500
 Wire Wire Line
 	8100 2550 8100 2500
 Connection ~ 8100 2500
-Wire Wire Line
-	8100 2500 8300 2500
 Wire Wire Line
 	1400 3700 1600 3700
 Text Label 1600 3700 0    50   ~ 0
@@ -508,4 +477,28 @@ Text Label 6850 4700 0    50   ~ 0
 GPS_~RESET
 Wire Wire Line
 	6850 4700 6700 4700
+$Comp
+L agg-kicad:SL18860DC IC?
+U 1 1 5A7CC280
+P 3250 4450
+F 0 "IC?" H 3250 5075 50  0000 C CNN
+F 1 "SL18860DC" H 3250 4984 50  0000 C CNN
+F 2 "agg:DFN-10-SL18860DC" H 2850 3850 50  0001 L CNN
+F 3 "http://www.silabs.com/Support%20Documents/TechnicalDocs/SL18860.pdf" H 2850 3750 50  0001 L CNN
+F 4 "634-SL18860DC" H 2850 3650 50  0001 L CNN "Mouser"
+	1    3250 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:TCXO Y?
+U 1 1 5A7E3BDC
+P 2250 4500
+F 0 "Y?" H 2250 4725 50  0000 C CNN
+F 1 "TCXO" H 2250 4634 50  0000 C CNN
+F 2 "Jerboa:2x1.6mm_TCXO" H 2050 4500 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2045487.pdf" H 2050 4500 50  0001 C CNN
+F 4 "2545847" H 2050 4200 50  0001 L CNN "Farnell"
+	1    2250 4500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
