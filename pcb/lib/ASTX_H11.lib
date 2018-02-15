@@ -1,0 +1,21 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# TCXO
+#
+DEF TCXO Y 0 40 Y Y 1 F N
+F0 "Y" -200 100 50 H V L CNN
+F1 "TCXO" -200 -200 50 H V L CNN
+F2 "Jerboa:ASTX_H11" 0 -400 50 H I C CNN
+F3 "http://www.abracon.com/Oscillators/ASTX-H11.pdf" 0 -350 50 H I C CNN
+F4 "535-12039-1-ND" -200 -300 50 H I L CNN "Digikey"
+DRAW
+S -200 50 200 -150 0 1 0 f
+X TRI 1 300 -100 100 L 50 50 1 1 T
+X GND 2 -300 -100 100 R 50 50 1 1 W
+X OUT 3 300 0 100 L 50 50 1 1 O
+X VCC 4 -300 0 100 R 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
+#End Library
