@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name agg-kicad)(type Legacy)(uri ${KIPRJMOD}/../../agg-kicad/agg-kicad.lib)(options "")(descr ""))
+  (lib (name ASTX_H11)(type Legacy)(uri ${KIPRJMOD}/../lib/ASTX_H11.lib)(options "")(descr ""))
+  (lib (name FDC6329L)(type Legacy)(uri ${KIPRJMOD}/../lib/FDC6329L.lib)(options "")(descr ""))
+  (lib (name SI5351A_10_pin)(type Legacy)(uri ${KIPRJMOD}/../lib/SI5351A_10_pin.lib)(options "")(descr ""))
+)

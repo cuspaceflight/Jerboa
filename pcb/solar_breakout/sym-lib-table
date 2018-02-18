@@ -1,5 +1,5 @@
 (sym_lib_table
   (lib (name agg-kicad)(type Legacy)(uri ${KIPRJMOD}/../../agg-kicad/agg-kicad.lib)(options "")(descr ""))
-  (lib (name solar_cell)(type Legacy)(uri ${KIPRJMOD}/solar_cell.lib)(options "")(descr ""))
-  (lib (name sm74611)(type Legacy)(uri C:/Users/grego/Documents/CUSF/Jerboa/pcb/solar_breakout/sm74611.lib)(options "")(descr ""))
+  (lib (name solar_cell)(type Legacy)(uri ${KIPRJMOD}/../lib/solar_cell.lib)(options "")(descr ""))
+  (lib (name sm74611)(type Legacy)(uri ${KIPRJMOD}/../lib/sm74611.lib)(options "")(descr ""))
 )

@@ -22,7 +22,7 @@ F 0 "J?" H 6031 2115 50  0000 C CNN
 F 1 "CONN_01x02" H 6031 2024 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 6000 1900 50  0001 C CNN
 F 3 "" H 6000 1900 50  0001 C CNN
-F 4 "1593458" H 6000 1900 60  0001 C CNN "Farnell"
+F 4 "1593411" H 6000 1900 60  0001 C CNN "Farnell"
 	1    6000 1900
 	1    0    0    -1  
 $EndComp
@@ -34,7 +34,7 @@ F 0 "J?" H 7281 2115 50  0000 C CNN
 F 1 "CONN_01x02" H 7281 2024 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 7250 1900 50  0001 C CNN
 F 3 "" H 7250 1900 50  0001 C CNN
-F 4 "1593458" H 7250 1900 60  0001 C CNN "Farnell"
+F 4 "1593411" H 7250 1900 60  0001 C CNN "Farnell"
 	1    7250 1900
 	1    0    0    -1  
 $EndComp
@@ -165,18 +165,6 @@ F 4 "2495145" H 5300 3700 60  0001 C CNN "Farnell"
 	0    1    1    0   
 $EndComp
 $Comp
-L agg-kicad:D D?
-U 1 1 5A7CBF10
-P 2700 7000
-F 0 "D?" V 2796 6942 50  0000 R CNN
-F 1 "MRA4003T3" V 2705 6942 50  0000 R CNN
-F 2 "agg:DO-214AC-SMA" H 2700 7000 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2028669.pdf" H 2700 7000 50  0001 C CNN
-F 4 "1459134" H 2700 7000 60  0001 C CNN "Farnell"
-	1    2700 7000
-	0    -1   -1   0   
-$EndComp
-$Comp
 L agg-kicad:GND #PWR?
 U 1 1 5A7CCCAD
 P 5800 4100
@@ -261,27 +249,27 @@ NoConn ~ 5400 3500
 $Comp
 L solar_cell:Solar_Cell SC?
 U 1 1 5A7F06D9
-P 750 6750
-F 0 "SC?" H 858 6846 50  0000 L CNN
-F 1 "Solar_Cell" H 858 6755 50  0000 L CNN
-F 2 "" V 750 6810 50  0001 C CNN
-F 3 "~" V 750 6810 50  0001 C CNN
-F 4 "Value" H 750 6750 60  0001 C CNN "Digikey"
-F 5 "Value" H 750 6750 60  0001 C CNN "Farnell"
-	1    750  6750
+P 750 6600
+F 0 "SC?" H 858 6696 50  0000 L CNN
+F 1 "Solar_Cell" H 858 6605 50  0000 L CNN
+F 2 "" V 750 6660 50  0001 C CNN
+F 3 "~" V 750 6660 50  0001 C CNN
+F 4 "Value" H 750 6600 60  0001 C CNN "Digikey"
+F 5 "Value" H 750 6600 60  0001 C CNN "Farnell"
+	1    750  6600
 	1    0    0    -1  
 $EndComp
 $Comp
 L solar_cell:Solar_Cell SC?
 U 1 1 5A7CDA84
-P 1650 6750
-F 0 "SC?" H 1758 6846 50  0000 L CNN
-F 1 "Solar_Cell" H 1758 6755 50  0000 L CNN
-F 2 "" V 1650 6810 50  0001 C CNN
-F 3 "~" V 1650 6810 50  0001 C CNN
-F 4 "Value" H 1650 6750 60  0001 C CNN "Digikey"
-F 5 "Value" H 1650 6750 60  0001 C CNN "Farnell"
-	1    1650 6750
+P 1650 6600
+F 0 "SC?" H 1758 6696 50  0000 L CNN
+F 1 "Solar_Cell" H 1758 6605 50  0000 L CNN
+F 2 "" V 1650 6660 50  0001 C CNN
+F 3 "~" V 1650 6660 50  0001 C CNN
+F 4 "Value" H 1650 6600 60  0001 C CNN "Digikey"
+F 5 "Value" H 1650 6600 60  0001 C CNN "Farnell"
+	1    1650 6600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -328,10 +316,6 @@ Connection ~ 6250 3300
 Wire Wire Line
 	6250 3450 6250 3500
 Connection ~ 6250 3500
-Wire Wire Line
-	750  7100 750  6850
-Wire Wire Line
-	1650 7100 1650 6850
 $Comp
 L agg-kicad:C C?
 U 1 1 5A7D2F9C
@@ -374,7 +358,7 @@ Wire Wire Line
 	1650 7500 1650 7400
 Wire Wire Line
 	750  7500 750  7400
-Text Notes 900  7000 0    60   ~ 0
+Text Notes 900  7100 0    60   ~ 0
 Tabbing wire
 Text Notes 900  1750 0    60   ~ 0
 Holes for flying wires
@@ -409,7 +393,7 @@ P 5800 3500
 F 0 "IC?" H 5800 4025 50  0000 C CNN
 F 1 "LTC3105" H 5800 3934 50  0000 C CNN
 F 2 "agg:DFN-10-EP-LT" H 5500 2900 50  0001 L CNN
-F 3 "" H 5400 3800 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1999327.pdf" H 5400 3800 50  0001 C CNN
 F 4 "1898600" H 5500 2800 50  0001 L CNN "Farnell"
 	1    5800 3500
 	1    0    0    -1  
@@ -427,7 +411,7 @@ F 4 "1459134" H 2700 7250 60  0001 C CNN "Farnell"
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	2700 7150 2700 7000
+	2700 6750 2700 7150
 $Comp
 L agg-kicad:CONN_01x02 J?
 U 1 1 5A7F3534
@@ -436,7 +420,6 @@ F 0 "J?" H 1981 1865 50  0000 C CNN
 F 1 "CONN_01x02" H 1981 1774 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 1950 1650 50  0001 C CNN
 F 3 "" H 1950 1650 50  0001 C CNN
-F 4 "Value" H 1950 1650 60  0001 C CNN "Farnell"
 	1    1950 1650
 	1    0    0    -1  
 $EndComp
@@ -448,7 +431,6 @@ F 0 "J?" H 1981 3365 50  0000 C CNN
 F 1 "CONN_01x02" H 1981 3274 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 1950 3150 50  0001 C CNN
 F 3 "" H 1950 3150 50  0001 C CNN
-F 4 "Value" H 1950 3150 60  0001 C CNN "Farnell"
 	1    1950 3150
 	1    0    0    -1  
 $EndComp
@@ -538,18 +520,16 @@ F 4 "1654800" H 8150 3700 60  0001 C CNN "Farnell"
 	1    8150 3700
 	1    0    0    -1  
 $EndComp
-Text Label 750  6400 0    60   ~ 0
+Text Label 750  6250 0    60   ~ 0
 Array_1_+
-Text Label 1650 6400 0    60   ~ 0
+Text Label 1650 6250 0    60   ~ 0
 Array_2_+
 Text Label 2700 6750 0    60   ~ 0
 D_anode
 Wire Wire Line
-	2700 6900 2700 6750
+	750  6400 750  6250
 Wire Wire Line
-	750  6550 750  6400
-Wire Wire Line
-	1650 6550 1650 6400
+	1650 6400 1650 6250
 $Comp
 L agg-kicad:CONN_01x02 J?
 U 1 1 5A81FA4C
@@ -610,8 +590,6 @@ Wire Notes Line
 	3300 5900 3300 7750
 Text Notes 500  6050 0    79   ~ 16
 Off board components
-Text Notes 2650 7700 1    60   ~ 0
-Thermally coupled to solar cells
 Text Notes 850  3250 0    60   ~ 0
 Holes for flying wires
 Text Notes 6150 2200 0    60   ~ 0
@@ -627,7 +605,7 @@ L agg-kicad:R R?
 U 1 1 5A8494E9
 P 5300 3400
 F 0 "R?" H 5350 3222 50  0000 C CNN
-F 1 "20k" H 5350 3313 50  0000 C CNN
+F 1 "R" H 5350 3313 50  0000 C CNN
 F 2 "" H 5300 3400 50  0001 C CNN
 F 3 "" H 5300 3400 50  0001 C CNN
 F 4 "Value" H 5300 3400 60  0001 C CNN "Farnell"
@@ -639,4 +617,50 @@ Wire Wire Line
 Wire Wire Line
 	4800 3400 5200 3400
 Connection ~ 5050 3400
+Text Notes 5900 2850 0    60   ~ 0
+Low DCR
+Text Notes 4850 3200 0    60   ~ 0
+Low ESR
+Text Notes 6850 3650 1    12   ~ 0
+Low ESR\nClose to converter pins
+Text Notes 4900 3500 0    20   ~ 0
+Change value to set max power point \n(use ltspice and IV curves for solar panels)
+$Comp
+L solar_cell:Solar_Cell SC?
+U 1 1 5A89D9A5
+P 750 6950
+F 0 "SC?" H 858 7046 50  0000 L CNN
+F 1 "Solar_Cell" H 858 6955 50  0000 L CNN
+F 2 "" V 750 7010 50  0001 C CNN
+F 3 "~" V 750 7010 50  0001 C CNN
+F 4 "Value" H 750 6950 60  0001 C CNN "Digikey"
+F 5 "Value" H 750 6950 60  0001 C CNN "Farnell"
+	1    750  6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L solar_cell:Solar_Cell SC?
+U 1 1 5A89D9F9
+P 1650 6950
+F 0 "SC?" H 1758 7046 50  0000 L CNN
+F 1 "Solar_Cell" H 1758 6955 50  0000 L CNN
+F 2 "" V 1650 7010 50  0001 C CNN
+F 3 "~" V 1650 7010 50  0001 C CNN
+F 4 "Value" H 1650 6950 60  0001 C CNN "Digikey"
+F 5 "Value" H 1650 6950 60  0001 C CNN "Farnell"
+	1    1650 6950
+	1    0    0    -1  
+$EndComp
+Text Notes 900  6750 0    60   ~ 0
+Tabbing wire
+Wire Wire Line
+	1650 6700 1650 6750
+Wire Wire Line
+	1650 7050 1650 7100
+Wire Wire Line
+	750  7100 750  7050
+Wire Wire Line
+	750  6750 750  6700
+Text Notes 2650 7700 1    60   ~ 0
+Thermally coupled to solar cells
 $EndSCHEMATC

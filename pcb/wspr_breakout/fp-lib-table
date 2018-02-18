@@ -1,4 +1,4 @@
 (fp_lib_table
   (lib (name agg)(type KiCad)(uri ${KIPRJMOD}/../../agg-kicad/agg.pretty)(options "")(descr ""))
-  (lib (name jerboa)(type KiCad)(uri "$(KIPRJMOD)/../jerboa.pretty")(options "")(descr ""))
+  (lib (name jerboa)(type KiCad)(uri ${KIPRJMOD}/../Jerboa.pretty)(options "")(descr ""))
 )

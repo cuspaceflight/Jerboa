@@ -723,4 +723,80 @@ $EndComp
 Wire Wire Line
 	3350 4100 3350 4050
 Connection ~ 3350 4250
+$Comp
+L agg-kicad:CONN_01x02 J?
+U 1 1 5A89E783
+P 3200 1750
+F 0 "J?" H 3231 1965 50  0000 C CNN
+F 1 "CONN_01x02" H 3231 1874 50  0000 C CNN
+F 2 "agg:SIL-254P-02" H 3200 1750 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2290158.pdf" H 3200 1750 50  0001 C CNN
+F 4 "1593458" H 3200 1750 50  0001 C CNN "Farnell"
+	1    3200 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:GND #PWR?
+U 1 1 5A89E908
+P 3550 1900
+F 0 "#PWR?" H 3420 1940 50  0001 L CNN
+F 1 "GND" H 3550 1800 50  0000 C CNN
+F 2 "" H 3550 1900 60  0001 C CNN
+F 3 "" H 3550 1900 60  0001 C CNN
+F 4 "Value" H 3550 1900 50  0001 C CNN "Farnell"
+	1    3550 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:3v3 #PWR?
+U 1 1 5A89EBB4
+P 3550 1700
+F 0 "#PWR?" H 3550 1810 50  0001 L CNN
+F 1 "3v3" H 3550 1824 50  0000 C CNN
+F 2 "" H 3550 1700 60  0001 C CNN
+F 3 "" H 3550 1700 60  0001 C CNN
+	1    3550 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 1900 3550 1850
+Wire Wire Line
+	3550 1850 3300 1850
+Wire Wire Line
+	3300 1750 3550 1750
+Wire Wire Line
+	3550 1750 3550 1700
+$Comp
+L agg-kicad:CONN_01x03 J?
+U 1 1 5A8A71F9
+P 3200 2300
+F 0 "J?" H 3231 2515 50  0000 C CNN
+F 1 "CONN_01x03" H 3231 2424 50  0000 C CNN
+F 2 "" H 3200 2300 50  0001 C CNN
+F 3 "" H 3200 2300 50  0001 C CNN
+	1    3200 2300
+	1    0    0    -1  
+$EndComp
+Text Label 3400 2300 0    60   ~ 0
+WSPR_SCL
+Text Label 3400 2400 0    60   ~ 0
+WSPR_SDA
+Text Label 3400 2500 0    60   ~ 0
+WSPR_ENABLE
+Wire Wire Line
+	3400 2300 3300 2300
+Wire Wire Line
+	3300 2400 3400 2400
+Wire Wire Line
+	3300 2500 3400 2500
+Text Notes 2950 1500 0    60   ~ 0
+WSPR
+Wire Notes Line
+	2950 1400 2950 2600
+Wire Notes Line
+	2950 2600 4100 2600
+Wire Notes Line
+	2950 1400 4100 1400
+Wire Notes Line
+	4100 1400 4100 2600
 $EndSCHEMATC
