@@ -92,7 +92,7 @@ F 4 "Value" H 2050 1600 60  0001 C CNN "Fieldname"
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	900  1400 2250 1400
+	900  1400 1600 1400
 Wire Wire Line
 	1850 1700 1850 1600
 Connection ~ 2050 1700
@@ -100,7 +100,7 @@ Wire Wire Line
 	1600 1700 1600 1600
 Connection ~ 1850 1700
 Wire Wire Line
-	2050 1600 2050 1800
+	2050 1600 2050 1700
 Wire Wire Line
 	2250 1600 2150 1600
 Wire Wire Line
@@ -112,7 +112,7 @@ Wire Wire Line
 	2150 1500 2150 1400
 Connection ~ 2150 1400
 Wire Wire Line
-	2050 1300 2050 1500
+	2050 1300 2050 1400
 Wire Wire Line
 	1850 1400 1850 1500
 Connection ~ 2050 1400
@@ -214,7 +214,7 @@ $EndComp
 Wire Wire Line
 	8150 2200 8150 2350
 Wire Wire Line
-	8150 2450 8150 2650
+	8150 2450 8150 2600
 Wire Wire Line
 	7750 2600 7750 2450
 Wire Wire Line
@@ -328,9 +328,9 @@ Wire Wire Line
 	6550 2450 6550 2600
 Connection ~ 6950 2600
 Wire Wire Line
-	8000 2200 8600 2200
+	8000 2200 8150 2200
 Wire Wire Line
-	7600 2200 7900 2200
+	7600 2200 7750 2200
 Wire Wire Line
 	7350 1850 7200 1850
 Wire Wire Line
@@ -348,21 +348,21 @@ F 3 "" H 7100 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6800 2200 7500 2200
+	6800 2200 6950 2200
 Wire Wire Line
 	6950 2350 6950 2200
 Wire Wire Line
-	6400 2600 7100 2600
+	6400 2600 6550 2600
 Wire Wire Line
-	6400 2200 6700 2200
+	6400 2200 6550 2200
 Wire Wire Line
-	7200 2600 8600 2600
+	7200 2600 7350 2600
 Wire Wire Line
 	6550 1700 6550 1850
 Wire Wire Line
-	6400 1850 6700 1850
+	6400 1850 6550 1850
 Wire Wire Line
-	7350 1850 7350 2350
+	7350 1850 7350 2200
 Connection ~ 6550 2200
 Connection ~ 6550 2600
 Text Label 6400 2600 2    60   ~ 0
@@ -387,7 +387,51 @@ RADIO_nSEL
 Text HLabel 3150 2300 2    60   Input ~ 0
 RADIO_nIRQ
 Wire Wire Line
-	1600 1700 2250 1700
+	1600 1700 1850 1700
 Wire Wire Line
 	6800 1850 7100 1850
+Wire Wire Line
+	2050 1700 2050 1800
+Wire Wire Line
+	2050 1700 2150 1700
+Wire Wire Line
+	1850 1700 2050 1700
+Wire Wire Line
+	2150 1700 2250 1700
+Wire Wire Line
+	2150 1400 2250 1400
+Wire Wire Line
+	2050 1400 2150 1400
+Wire Wire Line
+	2050 1400 2050 1500
+Wire Wire Line
+	1850 1400 2050 1400
+Wire Wire Line
+	1600 1400 1850 1400
+Wire Wire Line
+	7750 2600 8150 2600
+Wire Wire Line
+	7750 2200 7900 2200
+Wire Wire Line
+	8150 2600 8150 2650
+Wire Wire Line
+	8150 2600 8600 2600
+Wire Wire Line
+	7350 2200 7500 2200
+Wire Wire Line
+	7350 2200 7350 2350
+Wire Wire Line
+	6550 1850 6700 1850
+Wire Wire Line
+	6950 2200 7350 2200
+Wire Wire Line
+	7350 2600 7750 2600
+Wire Wire Line
+	6950 2600 7100 2600
+Wire Wire Line
+	8150 2200 8600 2200
+Wire Wire Line
+	6550 2200 6700 2200
+Wire Wire Line
+	6550 2600 6950 2600
 $EndSCHEMATC
