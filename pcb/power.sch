@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 4
+Sheet 2 4
 Title ""
 Date ""
 Rev ""
@@ -59,7 +59,7 @@ F 3 "" H 4000 3650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4000 3400 5250 3400
+	4000 3400 4150 3400
 Text Notes 2900 3450 0    50   ~ 0
 Battery/capacitor input
 $Comp
@@ -136,7 +136,7 @@ $EndComp
 Wire Wire Line
 	5250 3800 4900 3800
 Wire Wire Line
-	4900 3700 4900 3900
+	4900 3700 4900 3800
 Connection ~ 4900 3800
 Wire Wire Line
 	4900 3600 4900 3400
@@ -166,15 +166,15 @@ F 3 "" H 5050 4250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5050 4200 5250 4200
+	5050 4200 5150 4200
 Wire Wire Line
 	5250 4100 5150 4100
 Wire Wire Line
 	5150 4100 5150 4200
 Wire Wire Line
-	4000 3500 4000 3650
+	4000 3500 4000 3600
 Wire Wire Line
-	4000 3600 4600 3600
+	4000 3600 4150 3600
 Wire Wire Line
 	4600 3600 4600 3550
 Wire Wire Line
@@ -199,7 +199,7 @@ F 3 "" H 6550 4250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6350 4200 6550 4200
+	6350 4200 6450 4200
 Wire Wire Line
 	6450 4200 6450 4100
 Wire Wire Line
@@ -254,7 +254,7 @@ F 3 "" H 6800 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6800 3500 6800 3600
+	6800 3500 6800 3550
 Connection ~ 6800 3550
 Wire Wire Line
 	6800 3400 6800 3300
@@ -262,12 +262,12 @@ Connection ~ 6800 3300
 Wire Wire Line
 	7100 3600 7100 3300
 Wire Wire Line
-	6350 3300 7200 3300
+	6350 3300 6450 3300
 Connection ~ 7100 3300
 Wire Wire Line
 	7100 3700 7100 4000
 Wire Wire Line
-	6350 4000 7250 4000
+	6350 4000 7100 4000
 Wire Wire Line
 	6550 4250 6550 4200
 Connection ~ 6450 4200
@@ -321,4 +321,34 @@ $EndComp
 Text HLabel 7250 4000 2    50   Input ~ 0
 LOW_BATT_WARNING
 Connection ~ 7100 4000
+Wire Wire Line
+	4150 3400 4500 3400
+Wire Wire Line
+	4600 3400 4900 3400
+Wire Wire Line
+	5150 3400 5250 3400
+Wire Wire Line
+	4900 3800 4900 3900
+Wire Wire Line
+	4900 3400 5150 3400
+Wire Wire Line
+	4150 3600 4600 3600
+Wire Wire Line
+	4000 3600 4000 3650
+Wire Wire Line
+	6800 3550 6800 3600
+Wire Wire Line
+	6800 3300 7100 3300
+Wire Wire Line
+	7100 3300 7200 3300
+Wire Wire Line
+	6450 4200 6550 4200
+Wire Wire Line
+	5150 4200 5250 4200
+Wire Wire Line
+	4500 3400 4600 3400
+Wire Wire Line
+	6450 3300 6800 3300
+Wire Wire Line
+	7100 4000 7250 4000
 $EndSCHEMATC
