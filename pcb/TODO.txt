@@ -20,4 +20,3 @@
 
 *** WSPR ***
 - http://appnotes.etherkit.com/2016/04/10-milliwatt-si5351a-wspr-beacon/
-- I2C pullups
