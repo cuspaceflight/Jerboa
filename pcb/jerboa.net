@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/greg/Jerboa/pcb/jerboa.sch)
-    (date "Tue 12 Jun 2018 20:51:38 BST")
+    (date "Tue 12 Jun 2018 23:26:32 BST")
     (tool "Eeschema 5.0.0-rc2-unknown-0e3be57~65~ubuntu18.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -268,6 +268,12 @@
       (libsource (lib agg-kicad) (part R) (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 5B461FB6))
+    (comp (ref X3)
+      (value MOUNT)
+      (footprint agg:M2.5_MOUNT)
+      (libsource (lib agg-kicad) (part PART) (description ""))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 5B50EEE8))
     (comp (ref J3)
       (value CONN_01x02)
       (footprint agg:SIL-254P-02)
