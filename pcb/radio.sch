@@ -7,7 +7,7 @@ encoding utf-8
 Sheet 4 4
 Title "Jerboa Radio Schematics"
 Date "2018-06-12"
-Rev "1.0"
+Rev "1.1"
 Comp "Cambridge University Spaceflight"
 Comment1 "Greg Brooks"
 Comment2 ""
@@ -254,7 +254,7 @@ U 1 1 5B2583AC
 P 6400 2000
 F 0 "L2" V 6404 2041 50  0000 L CNN
 F 1 "56nH" V 6495 2041 50  0000 L CNN
-F 2 "agg:0805-L" H 6400 2000 50  0001 C CNN
+F 2 "agg:0805" H 6400 2000 50  0001 C CNN
 F 3 "" H 6400 2000 50  0001 C CNN
 F 4 "1711831" H 0   0   50  0001 C CNN "Farnell"
 	1    6400 2000
@@ -932,7 +932,7 @@ U 1 1 5B2BC7C0
 P 8300 4100
 F 0 "L8" V 8300 3950 50  0000 L CNN
 F 1 "680nH" V 8400 3800 50  0000 L CNN
-F 2 "agg:0805-L" H 8300 4100 50  0001 C CNN
+F 2 "agg:0805" H 8300 4100 50  0001 C CNN
 F 3 "" H 8300 4100 50  0001 C CNN
 F 4 "2286391" H 0   0   50  0001 C CNN "Farnell"
 	1    8300 4100
