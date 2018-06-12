@@ -5,11 +5,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 4
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Title "Jerboa Power Supply Schematics"
+Date "2018-06-12"
+Rev "1.0"
+Comp "Cambridge University Spaceflight"
+Comment1 "Greg Brooks"
 Comment2 ""
 Comment3 ""
 Comment4 ""
