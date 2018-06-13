@@ -7,4 +7,5 @@
   (lib (name mcp4812)(type Legacy)(uri ${KIPRJMOD}/lib/mcp4812.lib)(options "")(descr ""))
   (lib (name micrf112YMM)(type Legacy)(uri ${KIPRJMOD}/lib/micrf112YMM.lib)(options "")(descr ""))
   (lib (name TMP102)(type Legacy)(uri ${KIPRJMOD}/lib/TMP102.lib)(options "")(descr ""))
+  (lib (name antenna_chip)(type Legacy)(uri ${KIPRJMOD}/lib/antenna_chip.lib)(options "")(descr ""))
 )

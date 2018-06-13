@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:jerboa-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -26,17 +25,6 @@ F 4 "2533923" H 4950 2700 50  0001 C CNN "Farnell"
 	1    4950 2700
 	0    1    1    0   
 $EndComp
-$Comp
-L agg-kicad:COAX P2
-U 1 1 5A6DE78F
-P 7100 3500
-F 0 "P2" H 7100 3600 50  0000 C CNN
-F 1 "COAX" H 7100 3350 50  0000 C CNN
-F 2 "agg:SMA-EDGE" H 7100 3290 50  0001 C CNN
-F 3 "" H 7200 3400 50  0001 C CNN
-	1    7100 3500
-	1    0    0    -1  
-$EndComp
 Text Notes 5600 2150 0    118  ~ 0
 GPS
 Text HLabel 6500 2900 2    60   Input ~ 0
@@ -55,10 +43,10 @@ F 3 "https://www.u-blox.com/sites/default/files/MAX-M8-FW3_DataSheet_%28UBX-1503
 	1    0    0    -1  
 $EndComp
 $Comp
-L agg-kicad:3v3 #PWR029
+L agg-kicad:3v3 #PWR0129
 U 1 1 5A6F25D1
 P 5100 2450
-F 0 "#PWR029" H 5100 2560 50  0001 L CNN
+F 0 "#PWR0129" H 5100 2560 50  0001 L CNN
 F 1 "3v3" H 5100 2540 50  0000 C CNN
 F 2 "" H 5100 2450 60  0000 C CNN
 F 3 "" H 5100 2450 60  0000 C CNN
@@ -76,10 +64,10 @@ Wire Wire Line
 	5200 2600 5100 2600
 Connection ~ 5100 2600
 $Comp
-L agg-kicad:GND #PWR030
+L agg-kicad:GND #PWR0130
 U 1 1 5A6F2D41
 P 5100 3050
-F 0 "#PWR030" H 4970 3090 50  0001 L CNN
+F 0 "#PWR0130" H 4970 3090 50  0001 L CNN
 F 1 "GND" H 5000 3000 50  0000 C CNN
 F 2 "" H 5100 3050 60  0000 C CNN
 F 3 "" H 5100 3050 60  0000 C CNN
@@ -105,37 +93,6 @@ Wire Wire Line
 NoConn ~ 6400 3100
 NoConn ~ 6400 3200
 NoConn ~ 6400 3300
-$Comp
-L agg-kicad:ESD_DIODE D2
-U 1 1 5A6F5EFB
-P 6800 3600
-F 0 "D2" V 6800 3658 50  0000 L CNN
-F 1 "ESD_DIODE" H 6750 3500 50  0001 L CNN
-F 2 "agg:0402" H 6750 3400 50  0001 L CNN
-F 3 "http://www.farnell.com/datasheets/1772768.pdf" H 6700 3600 50  0001 C CNN
-F 4 "2368169" H 6750 3300 50  0001 L CNN "Farnell"
-	1    6800 3600
-	0    1    1    0   
-$EndComp
-$Comp
-L agg-kicad:GND #PWR031
-U 1 1 5A6F5FFD
-P 6800 3800
-F 0 "#PWR031" H 6670 3840 50  0001 L CNN
-F 1 "GND" H 6800 3887 50  0000 C CNN
-F 2 "" H 6800 3800 50  0001 C CNN
-F 3 "" H 6800 3800 50  0001 C CNN
-	1    6800 3800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6800 3700 6800 3750
-Connection ~ 6800 3500
-Wire Wire Line
-	7000 3600 7000 3750
-Wire Wire Line
-	7000 3750 6800 3750
-Connection ~ 6800 3750
 NoConn ~ 5200 3400
 NoConn ~ 5200 3300
 Text HLabel 5150 3200 0    60   Input ~ 0
@@ -154,15 +111,11 @@ Wire Wire Line
 Wire Wire Line
 	5100 2900 5100 3000
 Wire Wire Line
-	6800 3500 6900 3500
-Wire Wire Line
-	6800 3750 6800 3800
-Wire Wire Line
 	5100 2700 5200 2700
 Wire Wire Line
 	5100 2800 5200 2800
 $Comp
-L Device:Antenna_Chip AE1
+L antenna_chip:Antenna_Chip AE1
 U 1 1 5B1EFBE1
 P 6800 3300
 F 0 "AE1" H 6979 3428 50  0000 L CNN
@@ -176,11 +129,6 @@ $EndComp
 NoConn ~ 6700 3400
 Wire Wire Line
 	6900 3400 6900 3500
-Connection ~ 6900 3500
 Wire Wire Line
-	6900 3500 7000 3500
-Wire Wire Line
-	6400 3500 6800 3500
-Text Notes 7250 3400 0    50   ~ 0
-Use either chip antenna or edge mounted helical (sma)
+	6400 3500 6900 3500
 $EndSCHEMATC
