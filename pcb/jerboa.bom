@@ -2,7 +2,7 @@ Bill Of Materials
 =================
 
 Source file: jerboa.xml
-Date: 2018-06-14T00:49:16.496229
+Date: 2018-06-14T01:43:45.905544
 
 Parts Missing Footprints
 ------------------------
@@ -61,8 +61,10 @@ https://www.ebay.co.uk/itm/Ernie-Ball-Custom-Gauge-Guitar-Single-Strings-Electri
 2310317,2,2x 6.8pF 0402
 2545847,1,1x TCXO 2x1.6mm_TCXO
 1841971,1,1x 13.56MHz XTAL-50x32
+2424700,1,1x 220nH 0402
 1758879,2,2x 1uF 0402
 2764803,1,1x TMP102 SOT-666
+2491614,1,1x 150nH 0402
 1828865,1,1x 22nF 0402
 1135108,1,1x 100uF avx_2312
 2286391,1,1x 680nH 0805
@@ -80,13 +82,14 @@ https://www.ebay.co.uk/itm/Ernie-Ball-Custom-Gauge-Guitar-Single-Strings-Electri
 2470331,1,1x 43nH 0402
 2072529,2,2x 100k 0402
 2524782,1,1x 39pF 0402
+1885324,1,1x 6.2pF 0402
 2215632,1,1x 470nH 0603-L
 2112878,1,1x 50 0603-L
 2840114,1,1x 22nH 0402
 1834912,1,1x MCP4812 SOIC-8
 2310300,1,1x 1.2pF 0402
 2310307,1,1x 2.2pF 0402
-1885336,1,1x 12pF 0402
+1885336,2,2x 12pF 0402
 2533923,15,15x 100nF 0402
 1343090,2,2x 47nH 0402
 
@@ -118,8 +121,10 @@ https://www.ebay.co.uk/itm/Ernie-Ball-Custom-Gauge-Guitar-Single-Strings-Electri
 2310317              2   6.8pF           0402            C30 CM1
 2545847              1   TCXO            2x1.6mm_TCXO    Y1
 1841971              1   13.56MHz        XTAL-50x32      Y2
+2424700              1   220nH           0402            LR1
 1758879              2   1uF             0402            C19 C7
 2764803              1   TMP102          SOT-666         U4
+2491614              1   150nH           0402            LR2
 1828865              1   22nF            0402            C2
 1135108              1   100uF           avx_2312        C15
 2286391              1   680nH           0805            L2
@@ -137,13 +142,14 @@ https://www.ebay.co.uk/itm/Ernie-Ball-Custom-Gauge-Guitar-Single-Strings-Electri
 2470331              1   43nH            0402            L3
 2072529              2   100k            0402            R17 R18
 2524782              1   39pF            0402            C0
+1885324              1   6.2pF           0402            CR2
 2215632              1   470nH           0603-L          Lchoke1
 2112878              1   50              0603-L          R3
 2840114              1   22nH            0402            L0
 1834912              1   MCP4812         SOIC-8          U3
 2310300              1   1.2pF           0402            C27
 2310307              1   2.2pF           0402            C28
-1885336              1   12pF            0402            C23
+1885336              2   12pF            0402            C23 CR1
 2533923              15  100nF           0402            C1 C10 C11 C13 C16 C18 C20 C26 C29 C31 C32 C4 C6 C8 C9
 1343090              2   47nH            0402            LM2 LM4
 
