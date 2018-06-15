@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/greg/Jerboa/pcb/jerboa.sch)
-    (date "Fri 15 Jun 2018 00:28:35 BST")
+    (date "Fri 15 Jun 2018 12:59:36 BST")
     (tool "Eeschema 5.0.0-rc2-unknown-660aed7~65~ubuntu18.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -261,7 +261,7 @@
       (tstamp 5B461FB6))
     (comp (ref X1)
       (value MOUNT)
-      (footprint agg:M2.5_HOLE)
+      (footprint agg:M3_HOLE)
       (libsource (lib agg-kicad) (part PART) (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 5B50EEE8))

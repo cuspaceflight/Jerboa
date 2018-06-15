@@ -20,7 +20,6 @@ U 5A37ABBB
 F0 "power" 60
 F1 "power.sch" 60
 F2 "solar_cells" I R 1400 800 60 
-F3 "LOW_BATT_WARNING" I R 1400 950 50 
 $EndSheet
 $Sheet
 S 500  2950 900  2250
@@ -868,19 +867,13 @@ Wire Wire Line
 Wire Wire Line
 	8250 3550 8400 3550
 Wire Wire Line
-	1400 950  1600 950 
-Wire Wire Line
 	1600 800  1400 800 
 Text Label 8350 3050 0    50   ~ 0
 SOLAR_CELL_VOLTAGE
-Text Label 8350 2750 0    50   ~ 0
-LOW_BATT
 Wire Wire Line
 	8250 1250 8600 1250
 Text Label 1600 800  0    50   ~ 0
 SOLAR_CELL_VOLTAGE
-Text Label 1600 950  0    50   ~ 0
-LOW_BATT
 Text Label 1600 6450 0    60   ~ 0
 SI4460_CLK
 Wire Wire Line
@@ -1031,13 +1024,11 @@ U 1 1 5B50EEE8
 P 7050 5550
 F 0 "X1" H 7578 5646 50  0000 L CNN
 F 1 "MOUNT" H 7578 5555 50  0000 L CNN
-F 2 "agg:M2.5_HOLE" H 7050 5550 50  0001 C CNN
+F 2 "agg:M3_HOLE" H 7050 5550 50  0001 C CNN
 F 3 "" H 7050 5550 50  0001 C CNN
 	1    7050 5550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8250 2750 8350 2750
 Wire Wire Line
 	5050 4350 5400 4350
 NoConn ~ 5050 4450
@@ -1080,4 +1071,5 @@ $EndComp
 NoConn ~ 8250 3150
 Wire Wire Line
 	8250 2050 8400 2050
+NoConn ~ 8250 2750
 $EndSCHEMATC
