@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:jerboa-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -44,10 +43,10 @@ F 3 "https://www.u-blox.com/sites/default/files/MAX-M8-FW3_DataSheet_%28UBX-1503
 	1    0    0    -1  
 $EndComp
 $Comp
-L agg-kicad:3v3 #PWR0129
+L agg-kicad:3v3 #PWR029
 U 1 1 5A6F25D1
 P 5100 2450
-F 0 "#PWR0129" H 5100 2560 50  0001 L CNN
+F 0 "#PWR029" H 5100 2560 50  0001 L CNN
 F 1 "3v3" H 5100 2540 50  0000 C CNN
 F 2 "" H 5100 2450 60  0000 C CNN
 F 3 "" H 5100 2450 60  0000 C CNN
@@ -65,10 +64,10 @@ Wire Wire Line
 	5200 2600 5100 2600
 Connection ~ 5100 2600
 $Comp
-L agg-kicad:GND #PWR0130
+L agg-kicad:GND #PWR030
 U 1 1 5A6F2D41
 P 5100 3050
-F 0 "#PWR0130" H 4970 3090 50  0001 L CNN
+F 0 "#PWR030" H 4970 3090 50  0001 L CNN
 F 1 "GND" H 5000 3000 50  0000 C CNN
 F 2 "" H 5100 3050 60  0000 C CNN
 F 3 "" H 5100 3050 60  0000 C CNN
