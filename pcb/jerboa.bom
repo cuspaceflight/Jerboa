@@ -2,7 +2,7 @@ Bill Of Materials
 =================
 
 Source file: jerboa.xml
-Date: 2018-06-14T01:43:45.905544
+Date: 2018-06-16T18:08:45.957500
 
 Parts Missing Footprints
 ------------------------
@@ -11,10 +11,14 @@ Parts Missing Footprints
 Parts Missing Order Codes
 -------------------------
 P1     SWD_TC          agg:TC2030-NL
-X1     MOUNT           agg:M2.5_MOUNT
+X1     MOUNT           agg:M2.5_HOLE
 IC2    MAX-M8Q         agg:MAX-M8Q
-P2     144MHz          Jerboa:GND_PLANE_ANT
-P3     434MHz          Jerboa:GND_PLANE_ANT
+P3     144MHz          Jerboa:GND_PLANE_ANT
+P2     434MHz          Jerboa:GND_PLANE_ANT
+C35    C               agg:0603
+L14    L               agg:0603
+C34    C               agg:0603
+L13    L               agg:0603
 
 Inconsistent Order Codes
 ------------------------
@@ -26,11 +30,11 @@ Vendor Specific BOMs
   ~~~~~~~
 1,712-1003-2-ND,1x Antenna_Chip 1575AT43A0040E AE1
 1,SL18860DC-ND,1x SL18860DC DFN-10-SL18860DC IC1
-1,MCP4812-E/SN-ND,1x MCP4812 SOIC-8 U3
 
 
   Mouser
   ~~~~~~
+81-LQW18ANR22J8ZD,1,1x L2 0603
 634-SL18860DC,1,1x IC1 DFN-10-SL18860DC
 
 
@@ -41,56 +45,46 @@ https://www.ebay.co.uk/itm/Ernie-Ball-Custom-Gauge-Guitar-Single-Strings-Electri
 
   Farnell
   ~~~~~~~
+1865418,2,2x 8.2pF 0402
 1703402,1,1x TPS61025DRCR VSON-10
 1669641,1,1x 68nH 0402
-2510519,1,1x MICRF112YMM MSOP-10
-1753780,1,1x D_Capacitance SC-79
 2611904,3,3x 10uF 0402
-2627339,1,1x 10nF 0402
 2575345,1,1x LED_GREEN 0603-LED
-1753783,1,1x D_Capacitance SOD-323
 1635970,1,1x 6.8uH wurth_7447789006
 1669639,1,1x 56nH 0402
-2073163,1,1x 604k 0402
-1754183,1,1x 10uF 1411
+2520723,1,1x 15pF 0402
+2332514,1,1x 10nF 0402
 2496792,1,1x 100pF 0402
 1593458,3,3x CONN_01x02 SIL-254P-02
 1593459,1,1x CONN_01x03 SIL-254P-03
-2447127,4,4x 1M 0402
+2447127,1,1x 1M 0402
 9239120,1,1x 120 0402
-2310317,2,2x 6.8pF 0402
+2310317,1,1x 6.8pF 0402
+1711807,1,1x 56nH 0603
 2545847,1,1x TCXO 2x1.6mm_TCXO
-1841971,1,1x 13.56MHz XTAL-50x32
 2424700,1,1x 220nH 0402
 1758879,2,2x 1uF 0402
-2764803,1,1x TMP102 SOT-666
 2491614,1,1x 150nH 0402
 1828865,1,1x 22nF 0402
 1135108,1,1x 100uF avx_2312
-2286391,1,1x 680nH 0805
-2059189,1,1x 499k 0402
 1758932,1,1x 2pF 0402
 1758933,1,1x 3pF 0402
 2346879,1,1x 2.2uF 0402
 1327654,1,1x 470pF 0402
 2522556,3,3x 18pF 0402
 2488323,1,1x STM32L051K8U6 QFN-32-EP-ST
-1758956,1,1x 36pF 0402
 2462635,1,1x Si4460 QFN-20-EP-SI
-2331444,5,5x 10k 0402
-2447187,3,3x 4k7 0402
-2470331,1,1x 43nH 0402
-2072529,2,2x 100k 0402
+2331444,4,4x 10k 0402
+2447187,2,2x 4k7 0402
 2524782,1,1x 39pF 0402
 1885324,1,1x 6.2pF 0402
-2215632,1,1x 470nH 0603-L
+1762622,2,2x 18nH 0402
 2112878,1,1x 50 0603-L
 2840114,1,1x 22nH 0402
-1834912,1,1x MCP4812 SOIC-8
-2310300,1,1x 1.2pF 0402
-2310307,1,1x 2.2pF 0402
-1885336,2,2x 12pF 0402
-2533923,15,15x 100nF 0402
+1885336,1,1x 12pF 0402
+2368169,2,2x ESD_DIODE 0402
+2480595,1,1x BGS12PL6E6327XTSA1 DFN-6-in
+2533923,10,10x 100nF 0402
 1343090,2,2x 47nH 0402
 
 
@@ -98,58 +92,48 @@ Assembly BOM
 ------------
 712-1003-2-ND        1   Antenna_Chip    1575AT43A0040E  AE1
 SL18860DC-ND         1   SL18860DC       DFN-10-SL18860DC IC1
-MCP4812-E/SN-ND      1   MCP4812         SOIC-8          U3
+81-LQW18ANR22J8ZD    1   250nH           0603            L2
 634-SL18860DC        1   SL18860DC       DFN-10-SL18860DC IC1
 https://www.ebay.co.uk/itm/Ernie-Ball-Custom-Gauge-Guitar-Single-Strings-Electric-or-Acoustic-Pack-6-13-/360959212478 1   TESTPAD         ANT_GND_PASSTHROUGH TP1
+1865418              2   8.2pF           0402            C25 C30
 1703402              1   TPS61025DRCR    VSON-10         U2
-1669641              1   68nH            0402            LM3
-2510519              1   MICRF112YMM     MSOP-10         U5
-1753780              1   D_Capacitance   SC-79           D3
+1669641              1   68nH            0402            L11
 2611904              3   10uF            0402            C12 C3 C5
-2627339              1   10nF            0402            C25
 2575345              1   LED_GREEN       0603-LED        D1
-1753783              1   D_Capacitance   SOD-323         D2
 1635970              1   6.8uH           wurth_7447789006 L1
-1669639              1   56nH            0402            LM1
-2073163              1   604k            0402            R10
-1754183              1   10uF            1411            C21
+1669639              1   56nH            0402            L8
+2520723              1   15pF            0402            C27
+2332514              1   10nF            0402            C20
 2496792              1   100pF           0402            C17
 1593458              3   CONN_01x02      SIL-254P-02     J1 J3 J4
 1593459              1   CONN_01x03      SIL-254P-03     J2
-2447127              4   1M              0402            R12 R14 R15 R9
+2447127              1   1M              0402            R9
 9239120              1   120             0402            R6
-2310317              2   6.8pF           0402            C30 CM1
+2310317              1   6.8pF           0402            C26
+1711807              1   56nH            0603            L4
 2545847              1   TCXO            2x1.6mm_TCXO    Y1
-1841971              1   13.56MHz        XTAL-50x32      Y2
-2424700              1   220nH           0402            LR1
+2424700              1   220nH           0402            L3
 1758879              2   1uF             0402            C19 C7
-2764803              1   TMP102          SOT-666         U4
-2491614              1   150nH           0402            LR2
+2491614              1   150nH           0402            L5
 1828865              1   22nF            0402            C2
 1135108              1   100uF           avx_2312        C15
-2286391              1   680nH           0805            L2
-2059189              1   499k            0402            R11
-1758932              1   2pF             0402            CP2
-1758933              1   3pF             0402            CP1
+1758932              1   2pF             0402            C32
+1758933              1   3pF             0402            C29
 2346879              1   2.2uF           0402            C14
-1327654              1   470pF           0402            CC2
-2522556              3   18pF            0402            C24 CM2 CM3
+1327654              1   470pF           0402            C33
+2522556              3   18pF            0402            C21 C28 C31
 2488323              1   STM32L051K8U6   QFN-32-EP-ST    U1
-1758956              1   36pF            0402            C22
 2462635              1   Si4460          QFN-20-EP-SI    IC3
-2331444              5   10k             0402            R1 R13 R2 R4 R5
-2447187              3   4k7             0402            R16 R7 R8
-2470331              1   43nH            0402            L3
-2072529              2   100k            0402            R17 R18
-2524782              1   39pF            0402            C0
-1885324              1   6.2pF           0402            CR2
-2215632              1   470nH           0603-L          Lchoke1
+2331444              4   10k             0402            R1 R2 R4 R5
+2447187              2   4k7             0402            R7 R8
+2524782              1   39pF            0402            C23
+1885324              1   6.2pF           0402            C24
+1762622              2   18nH            0402            L10 L7
 2112878              1   50              0603-L          R3
-2840114              1   22nH            0402            L0
-1834912              1   MCP4812         SOIC-8          U3
-2310300              1   1.2pF           0402            C27
-2310307              1   2.2pF           0402            C28
-1885336              2   12pF            0402            C23 CR1
-2533923              15  100nF           0402            C1 C10 C11 C13 C16 C18 C20 C26 C29 C31 C32 C4 C6 C8 C9
-1343090              2   47nH            0402            LM2 LM4
+2840114              1   22nH            0402            L6
+1885336              1   12pF            0402            C22
+2368169              2   ESD_DIODE       0402            D2 D3
+2480595              1   BGS12PL6E6327XTSA1 DFN-6-infineon  U3
+2533923              10  100nF           0402            C1 C10 C11 C13 C16 C18 C4 C6 C8 C9
+1343090              2   47nH            0402            L12 L9
 
