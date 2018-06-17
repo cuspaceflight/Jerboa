@@ -51,7 +51,7 @@ NoConn ~ 2150 2050
 NoConn ~ 2150 2150
 Wire Wire Line
 	2150 2250 2250 2250
-Text Label 4150 1750 0    60   ~ 0
+Text Label 4250 1650 0    60   ~ 0
 RADIO_TX_144
 Wire Wire Line
 	1200 2550 1350 2550
@@ -128,10 +128,6 @@ F 3 "" H 700 1250 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	2150 1550 2350 1550
-Text Label 2350 1450 0    60   ~ 0
-RADIO_RXn
-Text Label 2350 1350 0    60   ~ 0
-RADIO_RXp
 Wire Wire Line
 	2350 1450 2150 1450
 Wire Wire Line
@@ -152,10 +148,6 @@ Text Label 5600 1350 2    60   ~ 0
 RADIO_TX_144
 Wire Wire Line
 	9050 1550 9050 1650
-Text Label 5600 2100 2    60   ~ 0
-RADIO_RXp
-Text Label 5600 1700 2    60   ~ 0
-RADIO_RXn
 Wire Notes Line
 	500  3100 11200 3100
 NoConn ~ 1350 1850
@@ -198,10 +190,6 @@ Text HLabel 1200 1950 0    60   Input ~ 0
 SI4460_XIN
 Wire Wire Line
 	1200 1950 1350 1950
-Wire Wire Line
-	5600 1700 5800 1700
-Wire Wire Line
-	5600 2100 5800 2100
 $Comp
 L agg-kicad:GND #PWR040
 U 1 1 5B25FF17
@@ -300,18 +288,6 @@ F 4 "2310317" H -600 -150 50  0001 C CNN "Farnell"
 	0    1    1    0   
 $EndComp
 $Comp
-L agg-kicad:L L8
-U 1 1 5B22AF36
-P 6450 1350
-F 0 "L8" H 6550 1550 50  0000 C CNN
-F 1 "56nH" H 6550 1450 50  0000 C CNN
-F 2 "agg:0402" H 6450 1350 50  0001 C CNN
-F 3 "" H 6450 1350 50  0001 C CNN
-F 4 "1669639" H 6450 1350 50  0001 C CNN "Farnell"
-	1    6450 1350
-	1    0    0    -1  
-$EndComp
-$Comp
 L agg-kicad:GND #PWR038
 U 1 1 5B22AFE6
 P 6400 1550
@@ -330,21 +306,7 @@ Wire Wire Line
 	6400 1400 6400 1350
 Connection ~ 6400 1350
 Wire Wire Line
-	6400 1350 6450 1350
-Wire Wire Line
 	6400 1550 6400 1500
-$Comp
-L agg-kicad:L L9
-U 1 1 5B27C871
-P 6850 1350
-F 0 "L9" H 6900 1528 50  0000 C CNN
-F 1 "47nH" H 6900 1437 50  0000 C CNN
-F 2 "agg:0402" H 6850 1350 50  0001 C CNN
-F 3 "" H 6850 1350 50  0001 C CNN
-F 4 "1343090" H 6850 1350 50  0001 C CNN "Farnell"
-	1    6850 1350
-	1    0    0    -1  
-$EndComp
 $Comp
 L agg-kicad:C C28
 U 1 1 5B283320
@@ -437,8 +399,6 @@ Wire Wire Line
 	7050 1500 7050 1350
 Connection ~ 7050 1350
 Wire Wire Line
-	7050 1350 6950 1350
-Wire Wire Line
 	7350 1500 7350 1350
 Wire Wire Line
 	7250 1350 7350 1350
@@ -493,137 +453,32 @@ Wire Wire Line
 Wire Wire Line
 	1900 3900 1950 3900
 Wire Wire Line
-	5800 1950 5800 2100
-Wire Wire Line
-	5800 1850 5800 1700
-Wire Wire Line
-	6250 2100 6750 2100
-$Comp
-L agg-kicad:L L5
-U 1 1 5B257969
-P 6150 2100
-F 0 "L5" H 6200 2278 50  0000 C CNN
-F 1 "150nH" H 6200 2187 50  0000 C CNN
-F 2 "agg:0402" H 6150 2100 50  0001 C CNN
-F 3 "" H 6150 2100 50  0001 C CNN
-F 4 "2491614" H 6150 2100 50  0001 C CNN "Farnell"
-	1    6150 2100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5800 2300 5800 2350
-Connection ~ 5800 2100
-Wire Wire Line
-	5800 2100 5800 2200
-$Comp
-L agg-kicad:GND #PWR036
-U 1 1 5B258845
-P 5800 2350
-F 0 "#PWR036" H 5670 2390 50  0001 L CNN
-F 1 "GND" H 5800 2250 50  0000 C CNN
-F 2 "" H 5800 2350 60  0000 C CNN
-F 3 "" H 5800 2350 60  0000 C CNN
-	1    5800 2350
-	1    0    0    -1  
-$EndComp
-$Comp
-L agg-kicad:C C22
-U 1 1 5B257ADB
-P 5800 2200
-F 0 "C22" V 5804 2258 50  0000 L CNN
-F 1 "12pF" V 5895 2258 50  0000 L CNN
-F 2 "agg:0402" H 5800 2200 50  0001 C CNN
-F 3 "" H 5800 2200 50  0001 C CNN
-F 4 "1885336" H 5800 2200 50  0001 C CNN "Farnell"
-	1    5800 2200
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6150 2100 5800 2100
-$Comp
-L agg-kicad:L L3
-U 1 1 5B25788E
-P 5800 1850
-F 0 "L3" V 5804 1891 50  0000 L CNN
-F 1 "220nH" V 5895 1891 50  0000 L CNN
-F 2 "agg:0402" H 5800 1850 50  0001 C CNN
-F 3 "" H 5800 1850 50  0001 C CNN
-F 4 "2424700" H 5800 1850 50  0001 C CNN "Farnell"
-	1    5800 1850
-	0    1    1    0   
-$EndComp
-Connection ~ 5800 1700
-Wire Wire Line
-	6150 1700 5800 1700
-$Comp
-L agg-kicad:C C24
-U 1 1 5B2576E8
-P 6150 1700
-F 0 "C24" H 6200 1895 50  0000 C CNN
-F 1 "6.2pF" H 6200 1804 50  0000 C CNN
-F 2 "agg:0402" H 6150 1700 50  0001 C CNN
-F 3 "" H 6150 1700 50  0001 C CNN
-F 4 "1885324" H 6150 1700 50  0001 C CNN "Farnell"
-	1    6150 1700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6250 1700 6750 1700
-Wire Wire Line
-	6750 2100 6750 1700
-Wire Wire Line
-	6850 1350 6750 1350
-Wire Wire Line
-	6550 1350 6750 1350
-Connection ~ 6750 1350
-Connection ~ 6750 1700
-Wire Wire Line
-	6750 1700 6750 1350
-$Comp
-L BGS12PL6E6327XTSA1:BGS12PL6E6327XTSA1 U3
-U 1 1 5B297858
-P 3750 1850
-F 0 "U3" H 3750 2050 50  0000 C CNN
-F 1 "BGS12PL6E6327XTSA1" H 3750 1650 50  0000 C CNN
-F 2 "Jerboa:DFN-6-infineon" H 3750 1450 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2334175.pdf" H 3750 1550 50  0001 C CNN
-F 4 "2480595" H 3750 1350 50  0001 C CNN "Farnell"
-	1    3750 1850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
 	2350 1850 2350 1550
 $Comp
 L agg-kicad:3v3 #PWR034
 U 1 1 5B299062
-P 3100 1500
-F 0 "#PWR034" H 3100 1610 50  0001 L CNN
-F 1 "3v3" H 3100 1590 50  0000 C CNN
-F 2 "" H 3100 1500 60  0000 C CNN
-F 3 "" H 3100 1500 60  0000 C CNN
-	1    3100 1500
+P 2900 1550
+F 0 "#PWR034" H 2900 1660 50  0001 L CNN
+F 1 "3v3" H 2900 1640 50  0000 C CNN
+F 2 "" H 2900 1550 60  0000 C CNN
+F 3 "" H 2900 1550 60  0000 C CNN
+	1    2900 1550
 	1    0    0    -1  
 $EndComp
-Text Label 4150 1950 0    60   ~ 0
+Text Label 4250 1550 0    60   ~ 0
 RADIO_TX_434
 $Comp
 L agg-kicad:GND #PWR035
 U 1 1 5B29AF16
-P 4200 1850
-F 0 "#PWR035" H 4070 1890 50  0001 L CNN
-F 1 "GND" V 4200 1700 50  0000 C CNN
-F 2 "" H 4200 1850 60  0000 C CNN
-F 3 "" H 4200 1850 60  0000 C CNN
-	1    4200 1850
-	0    -1   -1   0   
+P 3300 1650
+F 0 "#PWR035" H 3170 1690 50  0001 L CNN
+F 1 "GND" V 3300 1500 50  0000 C CNN
+F 2 "" H 3300 1650 60  0000 C CNN
+F 3 "" H 3300 1650 60  0000 C CNN
+	1    3300 1650
+	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4100 1950 4150 1950
-Wire Wire Line
-	4100 1750 4150 1750
-Wire Wire Line
-	4100 1850 4200 1850
-Text HLabel 2850 1950 0    50   Input ~ 0
+Text HLabel 4250 1350 2    50   Input ~ 0
 FREQ_CTRL
 $Comp
 L agg-kicad:ESD_DIODE D3
@@ -651,7 +506,7 @@ Wire Wire Line
 Text Label 5700 4000 2    60   ~ 0
 RADIO_TX_434
 Wire Notes Line
-	4850 500  4850 5700
+	4950 500  4950 5700
 Text Notes 9500 3250 0    60   ~ 0
 Si4460 Antenna Matching - 434MHz
 Text Notes 5300 3700 0    50   ~ 0
@@ -764,22 +619,11 @@ F 4 "2332514" H 3100 1850 50  0001 C CNN "Farnell"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3400 1750 3400 1550
-Wire Wire Line
-	3400 1550 3100 1550
-Wire Wire Line
-	3100 1550 3100 1500
-Wire Wire Line
 	2900 1650 2900 1550
-Wire Wire Line
-	2900 1550 3100 1550
-Connection ~ 3100 1550
 Wire Wire Line
 	2900 1750 2900 1850
 Wire Wire Line
 	2900 1850 2350 1850
-Wire Wire Line
-	2850 1950 3400 1950
 Wire Wire Line
 	3200 1850 3400 1850
 Wire Wire Line
@@ -861,7 +705,7 @@ F 4 "1711807" H 6700 4000 50  0001 C CNN "Farnell"
 	1    6700 4000
 	1    0    0    -1  
 $EndComp
-Text Notes 3100 1800 0    50   ~ 0
+Text Notes 3200 1950 0    50   ~ 0
 Large
 $Comp
 L agg-kicad:L L10
@@ -994,17 +838,13 @@ Zload = (0.2815)/(2 * pi * 144MHz * 1.25pF)  *  e^j * 49.0524degrees\nZload = 16
 Text Notes 7000 2550 0    50   ~ 0
 Vdd = sqrt(0.01/ (2*pi^2 * 144MHz * 1.25pF) ) = 1.68V\nIdd = 2 * pi^2 * 144MHz * 1.25pF * Vdd = 0.00596A\nRdc = (3.3V - Vdd) / Idd = 272.2ohm (set PA_PWR_LVL register appropriately)\n
 Wire Notes Line
-	6800 1900 8100 1900
-Wire Notes Line
 	8100 1900 8100 700 
 Wire Notes Line
-	6800 700  8100 700 
-Wire Notes Line
-	6800 700  6800 1900
+	6700 700  6700 1900
 Text Notes 7500 1900 0    50   ~ 0
 Low pass filter
-Text Notes 2950 1350 0    50   ~ 0
-Inductor sets DC bias,\nswitch can only pass RF (not DC)
+Text Notes 3150 1500 1    50   ~ 0
+Inductor sets DC bias,\nswitch can only pass RF \n(not DC)
 Wire Wire Line
 	8400 4100 8400 4000
 Wire Wire Line
@@ -1019,4 +859,82 @@ Connection ~ 8250 1350
 Wire Wire Line
 	8550 1350 8750 1350
 Connection ~ 8750 1350
+$Comp
+L agg-kicad:BGS12AL7 IC4
+U 1 1 5B2DFFAE
+P 3800 1550
+F 0 "IC4" H 3800 1035 50  0000 C CNN
+F 1 "BGS12AL7" H 3800 1126 50  0000 C CNN
+F 2 "agg:TSLP7-4" H 3500 1050 50  0001 L CNN
+F 3 "http://www.infineon.com/dgdl/Infineon-BGS12AL7_4-DS-v01_03-en.pdf?fileId=db3a30431b3e89eb011b458d7a767d88" H 3500 950 50  0001 L CNN
+F 4 "2480594" H 3500 850 50  0001 L CNN "Farnell"
+	1    3800 1550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3300 1650 3400 1650
+Wire Wire Line
+	3400 1550 3300 1550
+Wire Wire Line
+	3300 1550 3300 1650
+Connection ~ 3300 1650
+Wire Wire Line
+	4250 1550 4200 1550
+Wire Wire Line
+	4250 1650 4200 1650
+Wire Wire Line
+	4200 1350 4250 1350
+$Comp
+L agg-kicad:3v3 #PWR0103
+U 1 1 5B2FB079
+P 4250 1800
+F 0 "#PWR0103" H 4250 1910 50  0001 L CNN
+F 1 "3v3" H 4250 1890 50  0000 C CNN
+F 2 "" H 4250 1800 60  0000 C CNN
+F 3 "" H 4250 1800 60  0000 C CNN
+	1    4250 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 1850 4250 1850
+Wire Wire Line
+	4250 1850 4250 1800
+$Comp
+L agg-kicad:GND #PWR0104
+U 1 1 5B30B360
+P 2450 1450
+F 0 "#PWR0104" H 2320 1490 50  0001 L CNN
+F 1 "GND" H 2450 1350 50  0000 C CNN
+F 2 "" H 2450 1450 60  0000 C CNN
+F 3 "" H 2450 1450 60  0000 C CNN
+	1    2450 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 1450 2350 1350
+Wire Wire Line
+	2450 1450 2450 1350
+Wire Wire Line
+	2450 1350 2350 1350
+Connection ~ 2350 1350
+$Comp
+L agg-kicad:L L3
+U 1 1 5B314416
+P 6650 1350
+F 0 "L3" H 6700 1528 50  0000 C CNN
+F 1 "100nH" H 6700 1437 50  0000 C CNN
+F 2 "agg:0402" H 6650 1350 50  0001 C CNN
+F 3 "" H 6650 1350 50  0001 C CNN
+F 4 "1762632" H 6650 1350 50  0001 C CNN "Farnell"
+	1    6650 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 1350 7050 1350
+Wire Wire Line
+	6400 1350 6650 1350
+Wire Notes Line
+	6700 700  8100 700 
+Wire Notes Line
+	6700 1900 8100 1900
 $EndSCHEMATC
