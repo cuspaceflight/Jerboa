@@ -2,7 +2,7 @@ Bill Of Materials
 =================
 
 Source file: jerboa.xml
-Date: 2018-06-16T20:19:15.741158
+Date: 2018-06-17T23:51:59.530207
 
 Parts Missing Footprints
 ------------------------
@@ -58,7 +58,7 @@ https://www.ebay.co.uk/itm/Ernie-Ball-Custom-Gauge-Guitar-Single-Strings-Electri
 1593459,1,1x CONN_01x03 SIL-254P-03
 2447127,1,1x 1M 0402
 1762632,1,1x 100nH 0402
-9239120,1,1x 120 0402
+2840114,1,1x 22nH 0402
 2310317,1,1x 6.8pF 0402
 2545847,1,1x TCXO 2x1.6mm_TCXO
 1758879,2,2x 1uF 0402
@@ -70,13 +70,13 @@ https://www.ebay.co.uk/itm/Ernie-Ball-Custom-Gauge-Guitar-Single-Strings-Electri
 1327654,1,1x 470pF 0402
 2522556,3,3x 18pF 0402
 2488323,1,1x STM32L051K8U6 QFN-32-EP-ST
+2073369,1,1x 120 0603
 2462635,1,1x Si4460 QFN-20-EP-SI
 2331444,4,4x 10k 0402
 2447187,2,2x 4k7 0402
 2524782,1,1x 39pF 0402
 1762622,2,2x 18nH 0402
 2112878,1,1x 50 0603-L
-2840114,1,1x 22nH 0402
 2368169,2,2x ESD_DIODE 0402
 1711807,1,1x 56nH 0603
 2480594,1,1x BGS12AL7 TSLP7-4
@@ -104,7 +104,7 @@ https://www.ebay.co.uk/itm/Ernie-Ball-Custom-Gauge-Guitar-Single-Strings-Electri
 1593459              1   CONN_01x03      SIL-254P-03     J2
 2447127              1   1M              0402            R9
 1762632              1   100nH           0402            L3
-9239120              1   120             0402            R6
+2840114              1   22nH            0402            L6
 2310317              1   6.8pF           0402            C26
 2545847              1   TCXO            2x1.6mm_TCXO    Y1
 1758879              2   1uF             0402            C19 C7
@@ -116,13 +116,13 @@ https://www.ebay.co.uk/itm/Ernie-Ball-Custom-Gauge-Guitar-Single-Strings-Electri
 1327654              1   470pF           0402            C33
 2522556              3   18pF            0402            C21 C28 C31
 2488323              1   STM32L051K8U6   QFN-32-EP-ST    U1
+2073369              1   120             0603            R6
 2462635              1   Si4460          QFN-20-EP-SI    IC3
 2331444              4   10k             0402            R1 R2 R4 R5
 2447187              2   4k7             0402            R7 R8
 2524782              1   39pF            0402            C23
 1762622              2   18nH            0402            L10 L7
 2112878              1   50              0603-L          R3
-2840114              1   22nH            0402            L6
 2368169              2   ESD_DIODE       0402            D2 D3
 1711807              1   56nH            0603            L4
 2480594              1   BGS12AL7        TSLP7-4         IC4
