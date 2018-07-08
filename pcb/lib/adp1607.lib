@@ -1,0 +1,24 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# ADP1607
+#
+DEF ADP1607 IC 0 40 Y Y 1 F N
+F0 "IC" -300 300 50 H V L CNN
+F1 "ADP1607" -300 -300 50 H V L CNN
+F2 "agg:LFCSP-2x2" -300 -400 50 H I L CNN
+F3 "http://www.analog.com/media/en/technical-documentation/data-sheets/ADP1606_ADP1607.pdf" -300 -500 50 H I L CNN
+F4 "2254940" -300 -600 50 H I L CNN "Farnell"
+DRAW
+S -300 250 300 -250 0 1 0 f
+X VIN 1 -400 200 100 R 50 50 0 0 W
+X EN 2 -400 100 100 R 50 50 0 0 I
+X FB 3 400 -100 100 L 50 50 0 0 I
+X GND 4 -400 -100 100 R 50 50 0 0 W
+X SW 5 400 200 100 L 50 50 0 0 P
+X VOUT 6 400 100 100 L 50 50 0 0 w
+X GND 7 -400 -200 100 R 50 50 0 0 W
+ENDDRAW
+ENDDEF
+#
+#End Library

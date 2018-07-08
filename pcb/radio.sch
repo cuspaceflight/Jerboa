@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:jerboa-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -115,17 +114,6 @@ Wire Wire Line
 Connection ~ 700  1350
 Wire Wire Line
 	700  1350 700  1450
-$Comp
-L agg-kicad:3v3 #PWR031
-U 1 1 5A68B692
-P 700 1250
-F 0 "#PWR031" H 700 1360 50  0001 L CNN
-F 1 "3v3" H 700 1340 50  0000 C CNN
-F 2 "" H 700 1250 60  0000 C CNN
-F 3 "" H 700 1250 60  0000 C CNN
-	1    700  1250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2150 1550 2350 1550
 Wire Wire Line
@@ -454,17 +442,6 @@ Wire Wire Line
 	1900 3900 1950 3900
 Wire Wire Line
 	2350 1850 2350 1550
-$Comp
-L agg-kicad:3v3 #PWR034
-U 1 1 5B299062
-P 2900 1550
-F 0 "#PWR034" H 2900 1660 50  0001 L CNN
-F 1 "3v3" H 2900 1640 50  0000 C CNN
-F 2 "" H 2900 1550 60  0000 C CNN
-F 3 "" H 2900 1550 60  0000 C CNN
-	1    2900 1550
-	1    0    0    -1  
-$EndComp
 Text Label 4250 1550 0    60   ~ 0
 RADIO_TX_434
 $Comp
@@ -884,21 +861,8 @@ Wire Wire Line
 	4250 1650 4200 1650
 Wire Wire Line
 	4200 1350 4250 1350
-$Comp
-L agg-kicad:3v3 #PWR0103
-U 1 1 5B2FB079
-P 4250 1800
-F 0 "#PWR0103" H 4250 1910 50  0001 L CNN
-F 1 "3v3" H 4250 1890 50  0000 C CNN
-F 2 "" H 4250 1800 60  0000 C CNN
-F 3 "" H 4250 1800 60  0000 C CNN
-	1    4250 1800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4200 1850 4250 1850
-Wire Wire Line
-	4250 1850 4250 1800
 $Comp
 L agg-kicad:GND #PWR0104
 U 1 1 5B30B360
@@ -937,4 +901,43 @@ Wire Notes Line
 	6700 700  8100 700 
 Wire Notes Line
 	6700 1900 8100 1900
+$Comp
+L 3v3_switched:3v3_switched #PWR?
+U 1 1 5B455DF5
+P 700 1250
+F 0 "#PWR?" H 700 1360 50  0001 L CNN
+F 1 "3v3_switched" H 700 1374 50  0000 C CNN
+F 2 "" H 700 1250 50  0001 C CNN
+F 3 "" H 700 1250 50  0001 C CNN
+	1    700  1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3v3_switched:3v3_switched #PWR?
+U 1 1 5B456116
+P 2900 1550
+F 0 "#PWR?" H 2900 1660 50  0001 L CNN
+F 1 "3v3_switched" H 2900 1674 50  0000 C CNN
+F 2 "" H 2900 1550 50  0001 C CNN
+F 3 "" H 2900 1550 50  0001 C CNN
+	1    2900 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3v3_switched:3v3_switched #PWR?
+U 1 1 5B456364
+P 4400 1850
+F 0 "#PWR?" H 4400 1960 50  0001 L CNN
+F 1 "3v3_switched" H 4400 1974 50  0000 C CNN
+F 2 "" H 4400 1850 50  0001 C CNN
+F 3 "" H 4400 1850 50  0001 C CNN
+	1    4400 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 1850 4400 1900
+Wire Wire Line
+	4400 1900 4250 1900
+Wire Wire Line
+	4250 1900 4250 1850
 $EndSCHEMATC
