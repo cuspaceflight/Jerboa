@@ -1,0 +1,22 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# NCP4620
+#
+DEF NCP4620 U 0 40 Y Y 1 F N
+F0 "U" 0 200 60 H V C CNN
+F1 "NCP4620" 0 -200 60 H V C CNN
+F2 "agg:SC-70-5" 0 -400 60 H I C CNN
+F3 "http://www.farnell.com/datasheets/1878393.pdf" -300 -300 60 H I C CNN
+F4 "2464259" 0 -500 60 H I C CNN "Farnell"
+DRAW
+S -300 150 300 -150 0 1 0 f
+X CE 1 -450 0 150 R 50 50 1 1 I
+X NC 2 450 -100 150 L 50 50 1 1 N
+X GND 3 -450 -100 150 R 50 50 1 1 W
+X VOUT 4 450 100 150 L 50 50 1 1 w
+X VIN 5 -450 100 150 R 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
+#End Library
