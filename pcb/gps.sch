@@ -94,7 +94,6 @@ Wire Wire Line
 NoConn ~ 6400 3100
 NoConn ~ 6400 3200
 NoConn ~ 6400 3300
-NoConn ~ 5200 3400
 NoConn ~ 5200 3300
 Text HLabel 5150 3200 0    60   Input ~ 0
 GPS_~RESET
@@ -132,4 +131,8 @@ Wire Wire Line
 	6900 3400 6900 3500
 Wire Wire Line
 	6400 3500 6900 3500
+Text HLabel 5150 3400 0    60   Input ~ 0
+GPS_EXTINT
+Wire Wire Line
+	5150 3400 5200 3400
 $EndSCHEMATC
