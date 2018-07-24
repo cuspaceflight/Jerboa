@@ -1,6 +1,6 @@
 [submodule "ChibiOS"]
 	path = ChibiOS
-	url = ../../cuspaceflight/ChibiOS.git
+	url = ../../ChibiOS/ChibiOS.git
 [submodule "agg-kicad"]
 	path = agg-kicad
 	url = ../../adamgreig/agg-kicad.git
