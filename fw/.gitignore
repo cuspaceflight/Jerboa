@@ -1,4 +1,5 @@
 build/
 .dep/
-.cproject
-.project
+.cproject/
+.project/
+.metadata/
