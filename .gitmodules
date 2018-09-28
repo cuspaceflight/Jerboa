@@ -6,4 +6,4 @@
 	url = ../../adamgreig/agg-kicad.git
 [submodule "gen-board.h"]
 	path = gen-board.h
-	url = ../../adamgreig/gen-board.h.git
+	url = ../../HarkonenBade/gen-board.h.git

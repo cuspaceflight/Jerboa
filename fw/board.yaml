@@ -1,0 +1,31 @@
+name: Jerboa
+lsefreq: 0
+hsefreq: 0
+voltage: 3.3
+mcutype: STM32L051xx
+other:
+    STM32_HSE_BYPASS: ~
+    STM32_LSEDRV: (3U << 11U) 
+default: input, opendrain, startlow, pulldown, lowspeed
+pins:
+    freq_ctrl:  pa1, output, pushpull
+    radio_sdn:  pa2, output, pushpull, floating
+    radio_nirq: pa3, output, pushpull, starthigh, pullup
+    radio_nss:  pa4, af0, pushpull, starthigh, pullup, highspeed
+    mcu_sck:    pa5, af0, pushpull, starthigh, pullup, highspeed
+    mcu_miso:   pa6, af0, pushpull, starthigh, pullup, highspeed
+    mcu_mosi:   pa7, af0, pushpull, starthigh, pullup, highspeed
+    gps_extint: pa8, output, pushpull, startlow, pulldown
+    gps_tx:     pa9, af4, pushpull, highspeed
+    gps_rx:    pa10, af4, pullup, highspeed
+    gps_nrst:  pa11, output, pushpull, starthigh, pullup
+    swdio:     pa13, af0, pushpull, starthigh, pullup, highspeed
+    swclk:     pa14, af0, pushpull, starthigh, pulldown, highspeed
+    led:       pa15, output, pushpull
+    
+    batt_v:       pb0, analog, floating
+    solar_cell_v: pb1, analog, floating
+    radio_pwr_en: pb2, output, pushpull, startlow, pulldown
+    wspr_en:      pb5, output, pushpull, startlow, pulldown
+    i2c_scl:      pb6, af1, opendrain, starthigh, floating, highspeed
+    i2c_sda:      pb7, af1, opendrain, starthigh, floating, highspeed

@@ -1,5 +1,5 @@
 /*
-    ChibiOS - Copyright (C) 2006..2017 Giovanni Di Sirio
+    ChibiOS - Copyright (C) 2006..2018 Giovanni Di Sirio
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@
 #define CHCONF_H
 
 #define _CHIBIOS_RT_CONF_
-#define _CHIBIOS_RT_CONF_VER_5_1_
+#define _CHIBIOS_RT_CONF_VER_6_0_
 
 /*===========================================================================*/
 /**
@@ -578,7 +578,7 @@
  * @details User initialization code added to the @p chSysInit() function
  *          just before interrupts are enabled globally.
  */
-#define CH_CFG_SYSTEM_INIT_HOOK(tp) {                                       \
+#define CH_CFG_SYSTEM_INIT_HOOK() {                                         \
   /* Add threads initialization code here.*/                                \
 }
 
