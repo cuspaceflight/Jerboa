@@ -95,15 +95,14 @@ include $(CHIBIOS)/os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32l0xx.m
 # HAL-OSAL files (optional).
 include $(CHIBIOS)/os/hal/hal.mk
 include $(CHIBIOS)/os/hal/ports/STM32/STM32L0xx/platform.mk
-include $(CHIBIOS)/os/hal/boards/ST_NUCLEO32_L031K6/board.mk
 include $(CHIBIOS)/os/hal/osal/rt/osal.mk
 # RTOS files (optional).
 include $(CHIBIOS)/os/rt/rt.mk
 include $(CHIBIOS)/os/common/ports/ARMCMx/compilers/GCC/mk/port_v6m.mk
 # Other files (optional).
-include $(CHIBIOS)/test/lib/test.mk
-include $(CHIBIOS)/test/rt/rt_test.mk
-#include $(CHIBIOS)/test/oslib/oslib_test.mk
+
+BOARDSRC = board.c
+ALLCSRC += $(BOARDSRC)
 
 # Define linker script file here
 LDSCRIPT= STM32L051x8.ld
