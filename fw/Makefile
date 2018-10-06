@@ -218,28 +218,30 @@ include $(RULESPATH)/rules.mk
 # BlackMagic SWD flashing via GDB
 #
 
+GDB_PORT ?= /dev/ttyACM0
+
 flash: build/$(PROJECT).elf
 	arm-none-eabi-gdb --batch \
-		              -ex 'target extended-remote /dev/ttyACM0' \
+		              -ex 'target extended-remote $(GDB_PORT)' \
 					  -ex 'monitor version' \
 					  -ex 'monitor swdp_scan' \
 					  -ex 'attach 1' \
 					  -ex 'load' build/$(PROJECT).elf \
 
 debug: build/$(PROJECT).elf
-	arm-none-eabi-gdb -ex 'target extended-remote /dev/ttyACM0' \
+	arm-none-eabi-gdb -ex 'target extended-remote $(GDB_PORT)' \
 		              -ex 'monitor swdp_scan' \
 					  -ex 'attach 1' \
 					  -ex "file build/$(PROJECT).elf"
 					  
 power:
 	arm-none-eabi-gdb --batch \
-	                  -ex 'target extended-remote /dev/ttyACM0' \
+	                  -ex 'target extended-remote $(GDB_PORT)' \
 		              -ex 'monitor tpwr enable'
 
 unpower:
 	arm-none-eabi-gdb --batch \
-		              -ex 'target extended-remote /dev/ttyACM0' \
+		              -ex 'target extended-remote $(GDB_PORT)' \
 		              -ex 'monitor tpwr disable'					  
 
 #
