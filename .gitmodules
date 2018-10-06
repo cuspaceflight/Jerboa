@@ -7,3 +7,9 @@
 [submodule "gen-board.h"]
 	path = gen-board.h
 	url = ../../HarkonenBade/gen-board.h.git
+[submodule "labrador-ldpc"]
+	path = labrador-ldpc
+	url = git@github.com:adamgreig/labrador-ldpc.git
+[submodule "labrador"]
+	path = labrador
+	url = git@github.com:adamgreig/labrador.git

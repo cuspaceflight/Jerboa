@@ -5,7 +5,7 @@
 
 # Compiler options here.
 ifeq ($(USE_OPT),)
-  USE_OPT = -O2 -ggdb -fomit-frame-pointer -falign-functions=16
+  USE_OPT = -O0 -ggdb -fomit-frame-pointer -falign-functions=16
 endif
 
 # C specific options here (added to USE_OPT).
@@ -101,9 +101,20 @@ include $(CHIBIOS)/os/hal/osal/rt/osal.mk
 include $(CHIBIOS)/os/rt/rt.mk
 include $(CHIBIOS)/os/common/ports/ARMCMx/compilers/GCC/mk/port_v6m.mk
 # Other files (optional).
-include $(CHIBIOS)/test/lib/test.mk
-include $(CHIBIOS)/test/rt/rt_test.mk
+#include $(CHIBIOS)/test/lib/test.mk
+#include $(CHIBIOS)/test/rt/rt_test.mk
 #include $(CHIBIOS)/test/oslib/oslib_test.mk
+
+# Pull in Labrador stuff
+LABRADOR_DIR = ../labrador
+LABRADOR_SRC = $(LABRADOR_DIR)/labrador/src/labrador.c \
+               $(LABRADOR_DIR)/radios/src/si446x.c
+LABRADOR_INC = $(LABRADOR_DIR)/labrador/include \
+               $(LABRADOR_DIR)/radios/include
+LDPCDIR      = ../labrador-ldpc
+LDPCINC      = $(LDPCDIR)/capi/include
+LDPCLIBDIR   = $(LDPCDIR)/capi/target/thumbv7em-none-eabihf/release
+LDPCLIB      = labrador_ldpc
 
 # Define linker script file here
 LDSCRIPT= STM32L051x8.ld
@@ -112,7 +123,8 @@ LDSCRIPT= STM32L051x8.ld
 # setting.
 CSRC = $(ALLCSRC) \
        $(TESTSRC) \
-       main.c
+	   $(LABRADOR_SRC) \
+       main.c radio.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -142,7 +154,7 @@ TCPPSRC =
 ASMSRC = $(ALLASMSRC)
 ASMXSRC = $(ALLXASMSRC)
 
-INCDIR = $(ALLINC) $(TESTINC)
+INCDIR = $(ALLINC) $(TESTINC) $(LABRADOR_INC) $(LDPCINC)
 
 #
 # Project, sources and paths
