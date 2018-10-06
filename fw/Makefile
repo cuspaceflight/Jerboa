@@ -115,8 +115,10 @@ CSRC = $(ALLCSRC) \
        main.c \
        gps.c \
        ukhas.c \
-       radio.c
-
+       radio.c \
+       rtc.c \
+       pwr.c
+       
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
 CPPSRC = $(ALLCPPSRC)
