@@ -333,53 +333,53 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef, bool rising_edge) {
     /* Clear the read buffer */
     while(sdGetTimeout(gps_seriald, TIME_IMMEDIATE) != Q_TIMEOUT);
     
-    /* Disable non GPS systems */
-    gnss.sync1 = UBX_SYNC1;
-    gnss.sync2 = UBX_SYNC2;
-    gnss.class = UBX_CFG;
-    gnss.id = UBX_CFG_GNSS;
-    gnss.length = sizeof(gnss.payload);
+//    /* Disable non GPS systems */
+//    gnss.sync1 = UBX_SYNC1;
+//    gnss.sync2 = UBX_SYNC2;
+//    gnss.class = UBX_CFG;
+//    gnss.id = UBX_CFG_GNSS;
+//    gnss.length = sizeof(gnss.payload);
+//
+//    gnss.msg_ver = 0;
+//    gnss.num_trk_ch_hw = 32;
+//    gnss.num_trk_ch_use = 32;
+//    gnss.num_config_blocks = 5;
+//
+//    /* Enable GPS, use all-1 channels */
+//    gnss.gps_gnss_id = 0;
+//    gnss.gps_res_trk_ch = 31;
+//    gnss.gps_max_trk_ch = 31;
+//    gnss.gps_flags = 1+(1<<16);
+//
+//    /* Enable QZSS as per protocol spec */
+//    gnss.qzss_gnss_id = 5;
+//    gnss.qzss_res_trk_ch = 1;
+//    gnss.qzss_max_trk_ch = 1;
+//    gnss.qzss_flags = 1+(1<<16);
+//
+//    /* Leave all other GNSS systems disabled */
+//    gnss.sbas_gnss_id = 1;
+//    gnss.beidou_gnss_id = 3;
+//    gnss.glonass_gnss_id = 6;
+//    gps_configured &= gps_tx_ack((uint8_t*)&gnss);
+//    if(!gps_configured) return false;
+//
+//    /* Wait for reset */
+//    chThdSleepMilliseconds(500);
+//
+//
+//    /* Re-disable NMEA Output */
+//    gps_configured &= gps_transmit((uint8_t*)&prt);
+//    if(!gps_configured) return false;
+//
+//    /* Wait for it to stop barfing NMEA */
+//    chThdSleepMilliseconds(300);
+//
+//    /* Clear the read buffer */
+//    while(sdGetTimeout(gps_seriald, TIME_IMMEDIATE) != Q_TIMEOUT);
 
-    gnss.msg_ver = 0;
-    gnss.num_trk_ch_hw = 32;
-    gnss.num_trk_ch_use = 32;
-    gnss.num_config_blocks = 5;
-
-    /* Enable GPS, use all-1 channels */
-    gnss.gps_gnss_id = 0;
-    gnss.gps_res_trk_ch = 31;
-    gnss.gps_max_trk_ch = 31;
-    gnss.gps_flags = 1+(1<<16);
-
-    /* Enable QZSS as per protocol spec */
-    gnss.qzss_gnss_id = 5;
-    gnss.qzss_res_trk_ch = 1;
-    gnss.qzss_max_trk_ch = 1;
-    gnss.qzss_flags = 1+(1<<16);
-
-    /* Leave all other GNSS systems disabled */
-    gnss.sbas_gnss_id = 1;
-    gnss.beidou_gnss_id = 3;
-    gnss.glonass_gnss_id = 6;
-    gps_configured &= gps_tx_ack((uint8_t*)&gnss);
-    if(!gps_configured) return false;
-
-    /* Wait for reset */
-    chThdSleepMilliseconds(500);    
     
-    
-    /* Re-disable NMEA Output */
-    gps_configured &= gps_transmit((uint8_t*)&prt);
-    if(!gps_configured) return false;
-    
-    /* Wait for it to stop barfing NMEA */
-    chThdSleepMilliseconds(300);
-    
-    /* Clear the read buffer */
-    while(sdGetTimeout(gps_seriald, TIME_IMMEDIATE) != Q_TIMEOUT);
-
-    
-    /* Set to Stationary mode */
+    /* Set to Airborne <2g mode */
     nav5.sync1 = UBX_SYNC1;
     nav5.sync2 = UBX_SYNC2;
     nav5.class = UBX_CFG;
@@ -387,7 +387,7 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef, bool rising_edge) {
     nav5.length = sizeof(nav5.payload);
 
     nav5.mask = 1 | (1<<10);
-    nav5.dyn_model = 2;
+    nav5.dyn_model = 7;
     nav5.utc_standard = 3;  // USNO
 
     gps_configured &= gps_tx_ack((uint8_t*)&nav5);
@@ -408,93 +408,81 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef, bool rising_edge) {
     if(!gps_configured) return false;
 
 
-    /* Disable sbas */
-    sbas.sync1 = UBX_SYNC1;
-    sbas.sync2 = UBX_SYNC2;
-    sbas.class = UBX_CFG;
-    sbas.id = UBX_CFG_SBAS;
-    sbas.length = sizeof(sbas.payload);
-    sbas.mode = 0;
-    
-    gps_configured &= gps_tx_ack((uint8_t*)&sbas);
-    if(!gps_configured) return false;
-
-
-    /* Set up 1MHz timepulse on TIMEPULSE pin*/
-    tp5_1.sync1 = UBX_SYNC1;
-    tp5_1.sync2 = UBX_SYNC2;
-    tp5_1.class = UBX_CFG;
-    tp5_1.id = UBX_CFG_TP5;
-    tp5_1.length = sizeof(tp5_1.payload);
-
-    /* Outputs only when locked */
-    tp5_1.tp_idx =           0;                   // TIMEPULSE
-    tp5_1.version =          0;
-    tp5_1.ant_cable_delay =  0;
-    tp5_1.freq_period =      1;           
-    tp5_1.pulse_len_ratio =  0;   
-    tp5_1.freq_period_lock = 1000000;             // 1 MHz
-    tp5_1.pulse_len_ratio_lock = 0xffffffff >> 1; // (2^32/2)/2^32 = 50% duty cycle
-    tp5_1.user_config_delay = 0;
-    tp5_1.flags = (
-        UBX_CFG_TP5_FLAGS_ACTIVE                    |
-        UBX_CFG_TP5_FLAGS_LOCK_GNSS_FREQ            |
-        UBX_CFG_TP5_FLAGS_LOCKED_OTHER_SET          |
-        UBX_CFG_TP5_FLAGS_IS_FREQ                   |
-        UBX_CFG_TP5_FLAGS_ALIGN_TO_TOW              |
-        UBX_CFG_TP5_FLAGS_POLARITY                  |
-        UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_GPS         |
-        UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_UTC);
-    
-    gps_configured &= gps_tx_ack((uint8_t*)&tp5_1);
-    if(!gps_configured) return false;
-
-
-    /* Set up 1Hz pulse on SAFEBOOT pin */
-    tp5_2.sync1 = UBX_SYNC1;
-    tp5_2.sync2 = UBX_SYNC2;
-    tp5_2.class = UBX_CFG;
-    tp5_2.id = UBX_CFG_TP5;
-    tp5_2.length = sizeof(tp5_2.payload);
-
-    /* Outputs only when locked */
-    tp5_2.tp_idx               = 1;     // Safeboot pin
-    tp5_2.version              = 0;
-    tp5_2.ant_cable_delay      = 0;
-    tp5_2.freq_period          = 1;
-    tp5_2.pulse_len_ratio      = 0; 
-    tp5_2.freq_period_lock     = 1;     // 1 Hz
-    tp5_2.pulse_len_ratio_lock = 60;   // us
-
-    if(rising_edge) {
-
-        /* Rising edge on top of second */
-        tp5_2.flags = (
-            UBX_CFG_TP5_FLAGS_ACTIVE                    |
-            UBX_CFG_TP5_FLAGS_LOCK_GNSS_FREQ            |
-            UBX_CFG_TP5_FLAGS_LOCKED_OTHER_SET          |
-            UBX_CFG_TP5_FLAGS_IS_FREQ                   |
-            UBX_CFG_TP5_FLAGS_IS_LENGTH                 |
-            UBX_CFG_TP5_FLAGS_ALIGN_TO_TOW              |
-            UBX_CFG_TP5_FLAGS_POLARITY                  |
-            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_GPS         |
-            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_UTC);
-    } else {
-
-        /* Falling edge on top of second */
-        tp5_2.flags = (
-            UBX_CFG_TP5_FLAGS_ACTIVE                    |
-            UBX_CFG_TP5_FLAGS_LOCK_GNSS_FREQ            |
-            UBX_CFG_TP5_FLAGS_LOCKED_OTHER_SET          |
-            UBX_CFG_TP5_FLAGS_IS_FREQ                   |
-            UBX_CFG_TP5_FLAGS_IS_LENGTH                 |
-            UBX_CFG_TP5_FLAGS_ALIGN_TO_TOW              |
-            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_GPS         |
-            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_UTC);
-    }
-
-    gps_configured &= gps_tx_ack((uint8_t*)&tp5_2);
-    if(!gps_configured) return false;
+//    /* Set up 1MHz timepulse on TIMEPULSE pin*/
+//    tp5_1.sync1 = UBX_SYNC1;
+//    tp5_1.sync2 = UBX_SYNC2;
+//    tp5_1.class = UBX_CFG;
+//    tp5_1.id = UBX_CFG_TP5;
+//    tp5_1.length = sizeof(tp5_1.payload);
+//
+//    /* Outputs only when locked */
+//    tp5_1.tp_idx =           0;                   // TIMEPULSE
+//    tp5_1.version =          0;
+//    tp5_1.ant_cable_delay =  0;
+//    tp5_1.freq_period =      1;
+//    tp5_1.pulse_len_ratio =  0;
+//    tp5_1.freq_period_lock = 1000000;             // 1 MHz
+//    tp5_1.pulse_len_ratio_lock = 0xffffffff >> 1; // (2^32/2)/2^32 = 50% duty cycle
+//    tp5_1.user_config_delay = 0;
+//    tp5_1.flags = (
+//        UBX_CFG_TP5_FLAGS_ACTIVE                    |
+//        UBX_CFG_TP5_FLAGS_LOCK_GNSS_FREQ            |
+//        UBX_CFG_TP5_FLAGS_LOCKED_OTHER_SET          |
+//        UBX_CFG_TP5_FLAGS_IS_FREQ                   |
+//        UBX_CFG_TP5_FLAGS_ALIGN_TO_TOW              |
+//        UBX_CFG_TP5_FLAGS_POLARITY                  |
+//        UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_GPS         |
+//        UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_UTC);
+//
+//    gps_configured &= gps_tx_ack((uint8_t*)&tp5_1);
+//    if(!gps_configured) return false;
+//
+//
+//    /* Set up 1Hz pulse on SAFEBOOT pin */
+//    tp5_2.sync1 = UBX_SYNC1;
+//    tp5_2.sync2 = UBX_SYNC2;
+//    tp5_2.class = UBX_CFG;
+//    tp5_2.id = UBX_CFG_TP5;
+//    tp5_2.length = sizeof(tp5_2.payload);
+//
+//    /* Outputs only when locked */
+//    tp5_2.tp_idx               = 1;     // Safeboot pin
+//    tp5_2.version              = 0;
+//    tp5_2.ant_cable_delay      = 0;
+//    tp5_2.freq_period          = 1;
+//    tp5_2.pulse_len_ratio      = 0;
+//    tp5_2.freq_period_lock     = 1;     // 1 Hz
+//    tp5_2.pulse_len_ratio_lock = 60;   // us
+//
+//    if(rising_edge) {
+//
+//        /* Rising edge on top of second */
+//        tp5_2.flags = (
+//            UBX_CFG_TP5_FLAGS_ACTIVE                    |
+//            UBX_CFG_TP5_FLAGS_LOCK_GNSS_FREQ            |
+//            UBX_CFG_TP5_FLAGS_LOCKED_OTHER_SET          |
+//            UBX_CFG_TP5_FLAGS_IS_FREQ                   |
+//            UBX_CFG_TP5_FLAGS_IS_LENGTH                 |
+//            UBX_CFG_TP5_FLAGS_ALIGN_TO_TOW              |
+//            UBX_CFG_TP5_FLAGS_POLARITY                  |
+//            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_GPS         |
+//            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_UTC);
+//    } else {
+//
+//        /* Falling edge on top of second */
+//        tp5_2.flags = (
+//            UBX_CFG_TP5_FLAGS_ACTIVE                    |
+//            UBX_CFG_TP5_FLAGS_LOCK_GNSS_FREQ            |
+//            UBX_CFG_TP5_FLAGS_LOCKED_OTHER_SET          |
+//            UBX_CFG_TP5_FLAGS_IS_FREQ                   |
+//            UBX_CFG_TP5_FLAGS_IS_LENGTH                 |
+//            UBX_CFG_TP5_FLAGS_ALIGN_TO_TOW              |
+//            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_GPS         |
+//            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_UTC);
+//    }
+//
+//    gps_configured &= gps_tx_ack((uint8_t*)&tp5_2);
+//    if(!gps_configured) return false;
 
     
     /* Enable NAV PVT messages */
