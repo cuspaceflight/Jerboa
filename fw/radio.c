@@ -6,7 +6,7 @@
 #include "si446x.h"
 #include "radio.h"
 
-static uint8_t labrador_wa[LABRADOR_WA_SIZE(TC256, TC256, MS)];
+static uint8_t labrador_wa[16];
 
 /* Board configuration.
  * This tells the Si446x driver what our hardware looks like.
@@ -38,10 +38,12 @@ static struct si446x_board_config brdcfg = {
 static struct labrador_config labcfg = {
     .freq = 434000000,
     .baud = 2000,
-    .tx_code = LABRADOR_LDPC_CODE_TC256,
-    .rx_code = LABRADOR_LDPC_CODE_TC256,
+    .tx_code = LDPC_NONE,
+    .rx_code = LDPC_NONE,
+    .ldpc_none_rxlen = 0,
+    .ldpc_none_txlen = 16,
     .ldpc_ms_decoder = true,
-    .rx_enabled = true,
+    .rx_enabled = false,
     .workingarea = labrador_wa,
     .workingarea_size = sizeof(labrador_wa),
 };

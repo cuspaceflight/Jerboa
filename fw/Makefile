@@ -213,10 +213,10 @@ UADEFS =
 UINCDIR =
 
 # List the user directory to look for the libraries here
-ULIBDIR =
+ULIBDIR = $(LDPCLIBDIR)
 
 # List all user libraries here
-ULIBS =
+ULIBS = -lm -l$(LDPCLIB)
 
 #
 # End of user defines
