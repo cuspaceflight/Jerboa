@@ -114,9 +114,8 @@ U 1 1 5A7CA7EC
 P 5750 2900
 F 0 "L?" H 5800 3078 50  0000 C CNN
 F 1 "10u" H 5800 2987 50  0000 C CNN
-F 2 "agg:0402" H 5750 2900 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2050066.pdf" H 5750 2900 50  0001 C CNN
-F 4 "2042936" H 5750 2900 60  0001 C CNN "Farnell"
+F 2 "" H 5750 2900 50  0001 C CNN
+F 3 "" H 5750 2900 50  0001 C CNN
 	1    5750 2900
 	1    0    0    -1  
 $EndComp
@@ -152,7 +151,6 @@ F 0 "C?" H 5300 3005 50  0000 C CNN
 F 1 "10u" H 5300 3096 50  0000 C CNN
 F 2 "agg:0603" H 5250 3200 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2291921.pdf" H 5250 3200 50  0001 C CNN
-F 4 "2189109" H 0   0   50  0001 C CNN "Farnell"
 	1    5250 3200
 	-1   0    0    1   
 $EndComp
@@ -326,9 +324,8 @@ U 1 1 5A7D2F9C
 P 6900 3450
 F 0 "C?" V 6904 3508 50  0000 L CNN
 F 1 "1u" V 6995 3508 50  0000 L CNN
-F 2 "agg:0402" H 6900 3450 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2291921.pdf" H 6900 3450 50  0001 C CNN
-F 4 "2525061" H 6900 3450 60  0001 C CNN "Farnell"
+F 2 "" H 6900 3450 50  0001 C CNN
+F 3 "" H 6900 3450 50  0001 C CNN
 	1    6900 3450
 	0    1    1    0   
 $EndComp
@@ -577,8 +574,6 @@ Board to board connectors
 Wire Wire Line
 	3400 3200 3600 3200
 Wire Wire Line
-	3600 1700 3600 3200
-Wire Wire Line
 	3400 1700 3600 1700
 $Comp
 L agg-kicad:R R?
@@ -586,7 +581,7 @@ U 1 1 5A8494E9
 P 5300 3400
 F 0 "R?" H 5350 3222 50  0000 C CNN
 F 1 "R" H 5350 3313 50  0000 C CNN
-F 2 "agg:0402" H 5300 3400 50  0001 C CNN
+F 2 "" H 5300 3400 50  0001 C CNN
 F 3 "" H 5300 3400 50  0001 C CNN
 F 4 "Value" H 5300 3400 60  0001 C CNN "Farnell"
 	1    5300 3400
@@ -717,4 +712,9 @@ Wire Wire Line
 	4700 3750 4800 3750
 Wire Wire Line
 	5050 3400 5200 3400
+Wire Wire Line
+	3600 1700 3600 2900
+Wire Wire Line
+	3600 2900 3600 3200
+Connection ~ 3600 2900
 $EndSCHEMATC
