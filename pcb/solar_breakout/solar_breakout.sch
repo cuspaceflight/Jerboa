@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:solar_breakout-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -139,7 +140,7 @@ F 0 "C?" V 5054 3658 50  0000 L CNN
 F 1 "10n" V 5145 3658 50  0000 L CNN
 F 2 "agg:0402" H 5050 3600 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2237835.pdf" H 5050 3600 50  0001 C CNN
-F 4 "2332546" H 0   0   50  0001 C CNN "Farnell"
+F 4 "1327624" H 0   0   50  0001 C CNN "Farnell"
 	1    5050 3600
 	0    1    1    0   
 $EndComp
@@ -149,8 +150,9 @@ U 1 1 5A7CAE34
 P 5250 3200
 F 0 "C?" H 5300 3005 50  0000 C CNN
 F 1 "10u" H 5300 3096 50  0000 C CNN
-F 2 "agg:0603" H 5250 3200 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2291921.pdf" H 5250 3200 50  0001 C CNN
+F 2 "agg:1206" H 5250 3200 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2096548.pdf" H 5250 3200 50  0001 C CNN
+F 4 "1135175" H 0   0   50  0001 C CNN "Farnell"
 	1    5250 3200
 	-1   0    0    1   
 $EndComp
@@ -162,7 +164,6 @@ F 0 "C?" V 5304 3758 50  0000 L CNN
 F 1 "1u" V 5395 3758 50  0000 L CNN
 F 2 "agg:0402" H 5300 3700 50  0001 C CNN
 F 3 "" H 5300 3700 50  0001 C CNN
-F 4 "2495145" H 5300 3700 60  0001 C CNN "Farnell"
 	1    5300 3700
 	0    1    1    0   
 $EndComp
@@ -581,7 +582,7 @@ U 1 1 5A8494E9
 P 5300 3400
 F 0 "R?" H 5350 3222 50  0000 C CNN
 F 1 "R" H 5350 3313 50  0000 C CNN
-F 2 "" H 5300 3400 50  0001 C CNN
+F 2 "agg:0603" H 5300 3400 50  0001 C CNN
 F 3 "" H 5300 3400 50  0001 C CNN
 F 4 "Value" H 5300 3400 60  0001 C CNN "Farnell"
 	1    5300 3400
