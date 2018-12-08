@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:solar_breakout-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -80,8 +79,9 @@ U 1 1 5A7C93DB
 P 6700 3550
 F 0 "R?" V 6700 3400 50  0000 L CNN
 F 1 "510k" V 6800 3350 50  0000 L CNN
-F 2 "" H 6700 3550 50  0001 C CNN
-F 3 "" H 6700 3550 50  0001 C CNN
+F 2 "agg:0402" H 6700 3550 50  0001 C CNN
+F 3 "https://uk.farnell.com/yageo/rc0402fr-07510kl/res-510k-1-0-063w-0402-thick-film/dp/1458807" H 6700 3550 50  0001 C CNN
+F 4 "1458807" H 0   0   50  0001 C CNN "Farnell"
 	1    6700 3550
 	0    1    1    0   
 $EndComp
@@ -91,8 +91,9 @@ U 1 1 5A7C950D
 P 6700 3350
 F 0 "R?" V 6700 3250 50  0000 C CNN
 F 1 "750k" V 6800 3250 50  0000 C CNN
-F 2 "" H 6700 3350 50  0001 C CNN
-F 3 "" H 6700 3350 50  0001 C CNN
+F 2 "agg:0603" H 6700 3350 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2563624.pdf" H 6700 3350 50  0001 C CNN
+F 4 "2447431" H 0   0   50  0001 C CNN "Farnell"
 	1    6700 3350
 	0    1    1    0   
 $EndComp
@@ -113,9 +114,9 @@ U 1 1 5A7CA7EC
 P 5750 2900
 F 0 "L?" H 5800 3078 50  0000 C CNN
 F 1 "10u" H 5800 2987 50  0000 C CNN
-F 2 "" H 5750 2900 50  0001 C CNN
-F 3 "" H 5750 2900 50  0001 C CNN
-F 4 "Value" H 5750 2900 60  0001 C CNN "Farnell"
+F 2 "agg:0402" H 5750 2900 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2050066.pdf" H 5750 2900 50  0001 C CNN
+F 4 "2042936" H 5750 2900 60  0001 C CNN "Farnell"
 	1    5750 2900
 	1    0    0    -1  
 $EndComp
@@ -125,8 +126,9 @@ U 1 1 5A7CABAB
 P 6350 3850
 F 0 "C?" V 6354 3908 50  0000 L CNN
 F 1 "4.7u" V 6445 3908 50  0000 L CNN
-F 2 "" H 6350 3850 50  0001 C CNN
-F 3 "" H 6350 3850 50  0001 C CNN
+F 2 "agg:0402" H 6350 3850 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2189109.pdf" H 6350 3850 50  0001 C CNN
+F 4 "2688503" H 0   0   50  0001 C CNN "Farnell"
 	1    6350 3850
 	0    1    1    0   
 $EndComp
@@ -136,8 +138,9 @@ U 1 1 5A7CADCB
 P 5050 3600
 F 0 "C?" V 5054 3658 50  0000 L CNN
 F 1 "10n" V 5145 3658 50  0000 L CNN
-F 2 "" H 5050 3600 50  0001 C CNN
-F 3 "" H 5050 3600 50  0001 C CNN
+F 2 "agg:0402" H 5050 3600 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2237835.pdf" H 5050 3600 50  0001 C CNN
+F 4 "2332546" H 0   0   50  0001 C CNN "Farnell"
 	1    5050 3600
 	0    1    1    0   
 $EndComp
@@ -147,8 +150,9 @@ U 1 1 5A7CAE34
 P 5250 3200
 F 0 "C?" H 5300 3005 50  0000 C CNN
 F 1 "10u" H 5300 3096 50  0000 C CNN
-F 2 "" H 5250 3200 50  0001 C CNN
-F 3 "" H 5250 3200 50  0001 C CNN
+F 2 "agg:0603" H 5250 3200 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2291921.pdf" H 5250 3200 50  0001 C CNN
+F 4 "2189109" H 0   0   50  0001 C CNN "Farnell"
 	1    5250 3200
 	-1   0    0    1   
 $EndComp
@@ -231,17 +235,17 @@ Connection ~ 5350 4050
 Wire Wire Line
 	5050 3200 5150 3200
 Wire Wire Line
-	3600 2900 5750 2900
+	3600 2900 5300 2900
 Wire Wire Line
 	5300 2900 5300 3200
 Wire Wire Line
-	5250 3200 5400 3200
+	5250 3200 5300 3200
 Connection ~ 5300 2900
 Connection ~ 5300 3200
 Wire Wire Line
-	6200 3500 6700 3500
+	6200 3500 6250 3500
 Wire Wire Line
-	6200 3300 7600 3300
+	6200 3300 6250 3300
 Connection ~ 6350 4050
 Text Label 4950 2900 0    50   ~ 0
 Panel_V
@@ -304,9 +308,9 @@ U 1 1 5A7CE150
 P 6250 3450
 F 0 "C?" V 6346 3392 50  0000 R CNN
 F 1 "22p" V 6255 3392 50  0000 R CNN
-F 2 "" H 6250 3450 50  0001 C CNN
-F 3 "" H 6250 3450 50  0001 C CNN
-F 4 "Value" H 6250 3450 60  0001 C CNN "Farnell"
+F 2 "agg:0402" H 6250 3450 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2031615.pdf" H 6250 3450 50  0001 C CNN
+F 4 "2533782" H 6250 3450 60  0001 C CNN "Farnell"
 	1    6250 3450
 	0    -1   -1   0   
 $EndComp
@@ -322,9 +326,9 @@ U 1 1 5A7D2F9C
 P 6900 3450
 F 0 "C?" V 6904 3508 50  0000 L CNN
 F 1 "1u" V 6995 3508 50  0000 L CNN
-F 2 "" H 6900 3450 50  0001 C CNN
-F 3 "" H 6900 3450 50  0001 C CNN
-F 4 "Value" H 6900 3450 60  0001 C CNN "Farnell"
+F 2 "agg:0402" H 6900 3450 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2291921.pdf" H 6900 3450 50  0001 C CNN
+F 4 "2525061" H 6900 3450 60  0001 C CNN "Farnell"
 	1    6900 3450
 	0    1    1    0   
 $EndComp
@@ -347,7 +351,7 @@ Wire Wire Line
 	6900 3450 6900 3300
 Connection ~ 6900 3300
 Wire Wire Line
-	6700 3450 6700 3550
+	6700 3450 6700 3500
 Wire Wire Line
 	6700 3350 6700 3300
 Connection ~ 6700 3300
@@ -433,15 +437,15 @@ F 3 "" H 3100 1850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2950 3300 3100 3300
+	2950 3300 3000 3300
 Wire Wire Line
 	3100 3300 3100 3350
 Wire Wire Line
-	2950 3200 3300 3200
+	2950 3200 3000 3200
 Wire Wire Line
-	2950 1700 3300 1700
+	2950 1700 3000 1700
 Wire Wire Line
-	2950 1800 3100 1800
+	2950 1800 3000 1800
 Wire Wire Line
 	3100 1800 3100 1850
 Text Notes 7750 3500 0    60   ~ 0
@@ -483,7 +487,7 @@ Wire Wire Line
 Wire Wire Line
 	7400 3800 7400 4050
 Wire Wire Line
-	4800 4050 7400 4050
+	4800 4050 5050 4050
 $Comp
 L agg-kicad:PART X?
 U 1 1 5A815078
@@ -519,9 +523,9 @@ F 4 "Value" H 4550 3650 60  0001 C CNN "Farnell"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4650 3650 4800 3650
+	4650 3650 4700 3650
 Wire Wire Line
-	4650 3750 4800 3750
+	4650 3750 4700 3750
 Text Label 750  7500 0    60   ~ 0
 Array_1_-
 Text Label 1650 7500 0    60   ~ 0
@@ -582,7 +586,7 @@ U 1 1 5A8494E9
 P 5300 3400
 F 0 "R?" H 5350 3222 50  0000 C CNN
 F 1 "R" H 5350 3313 50  0000 C CNN
-F 2 "" H 5300 3400 50  0001 C CNN
+F 2 "agg:0402" H 5300 3400 50  0001 C CNN
 F 3 "" H 5300 3400 50  0001 C CNN
 F 4 "Value" H 5300 3400 60  0001 C CNN "Farnell"
 	1    5300 3400
@@ -591,7 +595,7 @@ $EndComp
 Wire Wire Line
 	5300 3400 5400 3400
 Wire Wire Line
-	4800 3400 5200 3400
+	4800 3400 5050 3400
 Connection ~ 5050 3400
 Text Notes 5900 2850 0    60   ~ 0
 Low DCR
@@ -663,4 +667,54 @@ F 4 "1843668" H 3400 3200 60  0001 C CNN "Farnell"
 	1    3400 3200
 	-1   0    0    1   
 $EndComp
+Wire Wire Line
+	5800 4050 6250 4050
+Wire Wire Line
+	6250 4050 6350 4050
+Wire Wire Line
+	5300 4050 5350 4050
+Wire Wire Line
+	5050 4050 5300 4050
+Wire Wire Line
+	5350 4050 5800 4050
+Wire Wire Line
+	5300 2900 5750 2900
+Wire Wire Line
+	5300 3200 5400 3200
+Wire Wire Line
+	6350 4050 6700 4050
+Wire Wire Line
+	6250 3300 6700 3300
+Wire Wire Line
+	6250 3500 6700 3500
+Wire Wire Line
+	7150 3300 7400 3300
+Wire Wire Line
+	6900 3300 7150 3300
+Wire Wire Line
+	6700 3300 6900 3300
+Wire Wire Line
+	6700 3500 6700 3550
+Wire Wire Line
+	6700 4050 6900 4050
+Wire Wire Line
+	6900 4050 7150 4050
+Wire Wire Line
+	7400 3300 7600 3300
+Wire Wire Line
+	7150 4050 7400 4050
+Wire Wire Line
+	3000 3300 3100 3300
+Wire Wire Line
+	3000 3200 3300 3200
+Wire Wire Line
+	3000 1800 3100 1800
+Wire Wire Line
+	3000 1700 3300 1700
+Wire Wire Line
+	4700 3650 4800 3650
+Wire Wire Line
+	4700 3750 4800 3750
+Wire Wire Line
+	5050 3400 5200 3400
 $EndSCHEMATC
