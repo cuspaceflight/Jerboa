@@ -115,8 +115,9 @@ U 1 1 5A7CA7EC
 P 5750 2900
 F 0 "L?" H 5800 3078 50  0000 C CNN
 F 1 "10u" H 5800 2987 50  0000 C CNN
-F 2 "" H 5750 2900 50  0001 C CNN
-F 3 "" H 5750 2900 50  0001 C CNN
+F 2 "agg:0805" H 5750 2900 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1681885.pdf" H 5750 2900 50  0001 C CNN
+F 4 "2286356" H 0   0   50  0001 C CNN "Farnell"
 	1    5750 2900
 	1    0    0    -1  
 $EndComp
@@ -162,8 +163,9 @@ U 1 1 5A7CAE9A
 P 5300 3700
 F 0 "C?" V 5304 3758 50  0000 L CNN
 F 1 "1u" V 5395 3758 50  0000 L CNN
-F 2 "agg:0402" H 5300 3700 50  0001 C CNN
-F 3 "" H 5300 3700 50  0001 C CNN
+F 2 "agg:0603" H 5300 3700 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2048284.pdf" H 5300 3700 50  0001 C CNN
+F 4 "2470448" H 0   0   50  0001 C CNN "Farnell"
 	1    5300 3700
 	0    1    1    0   
 $EndComp
@@ -325,8 +327,9 @@ U 1 1 5A7D2F9C
 P 6900 3450
 F 0 "C?" V 6904 3508 50  0000 L CNN
 F 1 "1u" V 6995 3508 50  0000 L CNN
-F 2 "" H 6900 3450 50  0001 C CNN
-F 3 "" H 6900 3450 50  0001 C CNN
+F 2 "agg:0603" H 6900 3450 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2048284.pdf" H 6900 3450 50  0001 C CNN
+F 4 "2470448" H 0   0   50  0001 C CNN "Farnell"
 	1    6900 3450
 	0    1    1    0   
 $EndComp
