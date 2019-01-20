@@ -104,7 +104,7 @@ U 1 1 5A7C9D0B
 P 7150 3550
 F 0 "C?" V 7246 3492 50  0000 R CNN
 F 1 "50" V 7155 3492 50  0000 R CNN
-F 2 "" H 7150 3550 50  0001 C CNN
+F 2 "jerboa:super_capacitor" H 7150 3550 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2675068.pdf" H 7150 3550 50  0001 C CNN
 F 4 "2696619" H 0   0   50  0001 C CNN "Farnell"
 	1    7150 3550
