@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:solar_breakout-cache
-EELAYER 29 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -23,6 +22,7 @@ F 1 "CONN_01x02" H 6031 2024 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 6000 1900 50  0001 C CNN
 F 3 "" H 6000 1900 50  0001 C CNN
 F 4 "1593411" H 6000 1900 60  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6000 1900
 	1    0    0    -1  
 $EndComp
@@ -35,6 +35,7 @@ F 1 "CONN_01x02" H 7281 2024 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 7250 1900 50  0001 C CNN
 F 3 "" H 7250 1900 50  0001 C CNN
 F 4 "1593411" H 7250 1900 60  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    7250 1900
 	1    0    0    -1  
 $EndComp
@@ -83,6 +84,7 @@ F 1 "510k" V 6800 3350 50  0000 L CNN
 F 2 "agg:0402" H 6700 3550 50  0001 C CNN
 F 3 "https://uk.farnell.com/yageo/rc0402fr-07510kl/res-510k-1-0-063w-0402-thick-film/dp/1458807" H 6700 3550 50  0001 C CNN
 F 4 "1458807" H 0   0   50  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6700 3550
 	0    1    1    0   
 $EndComp
@@ -95,6 +97,7 @@ F 1 "750k" V 6800 3250 50  0000 C CNN
 F 2 "agg:0603" H 6700 3350 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2563624.pdf" H 6700 3350 50  0001 C CNN
 F 4 "2447431" H 0   0   50  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6700 3350
 	0    1    1    0   
 $EndComp
@@ -107,6 +110,7 @@ F 1 "50" V 7155 3492 50  0000 R CNN
 F 2 "jerboa:super_capacitor" H 7150 3550 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2675068.pdf" H 7150 3550 50  0001 C CNN
 F 4 "2696619" H 0   0   50  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    7150 3550
 	0    -1   -1   0   
 $EndComp
@@ -116,9 +120,10 @@ U 1 1 5A7CA7EC
 P 5750 2900
 F 0 "L?" H 5800 3078 50  0000 C CNN
 F 1 "10u" H 5800 2987 50  0000 C CNN
-F 2 "agg:0805" H 5750 2900 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1681885.pdf" H 5750 2900 50  0001 C CNN
-F 4 "2286356" H 0   0   50  0001 C CNN "Farnell"
+F 2 "agg:1812" H 5750 2900 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/5132.pdf" H 5750 2900 50  0001 C CNN
+F 4 "1515459" H 0   0   50  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    5750 2900
 	1    0    0    -1  
 $EndComp
@@ -131,6 +136,7 @@ F 1 "4.7u" V 6445 3908 50  0000 L CNN
 F 2 "agg:0402" H 6350 3850 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2189109.pdf" H 6350 3850 50  0001 C CNN
 F 4 "2688503" H 0   0   50  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6350 3850
 	0    1    1    0   
 $EndComp
@@ -140,9 +146,10 @@ U 1 1 5A7CADCB
 P 5050 3600
 F 0 "C?" V 5054 3658 50  0000 L CNN
 F 1 "10n" V 5145 3658 50  0000 L CNN
-F 2 "agg:0402" H 5050 3600 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2237835.pdf" H 5050 3600 50  0001 C CNN
-F 4 "1327624" H 0   0   50  0001 C CNN "Farnell"
+F 2 "agg:0603" H 5050 3600 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2290180.pdf" H 5050 3600 50  0001 C CNN
+F 4 "2760492" H 0   0   50  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    5050 3600
 	0    1    1    0   
 $EndComp
@@ -152,9 +159,10 @@ U 1 1 5A7CAE34
 P 5250 3200
 F 0 "C?" H 5300 3005 50  0000 C CNN
 F 1 "10u" H 5300 3096 50  0000 C CNN
-F 2 "agg:1206" H 5250 3200 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2096548.pdf" H 5250 3200 50  0001 C CNN
-F 4 "1135175" H 0   0   50  0001 C CNN "Farnell"
+F 2 "agg:0402" H 5250 3200 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2079148.pdf" H 5250 3200 50  0001 C CNN
+F 4 "2611904" H 0   0   50  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    5250 3200
 	-1   0    0    1   
 $EndComp
@@ -164,9 +172,10 @@ U 1 1 5A7CAE9A
 P 5300 3700
 F 0 "C?" V 5304 3758 50  0000 L CNN
 F 1 "1u" V 5395 3758 50  0000 L CNN
-F 2 "agg:0603" H 5300 3700 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2048284.pdf" H 5300 3700 50  0001 C CNN
-F 4 "2470448" H 0   0   50  0001 C CNN "Farnell"
+F 2 "agg:0805" H 5300 3700 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2315442.pdf" H 5300 3700 50  0001 C CNN
+F 4 "1463389" H 0   0   50  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    5300 3700
 	0    1    1    0   
 $EndComp
@@ -313,6 +322,7 @@ F 1 "22p" V 6255 3392 50  0000 R CNN
 F 2 "agg:0402" H 6250 3450 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2031615.pdf" H 6250 3450 50  0001 C CNN
 F 4 "2533782" H 6250 3450 60  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6250 3450
 	0    -1   -1   0   
 $EndComp
@@ -328,9 +338,10 @@ U 1 1 5A7D2F9C
 P 6900 3450
 F 0 "C?" V 6904 3508 50  0000 L CNN
 F 1 "1u" V 6995 3508 50  0000 L CNN
-F 2 "agg:0603" H 6900 3450 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2048284.pdf" H 6900 3450 50  0001 C CNN
-F 4 "2470448" H 0   0   50  0001 C CNN "Farnell"
+F 2 "agg:0805" H 6900 3450 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2315442.pdf" H 6900 3450 50  0001 C CNN
+F 4 "1463389" H 0   0   50  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6900 3450
 	0    1    1    0   
 $EndComp
@@ -366,8 +377,6 @@ Wire Wire Line
 Wire Wire Line
 	7150 3550 7150 4050
 Connection ~ 6900 4050
-Text Notes 3550 3750 0    60   ~ 0
-Flying wires, \nthermally coupled\nto solar cells\n(no smd footprint)
 $Comp
 L agg-kicad:LTC3105 IC?
 U 1 1 5A7C9AD2
@@ -375,8 +384,8 @@ P 5800 3500
 F 0 "IC?" H 5800 4025 50  0000 C CNN
 F 1 "LTC3105" H 5800 3934 50  0000 C CNN
 F 2 "agg:DFN-10-EP-LT" H 5500 2900 50  0001 L CNN
-F 3 "http://www.farnell.com/datasheets/1999327.pdf" H 5400 3800 50  0001 C CNN
-F 4 "1898600" H 5500 2800 50  0001 L CNN "Farnell"
+F 3 "https://www.mouser.co.uk/datasheet/2/609/3105fb-1270124.pdf" H 5400 3800 50  0001 C CNN
+F 4 "584-LTC3105EDD#PBF" H 0   0   50  0001 C CNN "Mouser"
 	1    5800 3500
 	1    0    0    -1  
 $EndComp
@@ -386,9 +395,10 @@ U 1 1 5A7F1F34
 P 2700 7250
 F 0 "D?" V 2796 7192 50  0000 R CNN
 F 1 "MRA4003T3" V 2705 7192 50  0000 R CNN
-F 2 "agg:DO-214AC-SMA" H 2700 7250 50  0001 C CNN
+F 2 "" H 2700 7250 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2028669.pdf" H 2700 7250 50  0001 C CNN
-F 4 "1459134" H 2700 7250 60  0001 C CNN "Farnell"
+F 4 "" H 0   0   50  0001 C CNN "Mouser"
+F 5 "1459134" H 2700 7250 60  0001 C CNN "Farnell"
 	1    2700 7250
 	0    -1   -1   0   
 $EndComp
@@ -402,6 +412,7 @@ F 0 "J?" H 2881 1915 50  0000 C CNN
 F 1 "CONN_01x02" H 2881 1824 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 2850 1700 50  0001 C CNN
 F 3 "" H 2850 1700 50  0001 C CNN
+F 4 "" H 0   0   50  0001 C CNN "Mouser"
 	1    2850 1700
 	1    0    0    -1  
 $EndComp
@@ -413,6 +424,7 @@ F 0 "J?" H 2881 3415 50  0000 C CNN
 F 1 "CONN_01x02" H 2881 3324 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 2850 3200 50  0001 C CNN
 F 3 "" H 2850 3200 50  0001 C CNN
+F 4 "" H 0   0   50  0001 C CNN "Mouser"
 	1    2850 3200
 	1    0    0    -1  
 $EndComp
@@ -461,6 +473,7 @@ F 1 "CONN_01x02" H 7400 3600 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 7550 3500 50  0001 C CNN
 F 3 "" H 7550 3500 50  0001 C CNN
 F 4 "1593411" H 7550 3500 60  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    7550 3500
 	-1   0    0    1   
 $EndComp
@@ -473,6 +486,7 @@ F 1 "3.3" V 7500 3550 50  0000 L CNN
 F 2 "agg:2512" H 7400 3700 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2007092.pdf" H 7400 3700 50  0001 C CNN
 F 4 "2476361" H 7400 3700 60  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    7400 3700
 	0    1    1    0   
 $EndComp
@@ -512,22 +526,6 @@ Wire Wire Line
 	750  6400 750  6250
 Wire Wire Line
 	1650 6400 1650 6250
-$Comp
-L agg-kicad:CONN_01x02 J?
-U 1 1 5A81FA4C
-P 4550 3650
-F 0 "J?" H 4581 3865 50  0000 C CNN
-F 1 "CONN_01x02" H 4581 3774 50  0000 C CNN
-F 2 "agg:SIL-254P-02" H 4550 3650 50  0001 C CNN
-F 3 "" H 4550 3650 50  0001 C CNN
-F 4 "Value" H 4550 3650 60  0001 C CNN "Farnell"
-	1    4550 3650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4650 3650 4700 3650
-Wire Wire Line
-	4650 3750 4700 3750
 Text Label 750  7500 0    60   ~ 0
 Array_1_-
 Text Label 1650 7500 0    60   ~ 0
@@ -560,12 +558,10 @@ Text Label 4700 3300 2    60   ~ 0
 D_anode
 Wire Wire Line
 	4700 3300 4700 3650
-Connection ~ 4700 3650
 Text Label 4700 4000 2    60   ~ 0
 D_cathode
 Wire Wire Line
 	4700 4000 4700 3750
-Connection ~ 4700 3750
 Wire Notes Line
 	500  5900 3300 5900
 Wire Notes Line
@@ -652,6 +648,7 @@ F 1 "SCHOTTKY" H 3450 1596 50  0000 C CNN
 F 2 "jerboa:SMA_DIODE" H 3350 1670 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2238474.pdf" H 3450 1770 50  0001 C CNN
 F 4 "1843668" H 3400 1700 60  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    3400 1700
 	-1   0    0    1   
 $EndComp
@@ -664,6 +661,7 @@ F 1 "SCHOTTKY" H 3450 3096 50  0000 C CNN
 F 2 "jerboa:SMA_DIODE" H 3350 3170 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2238474.pdf" H 3450 3270 50  0001 C CNN
 F 4 "1843668" H 3400 3200 60  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    3400 3200
 	-1   0    0    1   
 $EndComp
@@ -722,4 +720,44 @@ Wire Wire Line
 Wire Wire Line
 	3600 2900 3600 3200
 Connection ~ 3600 2900
+Text Notes 6950 3200 0    50   ~ 0
+Or use the 40F one as \nit has a significantly \ngreater energy density \n(so similar energy storage \nwith significant mass saving)
+Wire Notes Line
+	7100 3600 7100 3250
+Wire Notes Line
+	7100 3250 6900 3250
+Wire Notes Line
+	6900 3250 6900 2750
+Wire Notes Line
+	6900 2750 8100 2750
+Wire Notes Line
+	8100 2750 8100 3250
+Wire Notes Line
+	8100 3250 7200 3250
+Wire Notes Line
+	7200 3250 7200 3600
+Wire Notes Line
+	7100 3600 7200 3600
+Connection ~ 4700 3750
+Wire Wire Line
+	4650 3750 4700 3750
+Connection ~ 4700 3650
+Wire Wire Line
+	4650 3650 4700 3650
+$Comp
+L agg-kicad:CONN_01x02 J?
+U 1 1 5A81FA4C
+P 4550 3650
+F 0 "J?" H 4581 3865 50  0000 C CNN
+F 1 "CONN_01x02" H 4581 3774 50  0000 C CNN
+F 2 "agg:SIL-254P-02" H 4550 3650 50  0001 C CNN
+F 3 "" H 4550 3650 50  0001 C CNN
+F 4 "" H 0   0   50  0001 C CNN "Mouser"
+	1    4550 3650
+	1    0    0    -1  
+$EndComp
+Text Notes 2800 7100 0    50   ~ 0
+agg:DO-214AC-SMA\nbut don't need footprint\nas this will not be mounted\nto board
+Text Notes 7450 3800 0    50   ~ 0
+>=3W
 $EndSCHEMATC
