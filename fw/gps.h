@@ -3,7 +3,6 @@
 
 #include "ch.h"
 #include "hal.h"
-#include "packets.h"
 
 
 /* NAV-POSECEF Payload Data */
@@ -41,15 +40,21 @@ typedef struct __attribute__((packed)) {
 } ublox_pvt_t;
 
 
-/* Global Position Packet */
-extern position_packet pos_pkt;
+/* Global PVT Packet */
+extern ublox_pvt_t pvt_pkt;
 
 /* Position Packet Mutex */
-extern mutex_t pos_pkt_mutex;
+extern mutex_t pvt_pkt_mutex;
+
+/*
+ * Poll for PVT packet
+ *
+ * returns -- true if sucessful, else false
+ */
+bool gps_poll_pvt(void);
 
 /* Configure uBlox GPS */
-void gps_init(SerialDriver* seriald, bool nav_pvt, bool nav_posecef,
-                bool rising_edge);
+void gps_init(SerialDriver* seriald, bool nav_pvt, bool nav_posecef);
 
 /* Init GPS Thread */
 void gps_thd_init(void);

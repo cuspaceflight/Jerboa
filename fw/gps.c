@@ -4,9 +4,8 @@
 #include <string.h>
 #include "gps.h"
 #include "ubx.h"
-#include "packets.h"
 
-MUTEX_DECL(pos_pkt_mutex);
+MUTEX_DECL(pvt_pkt_mutex);
 
 /* Serial Setup */
 static SerialDriver* gps_seriald;
@@ -25,14 +24,14 @@ static uint16_t gps_fletcher_8(uint16_t chk, uint8_t *buf, uint8_t n);
 static void gps_checksum(uint8_t *buf);
 static bool gps_transmit(uint8_t *buf);
 static enum ublox_result ublox_state_machine(uint8_t b);
-static bool gps_configure(bool nav_pvt, bool nav_posecef, bool rising_edge);
+static bool gps_configure(bool nav_pvt, bool nav_posecef);
 static bool gps_tx_ack(uint8_t *buf);
 
 /* Global Position Packet */
-position_packet pos_pkt;
+ublox_pvt_t pvt_pkt;
 
 /* Position Packet Mutex */
-mutex_t pos_pkt_mutex;
+mutex_t pvt_pkt_mutex;
 
 /* UBX Decoding State Machine States */
 typedef enum {
@@ -140,7 +139,6 @@ static enum ublox_result ublox_state_machine(uint8_t b)
 
     ubx_cfg_nav5_t cfg_nav5;
     ublox_posecef_t posecef;
-    ublox_pvt_t pvt_data;
     
 
     switch(state) {
@@ -225,26 +223,9 @@ static enum ublox_result ublox_state_machine(uint8_t b)
                     if(id == UBX_NAV_PVT) {
 
                         /* Extract NAV-PVT Payload */
-                        memcpy(&pvt_data, payload, length);
-
-                        /* Generate Position Packet */
-	                    chMtxLock(&pos_pkt_mutex);
-
-	                    pos_pkt.lon = pvt_data.lon;
-	                    pos_pkt.lat = pvt_data.lat;
-	                    pos_pkt.height = pvt_data.height;
-	                    pos_pkt.num_sat = pvt_data.num_sv;
-                        pos_pkt.fix_type = pvt_data.fix_type;
-                        pos_pkt.year = pvt_data.year;
-                        pos_pkt.month = pvt_data.month;
-                        pos_pkt.day = pvt_data.day;
-                        pos_pkt.hour = pvt_data.hour;
-                        pos_pkt.minute = pvt_data.minute;
-                        pos_pkt.second = pvt_data.second;
-
-                        //TODO: Send packet data
-
-	                    chMtxUnlock(&pos_pkt_mutex);
+                        chMtxLock(&pvt_pkt_mutex);
+                        memcpy(&pvt_pkt, payload, length);
+                        chMtxUnlock(&pvt_pkt_mutex);
 	                    
                         return UBLOX_NAV_PVT;
 
@@ -252,6 +233,7 @@ static enum ublox_result ublox_state_machine(uint8_t b)
 
                         /* Extract NAV-POSECEF Payload */
                         memcpy(&posecef, payload, length);
+                        // TODO: do something with this
                         return UBLOX_NAV_POSECEF;
 
                     } else {
@@ -288,7 +270,7 @@ static enum ublox_result ublox_state_machine(uint8_t b)
 
 
 /* Configure uBlox GPS */
-static bool gps_configure(bool nav_pvt, bool nav_posecef, bool rising_edge) {
+static bool gps_configure(bool nav_pvt, bool nav_posecef) {
 
     gps_configured = true;
 
@@ -297,10 +279,6 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef, bool rising_edge) {
     ubx_cfg_msg_t msg;
     ubx_cfg_msg_t msg2;
     ubx_cfg_rate_t rate;
-    ubx_cfg_sbas_t sbas;
-    ubx_cfg_gnss_t gnss;
-    ubx_cfg_tp5_t tp5_1;
-    ubx_cfg_tp5_t tp5_2;
 
     /* Disable NMEA on UART */
     prt.sync1 = UBX_SYNC1;
@@ -333,52 +311,6 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef, bool rising_edge) {
     /* Clear the read buffer */
     while(sdGetTimeout(gps_seriald, TIME_IMMEDIATE) != Q_TIMEOUT);
     
-//    /* Disable non GPS systems */
-//    gnss.sync1 = UBX_SYNC1;
-//    gnss.sync2 = UBX_SYNC2;
-//    gnss.class = UBX_CFG;
-//    gnss.id = UBX_CFG_GNSS;
-//    gnss.length = sizeof(gnss.payload);
-//
-//    gnss.msg_ver = 0;
-//    gnss.num_trk_ch_hw = 32;
-//    gnss.num_trk_ch_use = 32;
-//    gnss.num_config_blocks = 5;
-//
-//    /* Enable GPS, use all-1 channels */
-//    gnss.gps_gnss_id = 0;
-//    gnss.gps_res_trk_ch = 31;
-//    gnss.gps_max_trk_ch = 31;
-//    gnss.gps_flags = 1+(1<<16);
-//
-//    /* Enable QZSS as per protocol spec */
-//    gnss.qzss_gnss_id = 5;
-//    gnss.qzss_res_trk_ch = 1;
-//    gnss.qzss_max_trk_ch = 1;
-//    gnss.qzss_flags = 1+(1<<16);
-//
-//    /* Leave all other GNSS systems disabled */
-//    gnss.sbas_gnss_id = 1;
-//    gnss.beidou_gnss_id = 3;
-//    gnss.glonass_gnss_id = 6;
-//    gps_configured &= gps_tx_ack((uint8_t*)&gnss);
-//    if(!gps_configured) return false;
-//
-//    /* Wait for reset */
-//    chThdSleepMilliseconds(500);
-//
-//
-//    /* Re-disable NMEA Output */
-//    gps_configured &= gps_transmit((uint8_t*)&prt);
-//    if(!gps_configured) return false;
-//
-//    /* Wait for it to stop barfing NMEA */
-//    chThdSleepMilliseconds(300);
-//
-//    /* Clear the read buffer */
-//    while(sdGetTimeout(gps_seriald, TIME_IMMEDIATE) != Q_TIMEOUT);
-
-    
     /* Set to Airborne <2g mode */
     nav5.sync1 = UBX_SYNC1;
     nav5.sync2 = UBX_SYNC2;
@@ -406,93 +338,6 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef, bool rising_edge) {
     
     gps_configured &= gps_tx_ack((uint8_t*)&rate);
     if(!gps_configured) return false;
-
-//    /* Disable sbas */
-//    sbas.sync1 = UBX_SYNC1;
-//    sbas.sync2 = UBX_SYNC2;
-//    sbas.class = UBX_CFG;
-//    sbas.id = UBX_CFG_SBAS;
-//    sbas.length = sizeof(sbas.payload);
-//    sbas.mode = 0;
-//
-//    gps_configured &= gps_tx_ack((uint8_t*)&sbas);
-//    if(!gps_configured) return false;
-
-//    /* Set up 1MHz timepulse on TIMEPULSE pin*/
-//    tp5_1.sync1 = UBX_SYNC1;
-//    tp5_1.sync2 = UBX_SYNC2;
-//    tp5_1.class = UBX_CFG;
-//    tp5_1.id = UBX_CFG_TP5;
-//    tp5_1.length = sizeof(tp5_1.payload);
-//
-//    /* Outputs only when locked */
-//    tp5_1.tp_idx =           0;                   // TIMEPULSE
-//    tp5_1.version =          0;
-//    tp5_1.ant_cable_delay =  0;
-//    tp5_1.freq_period =      1;
-//    tp5_1.pulse_len_ratio =  0;
-//    tp5_1.freq_period_lock = 1000000;             // 1 MHz
-//    tp5_1.pulse_len_ratio_lock = 0xffffffff >> 1; // (2^32/2)/2^32 = 50% duty cycle
-//    tp5_1.user_config_delay = 0;
-//    tp5_1.flags = (
-//        UBX_CFG_TP5_FLAGS_ACTIVE                    |
-//        UBX_CFG_TP5_FLAGS_LOCK_GNSS_FREQ            |
-//        UBX_CFG_TP5_FLAGS_LOCKED_OTHER_SET          |
-//        UBX_CFG_TP5_FLAGS_IS_FREQ                   |
-//        UBX_CFG_TP5_FLAGS_ALIGN_TO_TOW              |
-//        UBX_CFG_TP5_FLAGS_POLARITY                  |
-//        UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_GPS         |
-//        UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_UTC);
-//
-//    gps_configured &= gps_tx_ack((uint8_t*)&tp5_1);
-//    if(!gps_configured) return false;
-//
-//
-//    /* Set up 1Hz pulse on SAFEBOOT pin */
-//    tp5_2.sync1 = UBX_SYNC1;
-//    tp5_2.sync2 = UBX_SYNC2;
-//    tp5_2.class = UBX_CFG;
-//    tp5_2.id = UBX_CFG_TP5;
-//    tp5_2.length = sizeof(tp5_2.payload);
-//
-//    /* Outputs only when locked */
-//    tp5_2.tp_idx               = 1;     // Safeboot pin
-//    tp5_2.version              = 0;
-//    tp5_2.ant_cable_delay      = 0;
-//    tp5_2.freq_period          = 1;
-//    tp5_2.pulse_len_ratio      = 0;
-//    tp5_2.freq_period_lock     = 1;     // 1 Hz
-//    tp5_2.pulse_len_ratio_lock = 60;   // us
-//
-//    if(rising_edge) {
-//
-//        /* Rising edge on top of second */
-//        tp5_2.flags = (
-//            UBX_CFG_TP5_FLAGS_ACTIVE                    |
-//            UBX_CFG_TP5_FLAGS_LOCK_GNSS_FREQ            |
-//            UBX_CFG_TP5_FLAGS_LOCKED_OTHER_SET          |
-//            UBX_CFG_TP5_FLAGS_IS_FREQ                   |
-//            UBX_CFG_TP5_FLAGS_IS_LENGTH                 |
-//            UBX_CFG_TP5_FLAGS_ALIGN_TO_TOW              |
-//            UBX_CFG_TP5_FLAGS_POLARITY                  |
-//            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_GPS         |
-//            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_UTC);
-//    } else {
-//
-//        /* Falling edge on top of second */
-//        tp5_2.flags = (
-//            UBX_CFG_TP5_FLAGS_ACTIVE                    |
-//            UBX_CFG_TP5_FLAGS_LOCK_GNSS_FREQ            |
-//            UBX_CFG_TP5_FLAGS_LOCKED_OTHER_SET          |
-//            UBX_CFG_TP5_FLAGS_IS_FREQ                   |
-//            UBX_CFG_TP5_FLAGS_IS_LENGTH                 |
-//            UBX_CFG_TP5_FLAGS_ALIGN_TO_TOW              |
-//            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_GPS         |
-//            UBX_CFG_TP5_FLAGS_GRID_UTC_GNSS_UTC);
-//    }
-//
-//    gps_configured &= gps_tx_ack((uint8_t*)&tp5_2);
-//    if(!gps_configured) return false;
 
     
     /* Enable NAV PVT messages */
@@ -532,8 +377,9 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef, bool rising_edge) {
 }
 
 /* Configure uBlox GPS */
-void gps_init(SerialDriver* seriald, bool nav_pvt, bool nav_posecef,
-                bool rising_edge){
+void gps_init(SerialDriver* seriald, bool nav_pvt, bool nav_posecef){
+    /* Initialise mutex */
+    chMtxObjectInit(&pvt_pkt_mutex);
 
     /* Set global serial driver */
     gps_seriald = seriald;
@@ -549,12 +395,33 @@ void gps_init(SerialDriver* seriald, bool nav_pvt, bool nav_posecef,
     /* Start Serial Driver */
     sdStart(gps_seriald, &serial_cfg);
 
-    while(!gps_configure(nav_pvt, nav_posecef, rising_edge)){
+    while(!gps_configure(nav_pvt, nav_posecef)){
         
         chThdSleepMilliseconds(1000);
     }
     
     return;
+}
+
+bool gps_poll_pvt(void)
+{
+  const uint8_t request[] = {UBX_SYNC1, UBX_SYNC2,
+                           UBX_NAV, UBX_NAV_PVT,
+                           0x00, 0x00,
+                           0x08, 0x19};
+  if(!gps_transmit((uint8_t*)request)) {
+    return false;
+  }
+
+  enum ublox_result r = UBLOX_WAIT;
+  do {
+    r = ublox_state_machine(sdGet(gps_seriald));
+  } while(r == UBLOX_WAIT);
+
+  if(r != UBLOX_NAV_PVT)
+    return false;
+  else
+    return true;
 }
 
 

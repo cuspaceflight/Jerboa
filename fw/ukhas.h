@@ -39,7 +39,7 @@ void ukhas_populate_misc(UkhasPckt* ukhas_pckt);
  * Then allocate memory for a char array of that size
  * Then run again with print_addr pointing to this memory location
  * E.g.:
- *      size_t s = ukhas_print(pckt, NULL, 0);
+ *      size_t s = ukhas_print(&pckt, NULL, 0);
  *      char mystr[s];
  *      ukhas_print(pckt, mystr, s+1);  // +1 len to include null terminator
  *

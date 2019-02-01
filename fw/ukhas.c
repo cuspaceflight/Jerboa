@@ -46,7 +46,7 @@ static void ukhas_crc16(char* telem_string, size_t len)
   {
     crc = crc_xmodem_update(crc, telem_string[i]);
   }
-  snprintf(telem_string + len, 5, "*%04X", crc);
+  chsnprintf(telem_string + len, 5, "*%04X", crc);
 }
 
 void ukhas_populate_from_gps(const ublox_pvt_t* gps_pckt, UkhasPckt* ukhas_pckt)
@@ -72,7 +72,7 @@ size_t ukhas_print(const UkhasPckt* pckt, char* print_addr, size_t len)
   size_t len_str;
   if(len >= MIN_LEN) len_str = len - 6;  // Checksum & newline added later
   else len_str = 0;  // Else this is the first pass to find string length
-  size_t rtn = snprintf(print_addr, len_str,
+  size_t rtn = chsnprintf(print_addr, len_str,
                         "$$" CALLSIGN ",%lu,%02u:%02u:%02u,%02.7f,%03.7f,%ld,"
                             "%u,%u,%u",
                         (uint32_t)pckt->ticks, pckt->time[0], pckt->time[1],
