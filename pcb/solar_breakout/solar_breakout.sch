@@ -23,7 +23,6 @@ F 1 "CONN_01x02" H 6031 2024 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 6000 1900 50  0001 C CNN
 F 3 "" H 6000 1900 50  0001 C CNN
 F 4 "1593411" H 6000 1900 60  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6000 1900
 	1    0    0    -1  
 $EndComp
@@ -53,7 +52,6 @@ F 1 "510k" V 6800 3350 50  0000 L CNN
 F 2 "agg:0402" H 6700 3550 50  0001 C CNN
 F 3 "https://uk.farnell.com/yageo/rc0402fr-07510kl/res-510k-1-0-063w-0402-thick-film/dp/1458807" H 6700 3550 50  0001 C CNN
 F 4 "1458807" H 0   0   50  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6700 3550
 	0    1    1    0   
 $EndComp
@@ -66,7 +64,6 @@ F 1 "750k" V 6800 3250 50  0000 C CNN
 F 2 "agg:0603" H 6700 3350 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2563624.pdf" H 6700 3350 50  0001 C CNN
 F 4 "2447431" H 0   0   50  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6700 3350
 	0    1    1    0   
 $EndComp
@@ -79,7 +76,6 @@ F 1 "50" V 7155 3492 50  0000 R CNN
 F 2 "jerboa:super_capacitor" H 7150 3550 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2675068.pdf" H 7150 3550 50  0001 C CNN
 F 4 "2696619" H 0   0   50  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    7150 3550
 	0    -1   -1   0   
 $EndComp
@@ -92,7 +88,6 @@ F 1 "10u" H 5800 2987 50  0000 C CNN
 F 2 "agg:1812" H 5750 2900 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/5132.pdf" H 5750 2900 50  0001 C CNN
 F 4 "1515459" H 0   0   50  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    5750 2900
 	1    0    0    -1  
 $EndComp
@@ -105,7 +100,6 @@ F 1 "4.7u" V 6445 3908 50  0000 L CNN
 F 2 "agg:0402" H 6350 3850 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2189109.pdf" H 6350 3850 50  0001 C CNN
 F 4 "2688503" H 0   0   50  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6350 3850
 	0    1    1    0   
 $EndComp
@@ -118,7 +112,6 @@ F 1 "10n" V 5145 3658 50  0000 L CNN
 F 2 "agg:0603" H 5050 3600 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2290180.pdf" H 5050 3600 50  0001 C CNN
 F 4 "2760492" H 0   0   50  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    5050 3600
 	0    1    1    0   
 $EndComp
@@ -131,7 +124,6 @@ F 1 "10u" H 5300 3096 50  0000 C CNN
 F 2 "agg:0402" H 5250 3200 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2079148.pdf" H 5250 3200 50  0001 C CNN
 F 4 "2611904" H 0   0   50  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    5250 3200
 	-1   0    0    1   
 $EndComp
@@ -144,7 +136,6 @@ F 1 "1u" V 5395 3758 50  0000 L CNN
 F 2 "agg:0805" H 5300 3700 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2315442.pdf" H 5300 3700 50  0001 C CNN
 F 4 "1463389" H 0   0   50  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    5300 3700
 	0    1    1    0   
 $EndComp
@@ -291,7 +282,6 @@ F 1 "22p" V 6255 3392 50  0000 R CNN
 F 2 "agg:0402" H 6250 3450 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2031615.pdf" H 6250 3450 50  0001 C CNN
 F 4 "2533782" H 6250 3450 60  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6250 3450
 	0    -1   -1   0   
 $EndComp
@@ -310,7 +300,6 @@ F 1 "1u" V 6995 3508 50  0000 L CNN
 F 2 "agg:0805" H 6900 3450 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2315442.pdf" H 6900 3450 50  0001 C CNN
 F 4 "1463389" H 0   0   50  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    6900 3450
 	0    1    1    0   
 $EndComp
@@ -366,8 +355,7 @@ F 0 "D1" V 2796 7192 50  0000 R CNN
 F 1 "MRA4003T3" V 2705 7192 50  0000 R CNN
 F 2 "" H 2700 7250 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2028669.pdf" H 2700 7250 50  0001 C CNN
-F 4 "" H 0   0   50  0001 C CNN "Mouser"
-F 5 "1459134" H 2700 7250 60  0001 C CNN "Farnell"
+F 4 "1459134" H 2700 7250 60  0001 C CNN "Farnell"
 	1    2700 7250
 	0    -1   -1   0   
 $EndComp
@@ -381,7 +369,6 @@ F 0 "J1" H 2881 1915 50  0000 C CNN
 F 1 "CONN_01x02" H 2881 1824 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 2850 1700 50  0001 C CNN
 F 3 "" H 2850 1700 50  0001 C CNN
-F 4 "" H 0   0   50  0001 C CNN "Mouser"
 	1    2850 1700
 	1    0    0    -1  
 $EndComp
@@ -393,7 +380,6 @@ F 0 "J2" H 2881 3415 50  0000 C CNN
 F 1 "CONN_01x02" H 2881 3324 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 2850 3200 50  0001 C CNN
 F 3 "" H 2850 3200 50  0001 C CNN
-F 4 "" H 0   0   50  0001 C CNN "Mouser"
 	1    2850 3200
 	1    0    0    -1  
 $EndComp
@@ -442,7 +428,6 @@ F 1 "CONN_01x02" H 7400 3600 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 7550 3500 50  0001 C CNN
 F 3 "" H 7550 3500 50  0001 C CNN
 F 4 "1593411" H 7550 3500 60  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    7550 3500
 	-1   0    0    1   
 $EndComp
@@ -455,7 +440,6 @@ F 1 "3.3" V 7500 3550 50  0000 L CNN
 F 2 "agg:2512" H 7400 3700 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2007092.pdf" H 7400 3700 50  0001 C CNN
 F 4 "2476361" H 7400 3700 60  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    7400 3700
 	0    1    1    0   
 $EndComp
@@ -550,10 +534,10 @@ L agg-kicad:R R1
 U 1 1 5A8494E9
 P 5300 3400
 F 0 "R1" H 5350 3222 50  0000 C CNN
-F 1 "R" H 5350 3313 50  0000 C CNN
+F 1 "30k" H 5350 3313 50  0000 C CNN
 F 2 "agg:0603" H 5300 3400 50  0001 C CNN
-F 3 "" H 5300 3400 50  0001 C CNN
-F 4 "Value" H 5300 3400 60  0001 C CNN "Farnell"
+F 3 "http://www.farnell.com/datasheets/2563624.pdf" H 5300 3400 50  0001 C CNN
+F 4 "2447333" H 5300 3400 60  0001 C CNN "Farnell"
 	1    5300 3400
 	-1   0    0    1   
 $EndComp
@@ -617,7 +601,6 @@ F 1 "SCHOTTKY" H 3450 1596 50  0000 C CNN
 F 2 "jerboa:SMA_DIODE" H 3350 1670 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2238474.pdf" H 3450 1770 50  0001 C CNN
 F 4 "1843668" H 3400 1700 60  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    3400 1700
 	-1   0    0    1   
 $EndComp
@@ -630,7 +613,6 @@ F 1 "SCHOTTKY" H 3450 3096 50  0000 C CNN
 F 2 "jerboa:SMA_DIODE" H 3350 3170 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2238474.pdf" H 3450 3270 50  0001 C CNN
 F 4 "1843668" H 3400 3200 60  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    3400 3200
 	-1   0    0    1   
 $EndComp
@@ -721,7 +703,6 @@ F 0 "J3" H 4581 3865 50  0000 C CNN
 F 1 "CONN_01x02" H 4581 3774 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 4550 3650 50  0001 C CNN
 F 3 "" H 4550 3650 50  0001 C CNN
-F 4 "" H 0   0   50  0001 C CNN "Mouser"
 	1    4550 3650
 	1    0    0    -1  
 $EndComp
@@ -772,7 +753,6 @@ F 1 "CONN_01x02" H 7281 2024 50  0000 C CNN
 F 2 "agg:SIL-254P-02" H 7250 1900 50  0001 C CNN
 F 3 "" H 7250 1900 50  0001 C CNN
 F 4 "1593411" H 7250 1900 60  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    7250 1900
 	1    0    0    -1  
 $EndComp
