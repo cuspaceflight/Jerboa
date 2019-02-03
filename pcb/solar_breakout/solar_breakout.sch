@@ -28,19 +28,6 @@ F 5 "" H 0   0   50  0001 C CNN "Mouser"
 	1    0    0    -1  
 $EndComp
 $Comp
-L agg-kicad:CONN_01x02 J5
-U 1 1 5A7C8C5D
-P 7250 1900
-F 0 "J5" H 7281 2115 50  0000 C CNN
-F 1 "CONN_01x02" H 7281 2024 50  0000 C CNN
-F 2 "agg:SIL-254P-02" H 7250 1900 50  0001 C CNN
-F 3 "" H 7250 1900 50  0001 C CNN
-F 4 "1593411" H 7250 1900 60  0001 C CNN "Farnell"
-F 5 "" H 0   0   50  0001 C CNN "Mouser"
-	1    7250 1900
-	1    0    0    -1  
-$EndComp
-$Comp
 L agg-kicad:GND #PWR05
 U 1 1 5A7C8D84
 P 6250 2000
@@ -51,25 +38,6 @@ F 3 "" H 6250 2000 50  0001 C CNN
 	1    6250 2000
 	1    0    0    -1  
 $EndComp
-$Comp
-L agg-kicad:GND #PWR06
-U 1 1 5A7C8EBA
-P 7550 2050
-F 0 "#PWR06" H 7420 2090 50  0001 L CNN
-F 1 "GND" H 7550 2137 50  0000 C CNN
-F 2 "" H 7550 2050 50  0001 C CNN
-F 3 "" H 7550 2050 50  0001 C CNN
-	1    7550 2050
-	1    0    0    -1  
-$EndComp
-Text Label 7500 1900 0    50   ~ 0
-Panel_V
-Wire Wire Line
-	7350 1900 7500 1900
-Wire Wire Line
-	7350 2000 7550 2000
-Wire Wire Line
-	7550 2000 7550 2050
 Text Label 6250 1900 0    50   ~ 0
 Cap_V
 Wire Wire Line
@@ -795,4 +763,25 @@ Wire Wire Line
 Wire Wire Line
 	3200 3300 3100 3300
 Connection ~ 3100 3300
+$Comp
+L agg-kicad:CONN_01x02 J5
+U 1 1 5A7C8C5D
+P 7250 1900
+F 0 "J5" H 7281 2115 50  0000 C CNN
+F 1 "CONN_01x02" H 7281 2024 50  0000 C CNN
+F 2 "agg:SIL-254P-02" H 7250 1900 50  0001 C CNN
+F 3 "" H 7250 1900 50  0001 C CNN
+F 4 "1593411" H 7250 1900 60  0001 C CNN "Farnell"
+F 5 "" H 0   0   50  0001 C CNN "Mouser"
+	1    7250 1900
+	1    0    0    -1  
+$EndComp
+Text Label 7500 1900 0    50   ~ 0
+Panel_V
+Wire Wire Line
+	7350 1900 7500 1900
+Text Label 7500 2000 0    50   ~ 0
+Cap_V
+Wire Wire Line
+	7500 2000 7350 2000
 $EndSCHEMATC
