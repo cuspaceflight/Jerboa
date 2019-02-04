@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source C:\Users\Joel\Documents\Jerboa\pcb\solar_breakout\solar_breakout.sch)
-    (date "03-Feb-19 11:26:29 AM")
+    (date "04-Feb-19 7:53:01 PM")
     (tool "Eeschema (6.0.0-rc1-dev-1613-ga55d9819b)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -203,10 +203,11 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 5A815078))
     (comp (ref R1)
-      (value R)
+      (value 30k)
       (footprint agg:0603)
+      (datasheet http://www.farnell.com/datasheets/2563624.pdf)
       (fields
-        (field (name Farnell) Value))
+        (field (name Farnell) 2447333))
       (libsource (lib agg-kicad) (part R) (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 5A8494E9))
