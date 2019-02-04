@@ -16,8 +16,8 @@ pins:
     mcu_miso:   pa6, af0, pushpull, starthigh, pullup, highspeed
     mcu_mosi:   pa7, af0, pushpull, starthigh, pullup, highspeed
     gps_extint: pa8, output, pushpull, startlow, pulldown
-    gps_tx:     pa9, af4, pushpull, highspeed
-    gps_rx:    pa10, af4, pullup, highspeed
+    gps_tx:     pa9, af4, pushpull, starthigh, pullup, highspeed
+    gps_rx:    pa10, af4, pushpull, starthigh, pullup, highspeed
     gps_nrst:  pa11, output, pushpull, starthigh, pullup
     swdio:     pa13, af0, pushpull, starthigh, pullup, highspeed
     swclk:     pa14, af0, pushpull, starthigh, pulldown, highspeed
