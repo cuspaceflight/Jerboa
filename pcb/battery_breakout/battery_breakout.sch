@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -13,63 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L agg-kicad:CONN_01x02 J2
-U 1 1 5A722E07
-P 4700 2650
-F 0 "J2" H 4731 2865 50  0000 C CNN
-F 1 "CONN_01x02" H 4731 2774 50  0000 C CNN
-F 2 "agg:SIL-254P-02" H 4700 2650 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1518407.pdf" H 4700 2650 50  0001 C CNN
-F 4 "1593411" H 4700 2650 50  0001 C CNN "Farnell"
-	1    4700 2650
-	1    0    0    -1  
-$EndComp
-NoConn ~ 4800 3100
-$Comp
-L agg-kicad:GND #PWR02
-U 1 1 5A722EF5
-P 4950 3250
-F 0 "#PWR02" H 4820 3290 50  0001 L CNN
-F 1 "GND" H 4950 3337 50  0000 C CNN
-F 2 "" H 4950 3250 50  0001 C CNN
-F 3 "" H 4950 3250 50  0001 C CNN
-	1    4950 3250
-	1    0    0    -1  
-$EndComp
-$Comp
-L agg-kicad:GND #PWR03
-U 1 1 5A722F0B
-P 4950 2800
-F 0 "#PWR03" H 4820 2840 50  0001 L CNN
-F 1 "GND" H 4950 2887 50  0000 C CNN
-F 2 "" H 4950 2800 50  0001 C CNN
-F 3 "" H 4950 2800 50  0001 C CNN
-	1    4950 2800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4950 2800 4950 2750
-Wire Wire Line
-	4950 2750 4800 2750
-Wire Wire Line
-	4800 3200 4950 3200
-Wire Wire Line
-	4950 3200 4950 3250
-Wire Wire Line
-	4800 2650 5100 2650
-$Comp
-L agg-kicad:PART X1
-U 1 1 5A7231E8
-P 2700 2500
-F 0 "X1" H 2700 2600 50  0000 L CNN
-F 1 "Mount" H 2700 2500 50  0000 L CNN
-F 2 "agg:M2.5_MOUNT" H 2700 2500 50  0001 C CNN
-F 3 "" H 2700 2500 50  0001 C CNN
-F 4 "Value" H 2700 2500 50  0001 C CNN "Farnell"
-	1    2700 2500
-	1    0    0    -1  
-$EndComp
 $Comp
 L agg-kicad:CONN_01x02 J1
 U 1 1 5A72385E
@@ -99,21 +42,7 @@ Wire Wire Line
 	4000 2850 3900 2850
 Wire Wire Line
 	4000 2750 3900 2750
-Text Notes 4850 3100 0    50   ~ 0
-Pin for solar cell voltage (n/a here)
-$Comp
-L agg-kicad:CONN_01x02 J3
-U 1 1 5A723D3B
-P 4700 3100
-F 0 "J3" H 4731 3315 50  0000 C CNN
-F 1 "CONN_01x02" H 4731 3224 50  0000 C CNN
-F 2 "agg:SIL-254P-02" H 4700 3100 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1518407.pdf" H 4700 3100 50  0001 C CNN
-F 4 "1593411" H 4700 3100 50  0001 C CNN "Farnell"
-	1    4700 3100
-	1    0    0    -1  
-$EndComp
-Text Label 5100 2650 0    50   ~ 0
+Text Label 4950 2750 0    50   ~ 0
 V_BATT
 Text Label 4000 2750 0    50   ~ 0
 V_BATT
@@ -184,4 +113,52 @@ Text Notes 3550 2850 0    50   ~ 0
 AAA
 Text Notes 3600 3350 0    50   ~ 0
 AA
+Wire Wire Line
+	4950 2750 4800 2750
+$Comp
+L agg-kicad:CONN_01x02 J2
+U 1 1 5A722E07
+P 4700 2650
+F 0 "J2" H 4731 2865 50  0000 C CNN
+F 1 "CONN_01x02" H 4731 2774 50  0000 C CNN
+F 2 "agg:SIL-254P-02" H 4700 2650 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1518407.pdf" H 4700 2650 50  0001 C CNN
+F 4 "1593411" H 4700 2650 50  0001 C CNN "Farnell"
+	1    4700 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L agg-kicad:CONN_01x02 J3
+U 1 1 5A723D3B
+P 4700 3100
+F 0 "J3" H 4731 3315 50  0000 C CNN
+F 1 "CONN_01x02" H 4731 3224 50  0000 C CNN
+F 2 "agg:SIL-254P-02" H 4700 3100 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1518407.pdf" H 4700 3100 50  0001 C CNN
+F 4 "1593411" H 4700 3100 50  0001 C CNN "Farnell"
+	1    4700 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 3200 4950 3250
+Wire Wire Line
+	4800 3200 4950 3200
+$Comp
+L agg-kicad:GND #PWR02
+U 1 1 5A722EF5
+P 4950 3250
+F 0 "#PWR02" H 4820 3290 50  0001 L CNN
+F 1 "GND" H 4950 3337 50  0000 C CNN
+F 2 "" H 4950 3250 50  0001 C CNN
+F 3 "" H 4950 3250 50  0001 C CNN
+	1    4950 3250
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4800 2650
+Text Notes 4850 2675 0    50   ~ 0
+Pin for solar cell voltage (n/a here)
+Text Label 4950 3100 0    50   ~ 0
+V_BATT
+Wire Wire Line
+	4950 3100 4800 3100
 $EndSCHEMATC
