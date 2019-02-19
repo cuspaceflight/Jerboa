@@ -536,8 +536,8 @@ P 5300 3400
 F 0 "R1" H 5350 3222 50  0000 C CNN
 F 1 "76.8k" H 5350 3313 50  0000 C CNN
 F 2 "agg:0603" H 5300 3400 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1960319.pdf" H 5300 3400 50  0001 C CNN
-F 4 "2670896" H 5300 3400 60  0001 C CNN "Farnell"
+F 3 "http://www.farnell.com/datasheets/2189593.pdf" H 5300 3400 50  0001 C CNN
+F 4 "2694941" H 5300 3400 60  0001 C CNN "Farnell"
 	1    5300 3400
 	-1   0    0    1   
 $EndComp

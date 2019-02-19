@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source C:\Users\Joel\Documents\Jerboa\pcb\solar_breakout\solar_breakout.sch)
-    (date "19-Feb-19 8:34:56 AM")
+    (date "19-Feb-19 8:40:58 AM")
     (tool "Eeschema (6.0.0-rc1-dev-1613-ga55d9819b)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
