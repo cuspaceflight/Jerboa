@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-EELAYER 29 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -161,4 +161,16 @@ Text Label 4950 3100 0    50   ~ 0
 V_BATT
 Wire Wire Line
 	4950 3100 4800 3100
+$Comp
+L agg-kicad:TESTPAD TP?
+U 1 1 5C6C84B9
+P 4150 3400
+F 0 "TP?" H 4248 3400 50  0000 L CNN
+F 1 "TESTPAD" H 4150 3325 50  0001 L CNN
+F 2 "jerboa:ANT_GND_PASSTHROUGH" H 4150 3250 50  0001 L CNN
+F 3 "" H 4150 3400 50  0001 C CNN
+	1    4150 3400
+	1    0    0    -1  
+$EndComp
+Connection ~ 4150 3400
 $EndSCHEMATC

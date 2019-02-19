@@ -1,8 +1,8 @@
 (export (version D)
   (design
-    (source C:\Users\Joel\Documents\Jerboa\pcb\battery_breakout\battery_breakout.sch)
-    (date "19-Feb-19 3:54:23 PM")
-    (tool "Eeschema (6.0.0-rc1-dev-1613-ga55d9819b)")
+    (source C:\Users\grego\Documents\Jerboa\pcb\battery_breakout\battery_breakout.sch)
+    (date "19/02/2019 22:31:10")
+    (tool "Eeschema (5.0.0-rc3-dev)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title)
@@ -50,7 +50,13 @@
         (field (name Farnell) 1593411))
       (libsource (lib agg-kicad) (part CONN_01x02) (description ""))
       (sheetpath (names /) (tstamps /))
-      (tstamp 5A723D3B)))
+      (tstamp 5A723D3B))
+    (comp (ref TP1)
+      (value TESTPAD)
+      (footprint jerboa:ANT_GND_PASSTHROUGH)
+      (libsource (lib agg-kicad) (part TESTPAD) (description ""))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 5C6C84B9)))
   (libparts
     (libpart (lib agg-kicad) (part CONN_01x02)
       (fields
@@ -58,19 +64,27 @@
         (field (name Value) CONN_01x02))
       (pins
         (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive)))))
+        (pin (num 2) (name 2) (type passive))))
+    (libpart (lib agg-kicad) (part TESTPAD)
+      (fields
+        (field (name Reference) TP)
+        (field (name Value) TESTPAD)
+        (field (name Footprint) agg:TESTPAD))
+      (pins
+        (pin (num 1) (name TP) (type input)))))
   (libraries
     (library (logical agg-kicad)
-      (uri C:\Users\Joel\Documents\Jerboa\pcb\battery_breakout/../../agg-kicad/agg-kicad.lib)))
+      (uri C:\Users\grego\Documents\Jerboa\pcb\battery_breakout/../../agg-kicad/agg-kicad.lib)))
   (nets
     (net (code 1) (name /V_BATT)
-      (node (ref J4) (pin 1))
       (node (ref J1) (pin 1))
-      (node (ref J2) (pin 2))
-      (node (ref J3) (pin 1)))
+      (node (ref J4) (pin 1))
+      (node (ref J3) (pin 1))
+      (node (ref J2) (pin 2)))
     (net (code 2) (name "Net-(J2-Pad1)")
       (node (ref J2) (pin 1)))
     (net (code 3) (name GND)
       (node (ref J4) (pin 2))
+      (node (ref J3) (pin 2))
       (node (ref J1) (pin 2))
-      (node (ref J3) (pin 2)))))
+      (node (ref TP1) (pin 1)))))
