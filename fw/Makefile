@@ -114,7 +114,8 @@ CSRC = $(ALLCSRC) \
        $(TESTSRC) \
        main.c \
        gps.c \
-       ukhas.c
+       ukhas.c \
+       radio.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.

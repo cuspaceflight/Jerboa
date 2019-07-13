@@ -3,6 +3,7 @@
 
 #define CALLSIGN "JERBOA"
 #define MIN_LEN 8
+#define CSUM_NL 6
 
 /*
  * Taken from AVR libc
@@ -70,7 +71,7 @@ void ukhas_populate_misc(UkhasPckt* ukhas_pckt)
 size_t ukhas_print(const UkhasPckt* pckt, char* print_addr, size_t len)
 {
   size_t len_str;
-  if(len >= MIN_LEN) len_str = len - 6;  // Checksum & newline added later
+  if(len >= MIN_LEN) len_str = len - CSUM_NL;  // Checksum & newline added later
   else len_str = 0;  // Else this is the first pass to find string length
   size_t rtn = chsnprintf(print_addr, len_str,
                         "$$" CALLSIGN ",%lu,%02u:%02u:%02u,%02.7f,%03.7f,%ld,"
@@ -78,13 +79,13 @@ size_t ukhas_print(const UkhasPckt* pckt, char* print_addr, size_t len)
                         (uint32_t)pckt->ticks, pckt->time[0], pckt->time[1],
                         pckt->time[2], pckt->lat, pckt->lon, pckt->alt,
                         pckt->num_sats, pckt->lock, pckt->voltage);
-  rtn += 6;  // Space for checksum & newline
+  rtn += CSUM_NL;  // Space for checksum & newline
 
   if(print_addr != NULL && len >= MIN_LEN)
   {
     // Add checksum & newline
     // Checksum ignores starting $$
-    ukhas_crc16(print_addr + 2*sizeof(char), len - 8);
+    ukhas_crc16(print_addr + 2*sizeof(char), len - CSUM_NL - 2);
     print_addr[len-1] = '\n';
   }
 

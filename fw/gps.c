@@ -5,7 +5,7 @@
 #include "gps.h"
 #include "ubx.h"
 
-MUTEX_DECL(pvt_pkt_mutex);
+MUTEX_DECL(global_pvt_pkt_mutex);
 
 /* Serial Setup */
 static SerialDriver* gps_seriald;
@@ -28,10 +28,10 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef);
 static bool gps_tx_ack(uint8_t *buf);
 
 /* Global Position Packet */
-ublox_pvt_t pvt_pkt;
+ublox_pvt_t global_pvt_pkt;
 
 /* Position Packet Mutex */
-mutex_t pvt_pkt_mutex;
+mutex_t global_pvt_pkt_mutex;
 
 /* UBX Decoding State Machine States */
 typedef enum {
@@ -223,9 +223,9 @@ static enum ublox_result ublox_state_machine(uint8_t b)
                     if(id == UBX_NAV_PVT) {
 
                         /* Extract NAV-PVT Payload */
-                        chMtxLock(&pvt_pkt_mutex);
-                        memcpy(&pvt_pkt, payload, length);
-                        chMtxUnlock(&pvt_pkt_mutex);
+                        chMtxLock(&global_pvt_pkt_mutex);
+                        memcpy(&global_pvt_pkt, payload, length);
+                        chMtxUnlock(&global_pvt_pkt_mutex);
 	                    
                         return UBLOX_NAV_PVT;
 
@@ -379,7 +379,7 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef) {
 /* Configure uBlox GPS */
 void gps_init(SerialDriver* seriald, bool nav_pvt, bool nav_posecef){
     /* Initialise mutex */
-    chMtxObjectInit(&pvt_pkt_mutex);
+    chMtxObjectInit(&global_pvt_pkt_mutex);
 
     /* Set global serial driver */
     gps_seriald = seriald;
@@ -403,7 +403,7 @@ void gps_init(SerialDriver* seriald, bool nav_pvt, bool nav_posecef){
     return;
 }
 
-bool gps_poll_pvt(void)
+bool gps_poll_pvt(ublox_pvt_t* pvt_pckt)
 {
   const uint8_t request[] = {UBX_SYNC1, UBX_SYNC2,
                            UBX_NAV, UBX_NAV_PVT,
@@ -421,7 +421,20 @@ bool gps_poll_pvt(void)
   if(r != UBLOX_NAV_PVT)
     return false;
   else
+  {
+    gps_get_pvt(pvt_pckt);
     return true;
+  }
+}
+
+void gps_get_pvt(ublox_pvt_t* pvt_pckt)
+{
+  if(pvt_pckt)
+  {
+    chMtxLock(&global_pvt_pkt_mutex);
+    memcpy(pvt_pckt, &global_pvt_pkt, sizeof(ublox_pvt_t));
+    chMtxUnlock(&global_pvt_pkt_mutex);
+  }
 }
 
 
