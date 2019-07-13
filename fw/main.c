@@ -20,7 +20,6 @@ static void sleep(uint32_t seconds)
   palClearPad(GPIOB, GPIOB_RADIO_PWR_EN);
 
   /* Shutdown GPS */
-  // TODO: Need to configure GPS here to be shutdown by EXTINT
   palClearPad(GPIOA, GPIOA_GPS_EXTINT);
 
   pwr_enter_standby_for_seconds(seconds);
@@ -46,7 +45,7 @@ static inline void setup(void)
   /* Initialise ChibiOS */
   halInit();
 
-  //  bool FIRST_BOOT = false;
+  static bool FIRST_BOOT = false;
   if(RTC->ISR & RTC_ISR_WUTF)
   {
       /* Wakeup timer flag set, needs clearing */
@@ -58,30 +57,31 @@ static inline void setup(void)
       /* Woken from standby */
       PWR->CR |= PWR_CR_CSBF;  // Clear the flag
   }
-//    else
-//    {
-//        FIRST_BOOT = true;
-//    }
+    else
+    {
+        FIRST_BOOT = true;
+    }
 
 
   chSysInit();
 
-//  if(FIRST_BOOT)
-//    {
-//        FIRST_BOOT = false;
-//        /* Do things here */
-//    }
+  if(FIRST_BOOT)
+    {
+      FIRST_BOOT = false;
+
+      /* Do things here */
+
+      // Start GPS
+      palSetPad(GPIOA, GPIOA_GPS_EXTINT);
+      /* Configure GPS, do not tx anything without being prompted */
+      gps_init(&SD1, false, false);
+    }
 
   /* Start radio system */
   palSetPad(GPIOB, GPIOB_RADIO_PWR_EN);
 
   /* Start GPS */
   palSetPad(GPIOA, GPIOA_GPS_EXTINT);
-
-  chThdSleepMilliseconds(300);
-
-  /* Configure GPS, do not tx anything without being prompted */
-  gps_init(&SD1, false, false);
 
 //    /* Start GPS State Machine */
 //    gps_thd_init();

@@ -274,11 +274,12 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef) {
 
     gps_configured = true;
 
-    ubx_cfg_prt_t prt;
-    ubx_cfg_nav5_t nav5;
-    ubx_cfg_msg_t msg;
-    ubx_cfg_msg_t msg2;
-    ubx_cfg_rate_t rate;
+    ubx_cfg_prt_t prt = {0};
+    ubx_cfg_nav5_t nav5 = {0};
+    ubx_cfg_msg_t msg = {0};
+    ubx_cfg_msg_t msg2 = {0};
+    ubx_cfg_rate_t rate = {0};
+    ubx_cfg_pm2_t pm2 = {0};
 
     /* Disable NMEA on UART */
     prt.sync1 = UBX_SYNC1;
@@ -372,6 +373,33 @@ static bool gps_configure(bool nav_pvt, bool nav_posecef) {
         gps_configured &= gps_tx_ack((uint8_t*)&msg2);
         if(!gps_configured) return false;
     }
+
+    /* Power on/off controlled by extint pin */
+    pm2.sync1 = UBX_SYNC1;
+    pm2.sync2 = UBX_SYNC2;
+    pm2.class = UBX_CFG;
+    pm2.id = UBX_CFG_PM2;
+    pm2.length = sizeof(pm2.payload);
+
+    pm2.version = 0x01;
+    pm2.maxStartupStateDur = 0;
+
+    pm2.flags =
+        // Select EXTINT0
+        (1 << 5) &   // Enable extintWake
+        (1 << 6) &   // Enable extintBackup
+        // Disable limitPeakCurrent
+        (1 << 10) &  // Wait for time fix OK before starting on time
+        (1 << 11) &  // Enable updateRTC
+        (1 << 12) &  // Enable updateEPH
+        (1 << 16);   // Enable doNotEnterOff
+        // ON/OFF mode
+
+    pm2.updatePeriod = 1000;
+    pm2.searchPeriod = 10000;
+
+    gps_configured &= gps_tx_ack((uint8_t*)&pm2);
+    if(!gps_configured) return false;
 
     return gps_configured;
 }

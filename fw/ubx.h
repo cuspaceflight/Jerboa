@@ -32,6 +32,7 @@
 #define UBX_CFG_SBAS    0x16
 #define UBX_CFG_NAV5    0x24
 #define UBX_CFG_TP5     0x31
+#define UBX_CFG_PM2     0x3B
 #define UBX_CFG_GNSS    0x3E
 #define UBX_NAV_POSECEF 0x01
 #define UBX_NAV_PVT     0x07
@@ -252,6 +253,31 @@ typedef struct __attribute__((packed)) {
      };
      uint8_t ck_a, ck_b;
  } ubx_cfg_gnss_t;
+
+ /* UBX-CFG-PM2
+  * Extended power management configuration
+  */
+typedef struct __attribute__((packed)) {
+  uint8_t sync1, sync2, class, id;
+  uint16_t length;
+  union {
+    uint8_t payload[44];
+      struct {
+        uint8_t version;
+        uint8_t reserved1;
+        uint8_t maxStartupStateDur;
+        uint8_t reserved2;
+        uint32_t flags;
+        uint32_t updatePeriod;
+        uint32_t searchPeriod;
+        uint32_t gridOffset;
+        uint16_t onTime;
+        uint16_t minAcqTime;
+        uint32_t reserved3[20];
+      } __attribute__((packed));
+   };
+   uint8_t ck_a, ck_b;
+} ubx_cfg_pm2_t;
 
 
 /* UBX-ACK

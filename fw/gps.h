@@ -4,7 +4,6 @@
 #include "ch.h"
 #include "hal.h"
 
-
 /* NAV-POSECEF Payload Data */
 typedef struct __attribute__((packed)) {
     uint32_t i_tow;
