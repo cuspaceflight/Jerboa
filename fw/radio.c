@@ -35,11 +35,6 @@ static void rtty_txbit(char b)
  */
 static void rtty_txchar(char c)
 {
-#define TIMEPERIOD 20    // RTTY time period in ms
-#define ASCII_BITS 7     // Choose 7 or 8 bit ascii
-#define START_BIT 0      // Comment out for no start bit
-#define STOP_BIT 1       // Comment out for no stop bit(s)
-#define NUM_STOP_BITS 2  // Comment out for no stop bit(s)
 
 #ifdef START_BIT
   rtty_txbit(START_BIT);
@@ -47,7 +42,7 @@ static void rtty_txchar(char c)
 
   for(uint8_t i = 0; i < ASCII_BITS; i++)
   {
-    rtty_txbit(c && 1);
+    rtty_txbit(c & 1);
     c >>= 1;
   }
 
