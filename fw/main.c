@@ -15,7 +15,7 @@ int main(void)
 	chSysInit();
 
     /* Configure GPS, do not tx anything without being prompted */
-    gps_init(&SD1, false, false);
+    //gps_init(&SD1, false, false);
 
 //    /* Start GPS State Machine */
 //    gps_thd_init();
@@ -24,7 +24,7 @@ int main(void)
 
 	/* Main Loop */
     while (true) {
-      gps_poll_pvt(&pvt_pckt);  // Request PVT message from GPS
+      //gps_poll_pvt(&pvt_pckt);  // Request PVT message from GPS
       UkhasPckt telem_pckt;
 
       ukhas_populate_from_gps(&pvt_pckt, &telem_pckt);  // Use PVT message to populate telem packet
