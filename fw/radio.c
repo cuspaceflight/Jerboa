@@ -17,41 +17,41 @@ static void tx_timer_cb(void* arg);
  * This tells the Si446x driver what our hardware looks like.
  */
 static struct si446x_board_config brdcfg = {
-    .spid = &SPID1,
-    .spi_cfg = {
-        .end_cb = NULL,
-        .ssport = PAL_PORT(LINE_RADIO_NSS),
-        .sspad = PAL_PAD(LINE_RADIO_NSS),
-        .cr1 = SPI_CR1_BR_2,
-    },
-    .sdn = LINE_RADIO_SDN,
-    .nirq = LINE_RADIO_NIRQ,
-    .gpio0 = si446x_gpio_mode_tristate,
-    .gpio1 = si446x_gpio_mode_tristate,
-    .gpio2 = si446x_gpio_mode_tristate,
-    .gpio3 = si446x_gpio_mode_tx_state,
-    .clk_out_enable = true,
-    .clk_out_div = si446x_clk_out_div_2,
-    .tcxo = true,
-    .xo_freq = 26000000,
-    .rtty_low_freq = 434000000,
-    .rtty_high_freq = 434001000,
+  .spid = &SPID1,
+  .spi_cfg = {
+      .end_cb = NULL,
+      .ssport = PAL_PORT(LINE_RADIO_NSS),
+      .sspad = PAL_PAD(LINE_RADIO_NSS),
+      .cr1 = SPI_CR1_BR_2,
+  },
+  .sdn = LINE_RADIO_SDN,
+  .nirq = LINE_RADIO_NIRQ,
+  .gpio0 = si446x_gpio_mode_tristate,
+  .gpio1 = si446x_gpio_mode_tristate,
+  .gpio2 = si446x_gpio_mode_tristate,
+  .gpio3 = si446x_gpio_mode_tx_state,
+  .clk_out_enable = true,
+  .clk_out_div = si446x_clk_out_div_2,
+  .tcxo = true,
+  .xo_freq = 26000000,
+  .rtty_low_freq = 434000000,
+  .rtty_high_freq = 434001000,
 };
 
 static GPTConfig gptcfg = 
 {
-    1000,  // 1kHz clock
-    tx_timer_cb, 0, 0
+  1000,  // 1kHz clock
+  tx_timer_cb, 0, 0
 };
 
 static binary_semaphore_t tx_sem;
 
 static void tx_timer_cb(void* arg)
 {
-    (void)arg;
-    chSysLockFromISR();
-    chBSemSignalI(&tx_sem);
-    chSysUnlockFromISR();
+  (void)arg;
+  chSysLockFromISR();
+  chBSemSignalI(&tx_sem);
+  chSysUnlockFromISR();
 }
 
 static void rtty_txbit(char b)
@@ -132,7 +132,21 @@ void radio_tx(char txbuf[], size_t len)
   palClearPad(GPIOB, GPIOB_RADIO_PWR_EN);
 }
 
+void radio_set_freq(bool four_three_four)
+{
+  if(four_three_four)
+  {
+    // 434MHz
+    palSetLine(LINE_FREQ_CTRL);
+  }
+  else
+  {
+    // 144MHz
+    palClearLine(LINE_FREQ_CTRL);
+  }
+}
+
 void radio_init(void)
 {
-    chBSemObjectInit(&tx_sem, false);
+  chBSemObjectInit(&tx_sem, false);
 }

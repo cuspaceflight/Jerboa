@@ -195,7 +195,7 @@
  *  GPIOA setup:
  *
  * PA0  - PIN0                         (unused).
- * PA1  - FREQ_CTRL                    (output pushpull).
+ * PA1  - FREQ_CTRL                    (output pushpull starthigh pullup).
  * PA2  - RADIO_SDN                    (output pushpull floating).
  * PA3  - RADIO_NIRQ                   (output pushpull starthigh pullup).
  * PA4  - RADIO_NSS                    (output pushpull starthigh pullup highspeed).
@@ -263,7 +263,7 @@
                                         PIN_OSPEED_LOW(GPIOA_LED))
 
 #define VAL_GPIOA_PUPDR                (PIN_PUPD_PULLDOWN(GPIOA_PIN0) | \
-                                        PIN_PUPD_PULLDOWN(GPIOA_FREQ_CTRL) | \
+                                        PIN_PUPD_PULLUP(GPIOA_FREQ_CTRL) | \
                                         PIN_PUPD_FLOATING(GPIOA_RADIO_SDN) | \
                                         PIN_PUPD_PULLUP(GPIOA_RADIO_NIRQ) | \
                                         PIN_PUPD_PULLUP(GPIOA_RADIO_NSS) | \
@@ -280,7 +280,7 @@
                                         PIN_PUPD_PULLDOWN(GPIOA_LED))
 
 #define VAL_GPIOA_ODR                  (PIN_OD_LOW(GPIOA_PIN0) | \
-                                        PIN_OD_LOW(GPIOA_FREQ_CTRL) | \
+                                        PIN_OD_HIGH(GPIOA_FREQ_CTRL) | \
                                         PIN_OD_LOW(GPIOA_RADIO_SDN) | \
                                         PIN_OD_HIGH(GPIOA_RADIO_NIRQ) | \
                                         PIN_OD_HIGH(GPIOA_RADIO_NSS) | \

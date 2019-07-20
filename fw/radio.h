@@ -12,6 +12,8 @@
  */
 void radio_tx(char txbuf[], size_t len);
 
+void radio_set_freq(bool four_three_four);
+
 void radio_init(void);
 
 #endif /*__RADIO_H__*/

@@ -8,7 +8,7 @@ other:
     STM32_LSEDRV: (3U << 11U) 
 default: input, opendrain, startlow, pulldown, lowspeed
 pins:
-    freq_ctrl:  pa1, output, pushpull
+    freq_ctrl:  pa1, output, pushpull, starthigh, pullup
     radio_sdn:  pa2, output, pushpull, floating
     radio_nirq: pa3, output, pushpull, starthigh, pullup
     radio_nss:  pa4, output, pushpull, starthigh, pullup, highspeed

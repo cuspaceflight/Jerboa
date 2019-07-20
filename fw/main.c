@@ -15,6 +15,7 @@ int main(void)
 	chSysInit();
 	
 	radio_init();
+	radio_set_freq(true);  // 434MHz
 
     /* Configure GPS, do not tx anything without being prompted */
     gps_init(&SD1, false, false);
