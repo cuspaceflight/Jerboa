@@ -55,8 +55,8 @@ void ukhas_populate_from_gps(const ublox_pvt_t* gps_pckt, UkhasPckt* ukhas_pckt)
   ukhas_pckt->time[0] = gps_pckt->hour;
   ukhas_pckt->time[1] = gps_pckt->minute;
   ukhas_pckt->time[2] = gps_pckt->second;
-  ukhas_pckt->lat = gps_pckt->lat / 10000000.0;  // deg
-  ukhas_pckt->lon = gps_pckt->lon / 10000000.0;  // deg
+  ukhas_pckt->lat = gps_pckt->lat;
+  ukhas_pckt->lon = gps_pckt->lon;
   ukhas_pckt->alt = gps_pckt->h_msl/ 1000;       // m above MSL
   ukhas_pckt->num_sats = gps_pckt->num_sv;
   ukhas_pckt->lock = gps_pckt->flags & 1;
@@ -74,7 +74,7 @@ size_t ukhas_print(const UkhasPckt* pckt, char* print_addr, size_t len)
   if(len >= MIN_LEN) len_str = len - CSUM_NL;  // Checksum & newline added later
   else len_str = 0;  // Else this is the first pass to find string length
   size_t rtn = chsnprintf(print_addr, len_str,
-                        "$$" CALLSIGN ",%lu,%02u:%02u:%02u,%02.7f,%03.7f,%ld,"
+                        "$$" CALLSIGN ",%lu,%02u:%02u:%02u,%d,%d,%ld,"
                             "%u,%u,%u",
                         (uint32_t)pckt->ticks, pckt->time[0], pckt->time[1],
                         pckt->time[2], pckt->lat, pckt->lon, pckt->alt,

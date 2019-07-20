@@ -12,8 +12,7 @@
 typedef struct ukhas_pckt {
   systime_t ticks;  // Current system time in systicks
   uint8_t time[3];  // hours, minutes, seconds
-  double lat;  // deg
-  double lon;  // deg
+  int32_t lat, lon;  // deg * 10^7
   int32_t alt;  // m above sea level
   uint8_t num_sats;
   uint8_t lock;  // 1 if valid fix

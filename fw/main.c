@@ -15,7 +15,7 @@ int main(void)
 	chSysInit();
 
     /* Configure GPS, do not tx anything without being prompted */
-    //gps_init(&SD1, false, false);
+    gps_init(&SD1, false, false);
 
 //    /* Start GPS State Machine */
 //    gps_thd_init();
@@ -24,7 +24,7 @@ int main(void)
 
 	/* Main Loop */
     while (true) {
-      //gps_poll_pvt(&pvt_pckt);  // Request PVT message from GPS
+      gps_poll_pvt(&pvt_pckt);  // Request PVT message from GPS
       UkhasPckt telem_pckt;
 
       ukhas_populate_from_gps(&pvt_pckt, &telem_pckt);  // Use PVT message to populate telem packet
@@ -35,6 +35,6 @@ int main(void)
       ukhas_print(&telem_pckt, telem_string, s+1);  // +1 len to include null terminator
       radio_tx(telem_string, s);  // Don't send terminator so can use s instead of s+1
 //      palTogglePad(GPIOA, GPIOA_LED);
-      chThdSleepSeconds(1);
+      chThdSleepSeconds(10);
     }
 }

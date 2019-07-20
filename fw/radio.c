@@ -85,12 +85,16 @@ void radio_tx(char txbuf[], size_t len)
   /* Power up Si446x */
   palSetPad(GPIOB, GPIOB_RADIO_PWR_EN);
   while(!si446x_init(&brdcfg));
+  
+  // Wait for tone to settle
+  rtty_tx(RTTY_HIGH);
+  chThdSleepMilliseconds(1000);
 
   for(size_t i = 0; i < len; i++)
   {
     if(txbuf[i] == '\0')
     {
-      return;
+      break;
     }
     else
     {
