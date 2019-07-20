@@ -14,6 +14,7 @@ int main(void)
 	halInit();
 	chSysInit();
 	
+	ukhas_init();
 	radio_init();
 	radio_set_freq(true);  // 434MHz
 

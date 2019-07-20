@@ -11,7 +11,7 @@
 #define STOP_BIT 1
 #define NUM_STOP_BITS 2
 
-static void tx_timer_cb(void* arg);
+static void tx_timer_cb(GPTDriver* gptp);
 
 /* Board configuration.
  * This tells the Si446x driver what our hardware looks like.
@@ -46,9 +46,9 @@ static GPTConfig gptcfg =
 
 static binary_semaphore_t tx_sem;
 
-static void tx_timer_cb(void* arg)
+static void tx_timer_cb(GPTDriver* gptp)
 {
-  (void)arg;
+  (void)gptp;
   chSysLockFromISR();
   chBSemSignalI(&tx_sem);
   chSysUnlockFromISR();

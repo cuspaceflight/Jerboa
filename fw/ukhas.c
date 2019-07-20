@@ -1,9 +1,46 @@
 #include <stdio.h>
 #include "ukhas.h"
 
+#include "ch.h"
+#include "hal.h"
+
 #define CALLSIGN "JERBOA"
 #define MIN_LEN 8
 #define CSUM_NL 6
+
+#define NUM_SAMP 3  // Number of ADC samples to average
+
+static binary_semaphore_t adc_conv_sem;
+
+static void adccallback(ADCDriver *adcp, adcsample_t *buffer, size_t n);
+
+static const ADCConversionGroup adc_grp_batt = {
+  .circular = false,
+  .num_channels = 1,
+  .end_cb = adccallback,
+  .error_cb = NULL,
+  .cfgr1 = ADC_CFGR1_AUTOFF,  // enable auto off
+  .cfgr2 = ADC_CFGR2_OVSS_1 | ADC_CFGR2_OVSR_0 | ADC_CFGR2_OVSE,
+  .tr = ADC_TR_HT_Msk,  // default value
+  .smpr = 0,
+//  .smpr2 = ADC_SMPR2_SMP_AN8(ADC_SAMPLE_84),
+  .chselr = ADC_CHSELR_CHSEL8,
+//  .sqr1 = ADC_SQR1_NUM_CH(1),
+//  .sqr2 = 0,
+//  .sqr3 = ADC_SQR3_SQ1_N(ADC_CHANNEL_IN8),
+};
+
+/* ADC Callback */
+static void adccallback(ADCDriver *adcp, adcsample_t *buffer, size_t n){
+
+  (void)adcp;
+  (void)buffer;
+  (void)n;
+
+  chSysLockFromISR();
+  chBSemSignalI(&adc_conv_sem);
+  chSysUnlockFromISR();
+}
 
 /*
  * Taken from AVR libc
@@ -50,6 +87,12 @@ static void ukhas_crc16(char* telem_string, size_t len)
   chsnprintf(telem_string + len, 5, "*%04X", crc);
 }
 
+/* Convert the 12bit ADC reading into a 10mV/LSB voltage. */
+static uint16_t adc_to_voltage(adcsample_t reading) {
+  uint32_t buf = 330 * reading;
+  return (uint16_t)(buf / 4096);
+}
+
 void ukhas_populate_from_gps(const ublox_pvt_t* gps_pckt, UkhasPckt* ukhas_pckt)
 {
   ukhas_pckt->time[0] = gps_pckt->hour;
@@ -65,7 +108,23 @@ void ukhas_populate_from_gps(const ublox_pvt_t* gps_pckt, UkhasPckt* ukhas_pckt)
 void ukhas_populate_misc(UkhasPckt* ukhas_pckt)
 {
   ukhas_pckt->ticks = chVTGetSystemTime();
-  ukhas_pckt->voltage = 0;  //TODO: replace with ADC measurement
+  
+  // Take ADC measurement
+  adcsample_t samp;
+  
+//  adcAcquireBus(&ADCD1);
+  adcConvert(&ADCD1, &adc_grp_batt, &samp, 1);
+//  adcReleaseBus(&ADCD1);
+//  uint32_t sum = 0;
+//  for(size_t i = 0; i < NUM_SAMP; i++)
+//  {
+//    sum += samp[i];
+//  }
+//  adcsample_t mean = sum / NUM_SAMP;  // Round down by default
+//  if(sum % NUM_SAMP > NUM_SAMP - sum % NUM_SAMP) mean++;  // Round up
+  chBSemWait(&adc_conv_sem);
+
+  ukhas_pckt->voltage = adc_to_voltage(samp);
 }
 
 size_t ukhas_print(const UkhasPckt* pckt, char* print_addr, size_t len)
@@ -90,4 +149,12 @@ size_t ukhas_print(const UkhasPckt* pckt, char* print_addr, size_t len)
   }
 
   return rtn;
+}
+
+
+
+void ukhas_init(void)
+{
+  adcStart(&ADCD1, NULL);
+  chBSemObjectInit(&adc_conv_sem, false);
 }

@@ -52,4 +52,6 @@ void ukhas_populate_misc(UkhasPckt* ukhas_pckt);
  */
 size_t ukhas_print(const UkhasPckt* pckt, char* print_addr, size_t len);
 
+void ukhas_init(void);
+
   #endif /*__UKHAS_H__*/
