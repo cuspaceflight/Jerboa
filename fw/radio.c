@@ -5,11 +5,13 @@
 #include "radio.h"
 #include "si446x.h"
 
-#define TIMEPERIOD 10  // RTTY time period in ms
+#define TIMEPERIOD 20  // RTTY time period in ms
 #define ASCII_BITS 7
 #define START_BIT 0
 #define STOP_BIT 1
 #define NUM_STOP_BITS 2
+
+static void tx_timer_cb(void* arg);
 
 /* Board configuration.
  * This tells the Si446x driver what our hardware looks like.
@@ -36,8 +38,27 @@ static struct si446x_board_config brdcfg = {
     .rtty_high_freq = 434001000,
 };
 
+static GPTConfig gptcfg = 
+{
+    1000,  // 1kHz clock
+    tx_timer_cb, 0, 0
+};
+
+static binary_semaphore_t tx_sem;
+
+static void tx_timer_cb(void* arg)
+{
+    (void)arg;
+    chSysLockFromISR();
+    chBSemSignalI(&tx_sem);
+    chSysUnlockFromISR();
+}
+
 static void rtty_txbit(char b)
 {
+  // Sync with timer
+  chBSemWaitTimeout(&tx_sem, TIME_MS2I(TIMEPERIOD));
+  
   if(b)
   {
     // Transmit 1
@@ -50,7 +71,6 @@ static void rtty_txbit(char b)
     palClearPad(GPIOA, GPIOA_LED);
     rtty_tx(RTTY_LOW);
   }
-  chThdSleepMilliseconds(TIMEPERIOD);
 }
 
 /* Transmit byte
@@ -89,6 +109,9 @@ void radio_tx(char txbuf[], size_t len)
   // Wait for tone to settle
   rtty_tx(RTTY_HIGH);
   chThdSleepMilliseconds(1000);
+  
+  gptStart(&GPTD2, &gptcfg);
+  gptStartContinuous(&GPTD2, TIMEPERIOD);
 
   for(size_t i = 0; i < len; i++)
   {
@@ -101,8 +124,15 @@ void radio_tx(char txbuf[], size_t len)
       rtty_txchar(txbuf[i]);
     }
   }
+  
+  gptStop(&GPTD2);
 
   /* Power down Si446x */
   si446x_shutdown();
   palClearPad(GPIOB, GPIOB_RADIO_PWR_EN);
+}
+
+void radio_init(void)
+{
+    chBSemObjectInit(&tx_sem, false);
 }

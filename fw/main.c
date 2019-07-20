@@ -13,6 +13,8 @@ int main(void)
 	/* Initialise ChibiOS */
 	halInit();
 	chSysInit();
+	
+	radio_init();
 
     /* Configure GPS, do not tx anything without being prompted */
     gps_init(&SD1, false, false);
