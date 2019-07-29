@@ -124,7 +124,7 @@ void radio_tx(char txbuf[], size_t len)
       rtty_txchar(txbuf[i]);
     }
   }
-  
+  gptStopTimer(&GPTD2);
   gptStop(&GPTD2);
 
   /* Power down Si446x */
