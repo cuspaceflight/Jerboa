@@ -35,7 +35,7 @@ static struct si446x_board_config brdcfg = {
   .tcxo = true,
   .xo_freq = 26000000,
   .rtty_low_freq = 434000000,
-  .rtty_high_freq = 434001000,
+  .rtty_high_freq = 434000850,
 };
 
 static GPTConfig gptcfg = 
@@ -76,8 +76,8 @@ static void rtty_txbit(char b)
 /* Transmit byte
  * 7 bit ascii
  * LSB first
- * 0 start bit
- * 1 stop bit
+ * '0' start bit
+ * '1' stop bit(s)
  */
 static void rtty_txchar(char c)
 {
