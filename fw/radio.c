@@ -62,13 +62,13 @@ static void rtty_txbit(char b)
   if(b)
   {
     // Transmit 1
-    palSetPad(GPIOA, GPIOA_LED);
+    //palSetPad(GPIOA, GPIOA_LED);
     rtty_tx(RTTY_HIGH);
   }
   else
   {
     // Transmit 0
-    palClearPad(GPIOA, GPIOA_LED);
+    //palClearPad(GPIOA, GPIOA_LED);
     rtty_tx(RTTY_LOW);
   }
 }
@@ -114,7 +114,7 @@ void radio_tx(char txbuf[], size_t len)
   gptStartContinuous(&GPTD2, TIMEPERIOD);
   
   // Wait for tone to settle
-  for(uint8_t j = 0; j < 70; j++)
+  for(uint8_t j = 0; j < 100; j++)
   {
     rtty_txbit(1);
   }
