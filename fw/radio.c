@@ -107,11 +107,17 @@ void radio_tx(char txbuf[], size_t len)
   while(!si446x_init(&brdcfg));
   
   // Wait for tone to settle
-  rtty_tx(RTTY_HIGH);
-  chThdSleepMilliseconds(1000);
+  //rtty_tx(RTTY_HIGH);
+  //chThdSleepMilliseconds(5000);
   
   gptStart(&GPTD2, &gptcfg);
   gptStartContinuous(&GPTD2, TIMEPERIOD);
+  
+  // Wait for tone to settle
+  for(uint8_t j = 0; j < 70; j++)
+  {
+    rtty_txbit(1);
+  }
 
   for(size_t i = 0; i < len; i++)
   {

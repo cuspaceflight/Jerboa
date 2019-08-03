@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "ukhas.h"
 
 #include "ch.h"
@@ -84,7 +85,7 @@ static void ukhas_crc16(char* telem_string, size_t len)
   {
     crc = crc_xmodem_update(crc, telem_string[i]);
   }
-  chsnprintf(telem_string + len, 5, "*%04X", crc);
+  chsnprintf(&telem_string[len], CSUM_NL+1, "*%04X\n", crc);  // +1 for null terminator
 }
 
 /* Convert the 12bit ADC reading into a 10mV/LSB voltage. */
@@ -132,20 +133,21 @@ size_t ukhas_print(const UkhasPckt* pckt, char* print_addr, size_t len)
   size_t len_str;
   if(len >= MIN_LEN) len_str = len - CSUM_NL;  // Checksum & newline added later
   else len_str = 0;  // Else this is the first pass to find string length
-  size_t rtn = chsnprintf(print_addr, len_str,
-                        "$$" CALLSIGN ",%lu,%02u:%02u:%02u,%d,%d,%ld,"
-                            "%u,%u,%u",
+  double lat = (double)pckt->lat / 10000000.0;
+  double lon = (double)pckt->lon / 10000000.0;
+  size_t rtn = snprintf(print_addr, len_str,
+                        "$$" CALLSIGN ",%lu,%02u:%02u:%02u,%02.7f,%03.7f,%ld,"
+                            "%u,%x,%u",
                         (uint32_t)pckt->ticks, pckt->time[0], pckt->time[1],
-                        pckt->time[2], pckt->lat, pckt->lon, pckt->alt,
+                        pckt->time[2], lat, lon, pckt->alt,
                         pckt->num_sats, pckt->lock, pckt->voltage);
   rtn += CSUM_NL;  // Space for checksum & newline
 
   if(print_addr != NULL && len >= MIN_LEN)
   {
     // Add checksum & newline
-    // Checksum ignores starting $$
-    ukhas_crc16(print_addr + 2*sizeof(char), len - CSUM_NL - 2);
-    print_addr[len-1] = '\n';
+    // Checksum ignores starting $$ hence +-2 offsets
+    ukhas_crc16(&print_addr[2], len - CSUM_NL - 2 - 1);  // Extra 1 offset due to null terminator
   }
 
   return rtn;

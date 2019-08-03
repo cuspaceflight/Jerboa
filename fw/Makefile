@@ -112,6 +112,7 @@ LDSCRIPT= STM32L051x8.ld
 # setting.
 CSRC = $(ALLCSRC) \
        $(TESTSRC) \
+       $(CHIBIOS)/os/various/syscalls.c \
        main.c \
        gps.c \
        ukhas.c \

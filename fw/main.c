@@ -36,9 +36,9 @@ int main(void)
 
       size_t s = ukhas_print(&telem_pckt, NULL, 0);
       char telem_string[s+1];
-      ukhas_print(&telem_pckt, telem_string, s+1);  // +1 len to include null terminator
+      ukhas_print(&telem_pckt, telem_string, s+1);  // include null terminator
       radio_tx(telem_string, s);  // Don't send terminator so can use s instead of s+1
 //      palTogglePad(GPIOA, GPIOA_LED);
-      chThdSleepSeconds(10);
+      chThdSleepSeconds(5);
     }
 }
